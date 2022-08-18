@@ -49,3 +49,4 @@ app.*.map.json
 /linux
 /ios
 /web
+/assets
