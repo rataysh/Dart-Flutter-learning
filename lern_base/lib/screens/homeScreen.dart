@@ -1,20 +1,18 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import '../const/const.dart';
+import 'package:lern_base/screens/themeScreen.dart';
+import '../classes/ListTheme.dart';
+import '../const/ref.dart';
+import '../const/slyles.dart';
+import '../const/standartTheme.dart';
+import 'elementsOfScreens/background.dart';
 
-class MyApp extends StatelessWidget {
+class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: "RABBIT",
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text("RABBIT"),
-          centerTitle: true,
-          backgroundColor: backgroundMain,
-          toolbarOpacity: 1,
-          toolbarHeight: 0,
-        ),
-        body: Stack(
+    return Material(
+      child: ClipRRect(
+        child: Stack(
           alignment: Alignment.bottomCenter,
           children: [
             SizedBox.expand(
@@ -67,7 +65,9 @@ class MyApp extends StatelessWidget {
                             padding: EdgeInsets.all(5.0),
                             child: ElevatedButton(
                               style: mainMenuButtonStyle,
-                              onPressed: () {},
+                              onPressed: () {
+                                print(standartThemeAqua.dict);
+                              },
                               child: const Text(
                                 'Новая игра',
                                 style: mainMenuButtonTextStyle,
@@ -78,7 +78,12 @@ class MyApp extends StatelessWidget {
                             padding: EdgeInsets.all(5.0),
                             child: ElevatedButton(
                               style: mainMenuButtonStyle,
-                              onPressed: () {},
+                              onPressed: () {
+                                Navigator.push(
+                                    context,
+                                    CupertinoPageRoute(
+                                        builder: (context) => ThemeScreen()));
+                              },
                               child: const Text(
                                 'Темы',
                                 style: mainMenuButtonTextStyle,
@@ -89,7 +94,12 @@ class MyApp extends StatelessWidget {
                             padding: EdgeInsets.all(5.0),
                             child: ElevatedButton(
                               style: mainMenuButtonStyle,
-                              onPressed: () {},
+                              onPressed: () {
+                                Navigator.push(
+                                    context,
+                                    CupertinoPageRoute(
+                                        builder: (context) => MainBackground()));
+                              },
                               child: const Text(
                                 'Правила',
                                 style: mainMenuButtonTextStyle,
@@ -117,5 +127,3 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-
-
