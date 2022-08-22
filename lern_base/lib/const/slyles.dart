@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 
 // Цвета
-const backgroundMain = Color(0xFFEAFED0); // Главный цвет
-const backgroundButton = Color(0xFF3EE3A8);
+const colorBackgroundMain = Color(0xFFEAFED0); // Главный цвет
+const colorBackgroundButton = Color(0xFF3EE3A8); //Главный цвет
 
 
 // Стили
 // Кнопки главного меню
 final ButtonStyle mainMenuButtonStyle = ElevatedButton.styleFrom(
-  primary: backgroundButton,
+  primary: colorBackgroundButton,
   fixedSize: const Size(200, 45),
   side: const BorderSide(
     color: Color(0xFF43CD9C),
@@ -38,7 +38,7 @@ const mainMenuButtonTextStyle = TextStyle(
 
 // Кнопки меню ТЕМЫ
 final ButtonStyle themeMenuButtonStyle = ElevatedButton.styleFrom(
-  primary: backgroundButton,
+  primary: colorBackgroundButton,
   side: const BorderSide(
     color: Color(0xFF43CD9C),
     // width: 2.0,
@@ -49,3 +49,6 @@ final ButtonStyle themeMenuButtonStyle = ElevatedButton.styleFrom(
     borderRadius: BorderRadius.all(Radius.circular(15.0)),
   ),
 );
+
+// Паддинг для второстепенных экранов, которые сохроняют главную тему
+const mySecondaryScreensPadding = EdgeInsets.fromLTRB(5, 140, 5, 140);

@@ -11,7 +11,7 @@ class MainBackground extends StatelessWidget {
         appBar: AppBar(
           title: const Text("ЗАЯЦ"),
           centerTitle: true,
-          backgroundColor: backgroundMain,
+          backgroundColor: colorBackgroundMain,
           toolbarOpacity: 1,
           toolbarHeight: 0,
         ),
@@ -20,7 +20,7 @@ class MainBackground extends StatelessWidget {
           children: [
             Container(
               decoration: BoxDecoration(
-                color: backgroundMain,
+                color: colorBackgroundMain,
                 image: DecorationImage(
                   image: Image.asset(pathBackgroundImage).image,
                   alignment: Alignment.bottomCenter,

@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
         appBar: AppBar(
           title: const Text("RABBIT"),
           centerTitle: true,
-          backgroundColor: backgroundMain,
+          backgroundColor: colorBackgroundMain,
           toolbarOpacity: 1,
           toolbarHeight: 0,
         ),

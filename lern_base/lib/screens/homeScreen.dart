@@ -1,10 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:lern_base/screens/themeScreen.dart';
-import '../classes/ListTheme.dart';
 import '../const/ref.dart';
 import '../const/slyles.dart';
 import '../const/standartTheme.dart';
+import 'addThemeScreen.dart';
 import 'elementsOfScreens/background.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -17,7 +17,7 @@ class HomeScreen extends StatelessWidget {
           children: [
             SizedBox.expand(
               child: Container(
-                color: backgroundMain,
+                color: colorBackgroundMain,
               ),
             ),
             SizedBox.expand(
@@ -98,7 +98,7 @@ class HomeScreen extends StatelessWidget {
                                 Navigator.push(
                                     context,
                                     CupertinoPageRoute(
-                                        builder: (context) => MainBackground()));
+                                        builder: (context) => AddThemeScreen()));
                               },
                               child: const Text(
                                 'Правила',
