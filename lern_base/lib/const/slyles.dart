@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/src/material/input_border.dart';
 
 // Цвета
 const colorBackgroundMain = Color(0xFFEAFED0); // Главный цвет
-const colorBackgroundButton = Color(0xFF3EE3A8); //Главный цвет
-
+const colorBackgroundButton = Color(0xFF3EE3A8); //Цвет кнопок
 
 // Стили
 // Кнопки главного меню
@@ -52,3 +52,13 @@ final ButtonStyle themeMenuButtonStyle = ElevatedButton.styleFrom(
 
 // Паддинг для второстепенных экранов, которые сохроняют главную тему
 const mySecondaryScreensPadding = EdgeInsets.fromLTRB(5, 140, 5, 140);
+
+// Стиль рамки выделения при создании новой темы
+const colorBorderForAddTheme = Color(0xFFFFE27D);
+const InputBorder myBorderStyleForAddTheme = OutlineInputBorder(
+  borderSide: BorderSide(
+    color: colorBorderForAddTheme,
+    width: 2,
+  ),
+  borderRadius: BorderRadius.all(Radius.circular(15.0)),
+);

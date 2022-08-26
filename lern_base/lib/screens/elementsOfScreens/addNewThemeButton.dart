@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import '../addThemeScreen.dart';
 
 
 class AddNewThemeButton extends StatelessWidget {
@@ -20,7 +21,10 @@ class AddNewThemeButton extends StatelessWidget {
         // splashColor: Colors.blue,
         // highlightColor: Colors.red,
         onPressed: () {
-          print('ADD');
+          Navigator.push(
+              context,
+              CupertinoPageRoute(
+                  builder: (context) => AddThemeScreen()));
         },
       ),
     );

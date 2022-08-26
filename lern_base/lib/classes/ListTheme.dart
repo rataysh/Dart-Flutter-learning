@@ -5,6 +5,7 @@ class ListTheme {
   List<String> allElements;
 
   ListTheme({required this.name, required this.allElements}) {
+    name = name[0].toUpperCase() + name.substring(1).toLowerCase();
     dict = {
       name = name[0].toUpperCase() + name.substring(1).toLowerCase():
           allElements.length == 16
