@@ -13,15 +13,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: "RABBIT",
       home: Scaffold(
-        appBar: AppBar(
-          title: const Text("RABBIT"),
-          centerTitle: true,
-          backgroundColor: colorBackgroundMain,
-          toolbarOpacity: 1,
-          toolbarHeight: 0,
-        ),
-        // body: HomeScreen(),
-          body: HomeScreen(),
+        body: HomeScreen(),
       ),
     );
   }
