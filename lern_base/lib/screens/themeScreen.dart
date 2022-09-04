@@ -3,10 +3,13 @@ import 'package:flutter/material.dart';
 import '../classes/AllTheme.dart';
 import '../const/slyles.dart';
 import 'addThemeScreen.dart';
+import 'eachThemeScreen.dart';
 import 'elementsOfScreens/addNewThemeButton.dart';
 import 'elementsOfScreens/backButton.dart';
 import 'elementsOfScreens/background.dart';
 
+var dataKindOfTheme;
+var dataChekStandartThemeFlag;
 
 class ThemeScreen extends StatelessWidget {
   @override
@@ -19,26 +22,28 @@ class ThemeScreen extends StatelessWidget {
             padding: mySecondaryScreensPadding,
             physics: const BouncingScrollPhysics(),
             itemCount: myAllTheme.listAllTheme.length,
-            itemBuilder: (_, index) => ElevatedButton(
-              onPressed: () {},
-              style: themeMenuButtonStyle,
-              child: Padding(
-                padding: const EdgeInsets.all(7.0),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: [
-                        Text(
-                          myAllTheme.listAllTheme[index].name,
-                          style: mainMenuButtonTextStyle,
-                        ),
-                      ],
-                    ),
-                  ],
+            itemBuilder: (_, index) => Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                const SizedBox(height: 10),
+                ElevatedButton(
+                  onPressed: () {
+                    dataKindOfTheme = myAllTheme.listAllTheme[index].dict;
+                    dataChekStandartThemeFlag =
+                        myAllTheme.listAllTheme[index].standartThemeFlag;
+                    print(myAllTheme.listAllTheme[index].standartThemeFlag);
+                    Navigator.push(
+                        context,
+                        CupertinoPageRoute(
+                            builder: (context) => EachThemeScreen()));
+                  },
+                  style: themeMenuButtonStyle,
+                  child: Text(
+                    myAllTheme.listAllTheme[index].name,
+                    style: mainMenuButtonTextStyle,
+                  ),
                 ),
-              ),
+              ],
             ),
           ),
           AddNewThemeButton(),

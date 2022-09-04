@@ -67,10 +67,10 @@ class HomeScreen extends StatelessWidget {
                         child: ElevatedButton(
                           style: mainMenuButtonStyle,
                           onPressed: () {
-                            Navigator.push(
-                                context,
-                                CupertinoPageRoute(
-                                    builder: (context) => AddThemeScreen()));
+                            // Navigator.push(
+                            //     context,
+                            //     CupertinoPageRoute(
+                            //         builder: (context) => AddThemeScreen()));
                           },
                           child: const Text(
                             'Правила',

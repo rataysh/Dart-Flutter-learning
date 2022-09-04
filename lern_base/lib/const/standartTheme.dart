@@ -18,7 +18,9 @@ final standartThemeDrink = ListTheme(name: "Напитки", allElements: [
   "Сироп",
   "Смузи",
   "Сок",
-]);
+],
+    standartThemeFlag: true,
+);
 
 final standartThemeJobs = ListTheme(name: "Профессии", allElements: [
   "Рыбак",
@@ -37,7 +39,9 @@ final standartThemeJobs = ListTheme(name: "Профессии", allElements: [
   "Футболист",
   "Журналист",
   "Стендап исполнитель",
-]);
+],
+  standartThemeFlag: true,
+);
 
 final standartThemeAqua = ListTheme(name: "Подводные обитатели", allElements: [
   "Осьминог",
@@ -56,23 +60,6 @@ final standartThemeAqua = ListTheme(name: "Подводные обитатели
   "Рыпа-меч",
   "Мурена",
   "Морской котик",
-]);
-
-// final standartThemeAqua = ListTheme(name: "Подводные обитатели", allElements: [
-//   "",
-//   "",
-//   "",
-//   "",
-//   "",
-//   "",
-//   "",
-//   "",
-//   "",
-//   "",
-//   "",
-//   "",
-//   "",
-//   "",
-//   "",
-//   "",
-// ]);
+],
+  standartThemeFlag: true,
+);

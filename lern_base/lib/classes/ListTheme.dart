@@ -3,8 +3,13 @@ class ListTheme {
   Map<String, List>? dict;
   String name;
   List<String> allElements;
+  bool? standartThemeFlag;
 
-  ListTheme({required this.name, required this.allElements}) {
+  ListTheme(
+      {required this.name,
+      required this.allElements,
+      this.standartThemeFlag = false}) {
+    // standartThemeFlag = false;
     name = name[0].toUpperCase() + name.substring(1).toLowerCase();
     dict = {
       name = name[0].toUpperCase() + name.substring(1).toLowerCase():
@@ -14,4 +19,3 @@ class ListTheme {
     };
   }
 }
-
