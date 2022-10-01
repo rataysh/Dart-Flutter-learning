@@ -93,7 +93,7 @@ class _AddNewPlayersState extends State<AddNewPlayers> {
           child: ElevatedButton(
             style: mainMenuButtonStyle,
             onPressed: () {
-              print(quantity);
+              Navigator.pushNamed(context, '/newGameQuantity');
             },
             child: const Text(
               'Далее',

@@ -3,6 +3,7 @@ import 'package:lern_base/screens/addThemeScreen.dart';
 import 'package:lern_base/screens/eachThemeScreen.dart';
 import 'package:lern_base/screens/homeScreen.dart';
 import 'package:lern_base/screens/newGame.dart';
+import 'package:lern_base/screens/newGameQuantity.dart';
 import 'package:lern_base/screens/themeScreen.dart';
 import 'const/slyles.dart';
 
@@ -22,6 +23,7 @@ class MyApp extends StatelessWidget {
         '/eachTheme': (context) => EachThemeScreen(),
         '/addTheme': (context) => AddThemeScreen(),
         '/newGame': (context) => NewGame(),
+        '/newGameQuantity': (context) => NewGameQuantity(),
       },
       // home: Scaffold(
       //   body: HomeScreen(),
