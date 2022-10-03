@@ -86,7 +86,7 @@ class _NewGameQuantityState extends State<NewGameQuantity> {
 
   _newGameQuantityTextForm(int index) {
     var key = index + 1;
-    return TextFormField(
+    return TextField(
       style: eachThemeHeaderTextStyle,
       enabled: true,
       // textAlign: TextAlign.right,
@@ -98,6 +98,9 @@ class _NewGameQuantityState extends State<NewGameQuantity> {
         border: myBorderStyleForAddTheme,
         hintText: 'Игрок ' + (key).toString(),
         hintStyle: eachThemeHeaderTextStyle,
+        suffixIcon: Icon(
+          Icons.create,
+        ),
       ),
       onChanged: (val) {
         _onUpdate(key, val);
