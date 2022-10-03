@@ -10,8 +10,8 @@ class NewGameQuantity extends StatefulWidget {
 }
 
 class _NewGameQuantityState extends State<NewGameQuantity> {
-
   Map<String, dynamic>? _values;
+
   // String? _result;
 
   @override
@@ -26,6 +26,21 @@ class _NewGameQuantityState extends State<NewGameQuantity> {
     final _argumentsQuantity =
         (ModalRoute.of(context)?.settings.arguments ?? 3) as int;
 
+    void _chekValidatorDate() {
+      if (_values?.length != _argumentsQuantity) {
+        if (_values?.length == 0) {
+          for (int i = 1; i < _argumentsQuantity + 1; i++) {
+            _values?[i.toString()] = 'Игрок $i';
+          }
+        } else {
+          for (int i = 1; i < _argumentsQuantity + 1; i++) {
+            if (_values?.containsKey(i.toString()) == false) {
+              _values?[i.toString()] = 'Игрок $i';
+            }
+          }
+        }
+      }
+    }
 
     return Material(
       child: Stack(
@@ -48,6 +63,7 @@ class _NewGameQuantityState extends State<NewGameQuantity> {
                           ElevatedButton(
                             style: mainMenuButtonStyle,
                             onPressed: () {
+                              _chekValidatorDate();
                               print(_values);
                               // Navigator.pushNamed(context, '/newGameQuantity');
                             },
@@ -90,12 +106,8 @@ class _NewGameQuantityState extends State<NewGameQuantity> {
     );
   }
 
-_onUpdate(int key, String val) {
-  var tempKey = key.toString();
-  _values?[tempKey]= val;
-  // setState(() {
-  //   _result = _values.toString();
-  // });
-}
-
+  _onUpdate(int key, String val) {
+    var tempKey = key.toString();
+    _values?[tempKey] = val;
+  }
 }
