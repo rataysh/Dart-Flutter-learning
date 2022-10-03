@@ -7,7 +7,7 @@ import 'eachThemeScreen.dart';
 import 'elementsOfScreens/addNewThemeButton.dart';
 import 'elementsOfScreens/backButton.dart';
 import 'elementsOfScreens/background.dart';
-import 'elementsOfScreens/newGameStart.dart';
+import 'newGameStart.dart';
 
 var dataKindOfTheme;
 var dataChekStandartThemeFlag;

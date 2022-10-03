@@ -1,8 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import '../../const/slyles.dart';
-import '../addThemeScreen.dart';
-import 'package:lern_base/screens/themeScreen.dart';
+import '../const/slyles.dart';
+
 
 class AddNewPlayers extends StatefulWidget {
   const AddNewPlayers({Key? key}) : super(key: key);
@@ -40,52 +39,52 @@ class _AddNewPlayersState extends State<AddNewPlayers> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             quantity == 3
-                ? IconButton(
-              onPressed: null,
-              iconSize: 40,
-              color: colorDisabledButton,
-              icon: const Icon(
-                Icons.remove,
-              ),
-            )
+                ? const IconButton(
+                    onPressed: null,
+                    iconSize: 40,
+                    color: colorDisabledButton,
+                    icon: Icon(
+                      Icons.remove,
+                    ),
+                  )
                 : IconButton(
-              onPressed: () {
-                minusPlayers();
-              },
-              iconSize: 40,
-              color: colorBackgroundButton,
-              icon: const Icon(
-                Icons.remove,
-              ),
-            ),
+                    onPressed: () {
+                      minusPlayers();
+                    },
+                    iconSize: 40,
+                    color: colorBackgroundButton,
+                    icon: const Icon(
+                      Icons.remove,
+                    ),
+                  ),
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: Container(
-                // color: Colors.white60,
+                  // color: Colors.white60,
                   child: Text(
-                    '$quantity',
-                    style: eachThemeHeaderTextStyle,
-                  )),
+                '$quantity',
+                style: eachThemeHeaderTextStyle,
+              )),
             ),
             quantity == 12
-                ? IconButton(
-                iconSize: 40,
-                color: colorDisabledButton,
-                icon: Icon(
-                  Icons.add,
-                ),
-                onPressed: null,
-            )
+                ? const IconButton(
+                    iconSize: 40,
+                    color: colorDisabledButton,
+                    icon: Icon(
+                      Icons.add,
+                    ),
+                    onPressed: null,
+                  )
                 : IconButton(
-              iconSize: 40,
-              color: colorBackgroundButton,
-              icon: const Icon(
-                Icons.add,
-              ),
-              onPressed: () {
-                plusPlayers();
-              },
-            ),
+                    iconSize: 40,
+                    color: colorBackgroundButton,
+                    icon: const Icon(
+                      Icons.add,
+                    ),
+                    onPressed: () {
+                      plusPlayers();
+                    },
+                  ),
           ],
         ),
         Padding(
@@ -93,7 +92,8 @@ class _AddNewPlayersState extends State<AddNewPlayers> {
           child: ElevatedButton(
             style: mainMenuButtonStyle,
             onPressed: () {
-              Navigator.pushNamed(context, '/newGameQuantity');
+              Navigator.pushNamed(context, '/newGameQuantity',
+                  arguments: quantity);
             },
             child: const Text(
               'Далее',
