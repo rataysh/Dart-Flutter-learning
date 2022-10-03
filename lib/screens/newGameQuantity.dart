@@ -10,17 +10,29 @@ class NewGameQuantity extends StatefulWidget {
 }
 
 class _NewGameQuantityState extends State<NewGameQuantity> {
-  // String tempText = '';
+
+  Map<String, dynamic>? _values;
+  // String? _result;
+
+  @override
+  void initState() {
+    super.initState();
+    _values = {};
+    // _result = '';
+  }
+
   @override
   Widget build(BuildContext context) {
     final _argumentsQuantity =
         (ModalRoute.of(context)?.settings.arguments ?? 3) as int;
+
 
     return Material(
       child: Stack(
         children: [
           MainBackground(),
           ListView.builder(
+            shrinkWrap: true,
             padding: mySecondaryScreensPadding,
             physics: const BouncingScrollPhysics(),
             itemCount: _argumentsQuantity,
@@ -36,7 +48,7 @@ class _NewGameQuantityState extends State<NewGameQuantity> {
                           ElevatedButton(
                             style: mainMenuButtonStyle,
                             onPressed: () {
-                              print('');
+                              print(_values);
                               // Navigator.pushNamed(context, '/newGameQuantity');
                             },
                             child: const Text(
@@ -57,6 +69,7 @@ class _NewGameQuantityState extends State<NewGameQuantity> {
   }
 
   _newGameQuantityTextForm(int index) {
+    var key = index + 1;
     return TextFormField(
       style: eachThemeHeaderTextStyle,
       enabled: true,
@@ -67,9 +80,22 @@ class _NewGameQuantityState extends State<NewGameQuantity> {
         enabledBorder: myBorderStyleForAddTheme,
         disabledBorder: myBorderStyleForAddTheme,
         border: myBorderStyleForAddTheme,
-        hintText: 'Игрок ' + (index + 1).toString(),
+        hintText: 'Игрок ' + (key).toString(),
         hintStyle: eachThemeHeaderTextStyle,
       ),
+      onChanged: (val) {
+        _onUpdate(key, val);
+        // print(val);
+      },
     );
   }
+
+_onUpdate(int key, String val) {
+  var tempKey = key.toString();
+  _values?[tempKey]= val;
+  // setState(() {
+  //   _result = _values.toString();
+  // });
+}
+
 }
