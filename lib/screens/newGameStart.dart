@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import '../const/slyles.dart';
+import 'elementsOfScreens/eachThemePart.dart';
 
 class AddNewPlayers extends StatefulWidget {
   const AddNewPlayers({Key? key}) : super(key: key);
@@ -29,66 +30,14 @@ class _AddNewPlayersState extends State<AddNewPlayers> {
     return Column(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
-        Container(
-          // padding: mySecondaryScreensPadding,
-          child: Text('Выберете количество игроков',
-              style: eachThemeHeaderTextStyle),
-        ),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            quantity == 3
-                ? const IconButton(
-                    onPressed: null,
-                    iconSize: 40,
-                    color: colorDisabledButton,
-                    icon: Icon(
-                      Icons.remove,
-                    ),
-                  )
-                : IconButton(
-                    onPressed: () {
-                      minusPlayers();
-                    },
-                    iconSize: 40,
-                    color: colorBackgroundButton,
-                    icon: const Icon(
-                      Icons.remove,
-                    ),
-                  ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Container(
-                  // color: Colors.white60,
-                  child: Text(
-                '$quantity',
-                style: eachThemeHeaderTextStyle,
-              )),
-            ),
-            quantity == 12
-                ? const IconButton(
-                    iconSize: 40,
-                    color: colorDisabledButton,
-                    icon: Icon(
-                      Icons.add,
-                    ),
-                    onPressed: null,
-                  )
-                : IconButton(
-                    iconSize: 40,
-                    color: colorBackgroundButton,
-                    icon: const Icon(
-                      Icons.add,
-                    ),
-                    onPressed: () {
-                      plusPlayers();
-                    },
-                  ),
-          ],
-        ),
+        const Text('Выберите количество игроков',
+            style: eachThemeHeaderTextStyle),
+        _myChouseQuantity(),
+        const Text('Выберите тему', style: eachThemeHeaderTextStyle),
+        // eachThemeForm('TEST'),
+        _myChouseTheme('TEST'),
         Padding(
-          padding: const EdgeInsets.all(8.0),
+          padding: const EdgeInsets.all(6.0),
           child: ElevatedButton(
             style: mainMenuButtonStyle,
             onPressed: () {
@@ -101,6 +50,71 @@ class _AddNewPlayersState extends State<AddNewPlayers> {
             ),
           ),
         ),
+      ],
+    );
+  }
+
+  _myChouseQuantity() {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      crossAxisAlignment: CrossAxisAlignment.center,
+      children: [
+        quantity == 3
+            ? const IconButton(
+                onPressed: null,
+                iconSize: 40,
+                color: colorDisabledButton,
+                icon: Icon(
+                  Icons.remove,
+                ),
+              )
+            : IconButton(
+                onPressed: () {
+                  minusPlayers();
+                },
+                iconSize: 40,
+                color: colorBackgroundButton,
+                icon: const Icon(
+                  Icons.remove,
+                ),
+              ),
+        Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Container(
+              // color: Colors.white60,
+              child: Text(
+            '$quantity',
+            style: eachThemeHeaderTextStyle,
+          )),
+        ),
+        quantity == 12
+            ? const IconButton(
+                iconSize: 40,
+                color: colorDisabledButton,
+                icon: Icon(
+                  Icons.add,
+                ),
+                onPressed: null,
+              )
+            : IconButton(
+                iconSize: 40,
+                color: colorBackgroundButton,
+                icon: const Icon(
+                  Icons.add,
+                ),
+                onPressed: () {
+                  plusPlayers();
+                },
+              ),
+      ],
+    );
+  }
+
+  _myChouseTheme(data) {
+    return Row(
+      children: [
+
+        Text(data),
       ],
     );
   }

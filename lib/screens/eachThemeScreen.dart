@@ -5,6 +5,7 @@ import '../const/slyles.dart';
 import 'elementsOfScreens/backButton.dart';
 import 'elementsOfScreens/background.dart';
 import 'elementsOfScreens/changeThemeButton.dart';
+import 'elementsOfScreens/eachThemePart.dart';
 
 class EachThemeScreen extends StatelessWidget {
 
@@ -23,8 +24,8 @@ class EachThemeScreen extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 index == 0
-                ? _eachTheme(dataKindOfTheme.keys.toList()[0])
-                : _eachTheme(dataKindOfTheme.values.toList()[0][index-1]),
+                ? eachThemeForm(dataKindOfTheme.keys.toList()[0])
+                : eachThemeForm(dataKindOfTheme.values.toList()[0][index-1]),
                 const SizedBox(
                   height: 10,
                 )
@@ -37,21 +38,21 @@ class EachThemeScreen extends StatelessWidget {
       ),
     );
   }
-  _eachTheme(data) {
-    return
-      TextField(
-        enabled: false,
-        // textAlign: TextAlign.center,
-        decoration: InputDecoration(
-          // alignLabelWithHint: false,
-          focusedBorder: myBorderStyleForAddTheme,
-          enabledBorder: myBorderStyleForAddTheme,
-          disabledBorder: myBorderStyleForAddTheme,
-          border: myBorderStyleForAddTheme,
-          labelText: data,
-          labelStyle: eachThemeHeaderTextStyle,
-        ),
-      );
-  }
+  // _eachTheme(data) {
+  //   return
+  //     TextField(
+  //       enabled: false,
+  //       // textAlign: TextAlign.center,
+  //       decoration: InputDecoration(
+  //         // alignLabelWithHint: false,
+  //         focusedBorder: myBorderStyleForAddTheme,
+  //         enabledBorder: myBorderStyleForAddTheme,
+  //         disabledBorder: myBorderStyleForAddTheme,
+  //         border: myBorderStyleForAddTheme,
+  //         labelText: data,
+  //         labelStyle: eachThemeHeaderTextStyle,
+  //       ),
+  //     );
+  // }
 }
 
