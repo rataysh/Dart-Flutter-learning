@@ -1,7 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
-// import 'package:flutter_swipable/flutter_swipable.dart';
+import '../classes/AllTheme.dart';
 import '../const/slyles.dart';
 import 'elementsOfScreens/backButton.dart';
 import 'elementsOfScreens/background.dart';
@@ -51,7 +50,7 @@ class _NewGameRoleState extends State<NewGameRole> {
             child: ElevatedButton(
               style: mainMenuButtonStyle,
               onPressed: () {
-                // print(_argumentsPlayersName['3']);
+                print(myAllTheme.listAllTheme[0].name);
               },
               child: const Text(
                 'TEST',
@@ -85,7 +84,7 @@ class _NewGameRoleState extends State<NewGameRole> {
           width: 4,
           color: Colors.black,
         ),
-        // color: colorDisabledButton,
+        color: colorDisabledButton,
       ),
       child: Text(
           '$_tempName',

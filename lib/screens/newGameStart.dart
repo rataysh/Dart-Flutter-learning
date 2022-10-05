@@ -35,7 +35,7 @@ class _AddNewPlayersState extends State<AddNewPlayers> {
         _myChouseQuantity(),
         const Text('Выберите тему', style: eachThemeHeaderTextStyle),
         // eachThemeForm('TEST'),
-        _myChouseTheme('TEST'),
+        _myChouseTheme('Podvodnie obitateli'),
         Padding(
           padding: const EdgeInsets.all(6.0),
           child: ElevatedButton(
@@ -53,6 +53,10 @@ class _AddNewPlayersState extends State<AddNewPlayers> {
       ],
     );
   }
+
+  // _funcAllTheme() {
+  //   print('TESTTT');
+  // }
 
   _myChouseQuantity() {
     return Row(
@@ -112,10 +116,51 @@ class _AddNewPlayersState extends State<AddNewPlayers> {
 
   _myChouseTheme(data) {
     return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
       children: [
-
-        Text(data),
+        Container(
+          alignment: Alignment.center,
+          width: 300,
+          height: 50,
+          child: TextField(
+            enabled: false,
+            // textAlign: TextAlign.center,
+            decoration: InputDecoration(
+              // alignLabelWithHint: false,
+              focusedBorder: myBorderStyleForAddTheme,
+              enabledBorder: myBorderStyleForAddTheme,
+              disabledBorder: myBorderStyleForAddTheme,
+              border: myBorderStyleForAddTheme,
+              labelText: data,
+              labelStyle: eachThemeHeaderTextStyle,
+              suffixIcon: Row(
+                mainAxisSize: MainAxisSize.min,
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  IconButton(
+                    alignment: Alignment.center,
+                    // iconSize: 20,
+                    icon: Icon(Icons.dehaze),
+                    onPressed: () {
+                      print('ettst');
+                    },
+                    ),
+                  SizedBox(
+                    width: 10,
+                  ),
+                  Icon(
+                    Icons.sync,
+                  ),
+                  SizedBox(
+                    width: 10,
+                  ),
+                ],
+              ),
+            ),
+          ),
+        ),
       ],
     );
   }
 }
+

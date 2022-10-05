@@ -7,7 +7,9 @@ import '../const/standartTheme.dart';
 class AllTheme {
   List listAllTheme;
 
+
   AllTheme({required this.listAllTheme});
+
 }
 
 
