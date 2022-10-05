@@ -2,7 +2,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import '../const/slyles.dart';
 
-
 class AddNewPlayers extends StatefulWidget {
   const AddNewPlayers({Key? key}) : super(key: key);
 
@@ -32,7 +31,8 @@ class _AddNewPlayersState extends State<AddNewPlayers> {
       children: [
         Container(
           // padding: mySecondaryScreensPadding,
-          child: Text('Выберете количество игроков', style: eachThemeTextStyle),
+          child: Text('Выберете количество игроков',
+              style: eachThemeHeaderTextStyle),
         ),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,

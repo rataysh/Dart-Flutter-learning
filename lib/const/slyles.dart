@@ -68,7 +68,7 @@ const InputBorder myBorderStyleForAddTheme = OutlineInputBorder(
 
 // Текст каждого слова в теме
 const eachThemeTextStyle = TextStyle(
-  color: Colors.black,
+  color: Color(0xFF9b8134),
   fontSize: 20.0,
   fontWeight: FontWeight.w800,
   fontFamily: 'AbhayaLibre',
@@ -83,7 +83,7 @@ const eachThemeTextStyle = TextStyle(
 
 // Текст заголовка в теме
 const eachThemeHeaderTextStyle = TextStyle(
-  color: Colors.black,
+  color: Color(0xFF8c6e1c),
   fontSize: 25.0,
   fontWeight: FontWeight.w800,
   fontFamily: 'AbhayaLibre',

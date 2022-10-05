@@ -41,7 +41,7 @@ class EachThemeScreen extends StatelessWidget {
     return
       TextField(
         enabled: false,
-        // textAlign: TextAlign.right,
+        // textAlign: TextAlign.center,
         decoration: InputDecoration(
           // alignLabelWithHint: false,
           focusedBorder: myBorderStyleForAddTheme,

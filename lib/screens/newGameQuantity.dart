@@ -64,8 +64,8 @@ class _NewGameQuantityState extends State<NewGameQuantity> {
                             style: mainMenuButtonStyle,
                             onPressed: () {
                               _chekValidatorDate();
-                              print(_values);
-                              // Navigator.pushNamed(context, '/newGameQuantity');
+                              Navigator.pushNamed(context, '/newGameRole',
+                                  arguments: _values);
                             },
                             child: const Text(
                               'Далее',
