@@ -82,7 +82,7 @@ class HomeScreen extends StatelessWidget {
                     alignment: Alignment.bottomCenter,
                     pathBodyRabImage,
                     fit: BoxFit.scaleDown,
-                    scale: 2.5,
+                    scale: 3.3,
                   ),
                 ],
               ),

@@ -1,9 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+// import 'package:flutter_swipable/flutter_swipable.dart';
 import '../const/slyles.dart';
 import 'elementsOfScreens/backButton.dart';
 import 'elementsOfScreens/background.dart';
 import 'package:flip_card/flip_card.dart';
+import 'package:flutter_swiper/flutter_swiper.dart';
+
 
 class NewGameRole extends StatefulWidget {
   @override
@@ -19,25 +22,37 @@ class _NewGameRoleState extends State<NewGameRole> {
   @override
   Widget build(BuildContext context) {
     final _argumentsPlayersName =
-        ModalRoute.of(context)?.settings.arguments as Map;
+    ModalRoute
+        .of(context)
+        ?.settings
+        .arguments as Map;
 
     return Material(
       child: Stack(
         children: [
           MainBackground(),
-          ListView.builder(
+          // Swipable(
+          //     child: Container(
+          //         height: double.infinity,
+          //         width: double.infinity,
+          //         color: Colors.red
+          //     )
+          // ),
+          Swiper(
             scrollDirection: Axis.horizontal,
-            shrinkWrap: true,
-            padding: mySecondaryScreensPadding,
+            // shrinkWrap: true,
+            // padding: mySecondaryScreensPadding,
             physics: const BouncingScrollPhysics(),
+            layout: SwiperLayout.STACK,
+            itemWidth: 300,
+            itemHeight: 500,
             itemCount: _argumentsPlayersName.length,
-            itemBuilder: (_, index) => Center(
-                child: FlipCard(
-              // fill: Fill.fillBack, // Fill the back side of the card to make in the same size as the front.
-              direction: FlipDirection.HORIZONTAL,
-              front: _frontSide('TEST'),
-              back: _frontSide('TEST_BACK'),
-            )),
+            itemBuilder: (_, index) =>
+              FlipCard(
+                direction: FlipDirection.HORIZONTAL,
+                front: _frontSide('TEST'),
+                back: _frontSide('TEST_BACK'),
+              )
           ),
           MyBackButton(), // separatorBuilder: (_, __) => const Divider(),
         ],
