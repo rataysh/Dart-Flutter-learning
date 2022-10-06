@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import '../classes/AllTheme.dart';
 import '../const/slyles.dart';
 import 'elementsOfScreens/eachThemePart.dart';
 
@@ -35,7 +36,7 @@ class _AddNewPlayersState extends State<AddNewPlayers> {
         _myChouseQuantity(),
         const Text('Выберите тему', style: eachThemeHeaderTextStyle),
         // eachThemeForm('TEST'),
-        _myChouseTheme('Podvodnie obitateli'),
+        _myChouseTheme(myAllTheme.listAllTheme[2].name),
         Padding(
           padding: const EdgeInsets.all(6.0),
           child: ElevatedButton(
@@ -54,9 +55,20 @@ class _AddNewPlayersState extends State<AddNewPlayers> {
     );
   }
 
-  // _funcAllTheme() {
-  //   print('TESTTT');
-  // }
+  _randomTheme() {
+    print('TEST');
+  }
+
+  _myIconThemeButton(icon, func) {
+    return IconButton(
+        padding: EdgeInsets.all(1.0),
+        alignment: Alignment.centerRight,
+        color: colorBackgroundButton,
+        onPressed: () {
+          func();
+        },
+        icon: Icon(icon));
+  }
 
   _myChouseQuantity() {
     return Row(
@@ -115,52 +127,48 @@ class _AddNewPlayersState extends State<AddNewPlayers> {
   }
 
   _myChouseTheme(data) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        Container(
-          alignment: Alignment.center,
-          width: 300,
-          height: 50,
-          child: TextField(
-            enabled: false,
-            // textAlign: TextAlign.center,
-            decoration: InputDecoration(
-              // alignLabelWithHint: false,
-              focusedBorder: myBorderStyleForAddTheme,
-              enabledBorder: myBorderStyleForAddTheme,
-              disabledBorder: myBorderStyleForAddTheme,
-              border: myBorderStyleForAddTheme,
-              labelText: data,
-              labelStyle: eachThemeHeaderTextStyle,
-              suffixIcon: Row(
-                mainAxisSize: MainAxisSize.min,
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: [
-                  IconButton(
-                    alignment: Alignment.center,
-                    // iconSize: 20,
-                    icon: Icon(Icons.dehaze),
-                    onPressed: () {
-                      print('ettst');
-                    },
-                    ),
-                  SizedBox(
-                    width: 10,
-                  ),
-                  Icon(
-                    Icons.sync,
-                  ),
-                  SizedBox(
-                    width: 10,
-                  ),
-                ],
+    return Container(
+      padding: EdgeInsets.all(3.0),
+      alignment: Alignment.center,
+      width: 350,
+      height: 50,
+      decoration: BoxDecoration(
+        // color: Colors.white,
+        border: Border.all(
+          color: colorBorderForAddTheme,
+          width: 2,
+        ),
+        borderRadius: BorderRadius.all(Radius.circular(15.0)),
+      ),
+      child: Row(
+        // mainAxisSize: MainAxisSize.min,
+        mainAxisAlignment: MainAxisAlignment.end,
+        children: [
+          SizedBox(
+            width: 10,
+          ),
+          Flexible(
+            flex: 7,
+            child: Container(
+              alignment: Alignment.centerLeft,
+              child: Text(
+                data,
+                style: eachThemeHeaderTextStyle,
+                overflow: TextOverflow.ellipsis,
               ),
             ),
           ),
-        ),
-      ],
+          // _iconThemeButton(Icons.dehaze, testFunc),
+          Flexible(
+            flex: 1,
+            child: _myIconThemeButton(Icons.dehaze, _randomTheme),
+          ),
+          Flexible(
+            flex: 1,
+            child: _myIconThemeButton(Icons.sync, _randomTheme),
+          ),
+        ],
+      ),
     );
   }
 }
-

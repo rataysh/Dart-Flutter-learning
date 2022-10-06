@@ -83,6 +83,7 @@ const eachThemeTextStyle = TextStyle(
 
 // Текст заголовка в теме
 const eachThemeHeaderTextStyle = TextStyle(
+
   color: Color(0xFF8c6e1c),
   fontSize: 25.0,
   fontWeight: FontWeight.w800,
