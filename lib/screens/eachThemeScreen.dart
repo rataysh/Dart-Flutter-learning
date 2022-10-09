@@ -33,7 +33,7 @@ class EachThemeScreen extends StatelessWidget {
             ),
           ),
           MyBackButton(),
-          ChangeThemeButton(),// separatorBuilder: (_, __) => const Divider(),
+          // ChangeThemeButton(),// separatorBuilder: (_, __) => const Divider(),
         ],
       ),
     );

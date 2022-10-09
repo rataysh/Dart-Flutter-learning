@@ -3,8 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import '../classes/AllTheme.dart';
 import '../const/slyles.dart';
-import 'elementsOfScreens/eachThemePart.dart';
-import 'newGameQuantity.dart';
+import 'listThemeChoice.dart';
 
 class AddNewPlayers extends StatefulWidget {
   const AddNewPlayers({Key? key}) : super(key: key);
@@ -16,6 +15,11 @@ class AddNewPlayers extends StatefulWidget {
 class _AddNewPlayersState extends State<AddNewPlayers> {
   int quantity = 3;
   var themeNumberForShow = 0;
+
+  @override
+  void initState() {
+    super.initState();
+  }
 
   void plusPlayers() {
     setState(() {
@@ -43,7 +47,7 @@ class _AddNewPlayersState extends State<AddNewPlayers> {
           padding: const EdgeInsets.all(6.0),
           child: ElevatedButton(
             style: mainMenuButtonStyle,
-            onPressed: () {
+            onPressed: () async {
               Navigator.pushNamed(context, '/newGameQuantity',
                   arguments: quantity);
             },
@@ -58,15 +62,20 @@ class _AddNewPlayersState extends State<AddNewPlayers> {
   }
 
   _randomTheme() {
-    setState(() {
-      themeNumberForShow = Random().nextInt(myAllTheme.listAllTheme.length);
-    });
+    return themeNumberForShow =
+        Random().nextInt(myAllTheme.listAllTheme.length);
   }
 
   _miniViewAllTheme() {
-    showModalBottomSheet(
-      context: context,
-      builder: (context) => NewGameQuantity(),
+    return showModalBottomSheet(
+      // isScrollControlled: true,
+        shape: const RoundedRectangleBorder(
+          borderRadius: BorderRadius.vertical(
+            top: Radius.circular(30),
+          ),
+        ),
+        context: context,
+        builder: (context) =>  ListThemeChoice(),
     );
   }
 
@@ -75,8 +84,11 @@ class _AddNewPlayersState extends State<AddNewPlayers> {
         padding: EdgeInsets.all(1.0),
         alignment: Alignment.centerRight,
         color: colorBackgroundButton,
-        onPressed: () {
-          func();
+        onPressed: () async {
+          final result = await func();
+          setState(() {
+            themeNumberForShow = result;
+          });
         },
         icon: Icon(icon));
   }
@@ -133,51 +145,51 @@ class _AddNewPlayersState extends State<AddNewPlayers> {
       children: [
         quantity == 3
             ? const IconButton(
-                onPressed: null,
-                iconSize: 40,
-                color: colorDisabledButton,
-                icon: Icon(
-                  Icons.remove,
-                ),
-              )
+          onPressed: null,
+          iconSize: 40,
+          color: colorDisabledButton,
+          icon: Icon(
+            Icons.remove,
+          ),
+        )
             : IconButton(
-                onPressed: () {
-                  minusPlayers();
-                },
-                iconSize: 40,
-                color: colorBackgroundButton,
-                icon: const Icon(
-                  Icons.remove,
-                ),
-              ),
+          onPressed: () {
+            minusPlayers();
+          },
+          iconSize: 40,
+          color: colorBackgroundButton,
+          icon: const Icon(
+            Icons.remove,
+          ),
+        ),
         Padding(
           padding: const EdgeInsets.all(8.0),
           child: Container(
-              // color: Colors.white60,
+            // color: Colors.white60,
               child: Text(
-            '$quantity',
-            style: eachThemeHeaderTextStyle,
-          )),
+                '$quantity',
+                style: eachThemeHeaderTextStyle,
+              )),
         ),
         quantity == 12
             ? const IconButton(
-                iconSize: 40,
-                color: colorDisabledButton,
-                icon: Icon(
-                  Icons.add,
-                ),
-                onPressed: null,
-              )
+          iconSize: 40,
+          color: colorDisabledButton,
+          icon: Icon(
+            Icons.add,
+          ),
+          onPressed: null,
+        )
             : IconButton(
-                iconSize: 40,
-                color: colorBackgroundButton,
-                icon: const Icon(
-                  Icons.add,
-                ),
-                onPressed: () {
-                  plusPlayers();
-                },
-              ),
+          iconSize: 40,
+          color: colorBackgroundButton,
+          icon: const Icon(
+            Icons.add,
+          ),
+          onPressed: () {
+            plusPlayers();
+          },
+        ),
       ],
     );
   }

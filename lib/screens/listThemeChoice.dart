@@ -5,10 +5,12 @@ import '../const/slyles.dart';
 import 'elementsOfScreens/backButton.dart';
 import 'elementsOfScreens/background.dart';
 
-var dataKindOfTheme;
-var dataChekStandartThemeFlag;
+// var nonLocalThemeNumberForShow = 0;
+// var dataChekStandartThemeFlag;
 
-class ThemeScreen extends StatelessWidget {
+class ListThemeChoice extends StatelessWidget {
+  const ListThemeChoice({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Material(
@@ -16,7 +18,7 @@ class ThemeScreen extends StatelessWidget {
         children: [
           MainBackground(),
           ListView.builder(
-            padding: mySecondaryScreensPadding,
+            padding: const EdgeInsets.fromLTRB(10, 50, 10, 50),// mySecondaryScreensPadding,
             physics: const BouncingScrollPhysics(),
             itemCount: myAllTheme.listAllTheme.length,
             itemBuilder: (_, index) => Column(
@@ -25,11 +27,8 @@ class ThemeScreen extends StatelessWidget {
                 const SizedBox(height: 10),
                 ElevatedButton(
                   onPressed: () {
-                    dataKindOfTheme = myAllTheme.listAllTheme[index].dict;
-                    dataChekStandartThemeFlag =
-                        myAllTheme.listAllTheme[index].standartThemeFlag;
-                    print(myAllTheme.listAllTheme[index].standartThemeFlag);
-                    Navigator.pushNamed(context, '/eachTheme');
+                    // nonLocalThemeNumberForShow = index;
+                    Navigator.pop(context, index);
                   },
                   style: themeMenuButtonStyle,
                   child: Text(
@@ -41,7 +40,7 @@ class ThemeScreen extends StatelessWidget {
             ),
           ),
           // AddNewThemeButton(), Добавить потом, база уже есть
-          MyBackButton(), // separatorBuilder: (_, __) => const Divider(),
+          //  MyBackButton(), // separatorBuilder: (_, __) => const Divider(),
         ],
       ),
     );
