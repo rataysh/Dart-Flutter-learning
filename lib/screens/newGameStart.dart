@@ -1,8 +1,10 @@
+import 'dart:math';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import '../classes/AllTheme.dart';
 import '../const/slyles.dart';
 import 'elementsOfScreens/eachThemePart.dart';
+import 'newGameQuantity.dart';
 
 class AddNewPlayers extends StatefulWidget {
   const AddNewPlayers({Key? key}) : super(key: key);
@@ -13,6 +15,7 @@ class AddNewPlayers extends StatefulWidget {
 
 class _AddNewPlayersState extends State<AddNewPlayers> {
   int quantity = 3;
+  var themeNumberForShow = 0;
 
   void plusPlayers() {
     setState(() {
@@ -33,10 +36,9 @@ class _AddNewPlayersState extends State<AddNewPlayers> {
       children: [
         const Text('Выберите количество игроков',
             style: eachThemeHeaderTextStyle),
-        _myChouseQuantity(),
+        _myChoiceQuantity(),
         const Text('Выберите тему', style: eachThemeHeaderTextStyle),
-        // eachThemeForm('TEST'),
-        _myChouseTheme(myAllTheme.listAllTheme[2].name),
+        _myChoiceTheme(myAllTheme.listAllTheme[themeNumberForShow].name),
         Padding(
           padding: const EdgeInsets.all(6.0),
           child: ElevatedButton(
@@ -56,7 +58,16 @@ class _AddNewPlayersState extends State<AddNewPlayers> {
   }
 
   _randomTheme() {
-    print('TEST');
+    setState(() {
+      themeNumberForShow = Random().nextInt(myAllTheme.listAllTheme.length);
+    });
+  }
+
+  _miniViewAllTheme() {
+    showModalBottomSheet(
+      context: context,
+      builder: (context) => NewGameQuantity(),
+    );
   }
 
   _myIconThemeButton(icon, func) {
@@ -70,7 +81,52 @@ class _AddNewPlayersState extends State<AddNewPlayers> {
         icon: Icon(icon));
   }
 
-  _myChouseQuantity() {
+  _myChoiceTheme(data) {
+    return Container(
+      padding: const EdgeInsets.all(3.0),
+      alignment: Alignment.center,
+      width: 350,
+      height: 50,
+      decoration: BoxDecoration(
+        // color: Colors.white,
+        border: Border.all(
+          color: colorBorderForAddTheme,
+          width: 2,
+        ),
+        borderRadius: const BorderRadius.all(Radius.circular(15.0)),
+      ),
+      child: Row(
+        // mainAxisSize: MainAxisSize.min,
+        mainAxisAlignment: MainAxisAlignment.end,
+        children: [
+          const SizedBox(
+            width: 10,
+          ),
+          Flexible(
+            flex: 7,
+            child: Container(
+              alignment: Alignment.centerLeft,
+              child: Text(
+                data,
+                style: eachThemeHeaderTextStyle,
+                overflow: TextOverflow.ellipsis,
+              ),
+            ),
+          ),
+          Flexible(
+            flex: 1,
+            child: _myIconThemeButton(Icons.dehaze, _miniViewAllTheme),
+          ),
+          Flexible(
+            flex: 1,
+            child: _myIconThemeButton(Icons.sync, _randomTheme),
+          ),
+        ],
+      ),
+    );
+  }
+
+  _myChoiceQuantity() {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.center,
@@ -123,52 +179,6 @@ class _AddNewPlayersState extends State<AddNewPlayers> {
                 },
               ),
       ],
-    );
-  }
-
-  _myChouseTheme(data) {
-    return Container(
-      padding: EdgeInsets.all(3.0),
-      alignment: Alignment.center,
-      width: 350,
-      height: 50,
-      decoration: BoxDecoration(
-        // color: Colors.white,
-        border: Border.all(
-          color: colorBorderForAddTheme,
-          width: 2,
-        ),
-        borderRadius: BorderRadius.all(Radius.circular(15.0)),
-      ),
-      child: Row(
-        // mainAxisSize: MainAxisSize.min,
-        mainAxisAlignment: MainAxisAlignment.end,
-        children: [
-          SizedBox(
-            width: 10,
-          ),
-          Flexible(
-            flex: 7,
-            child: Container(
-              alignment: Alignment.centerLeft,
-              child: Text(
-                data,
-                style: eachThemeHeaderTextStyle,
-                overflow: TextOverflow.ellipsis,
-              ),
-            ),
-          ),
-          // _iconThemeButton(Icons.dehaze, testFunc),
-          Flexible(
-            flex: 1,
-            child: _myIconThemeButton(Icons.dehaze, _randomTheme),
-          ),
-          Flexible(
-            flex: 1,
-            child: _myIconThemeButton(Icons.sync, _randomTheme),
-          ),
-        ],
-      ),
     );
   }
 }
