@@ -7,6 +7,7 @@ import 'elementsOfScreens/background.dart';
 import 'package:flip_card/flip_card.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
 
+
 class NewGameRole extends StatefulWidget {
   @override
   State<NewGameRole> createState() => _NewGameRoleState();
@@ -20,7 +21,7 @@ class _NewGameRoleState extends State<NewGameRole> {
 
   @override
   Widget build(BuildContext context) {
-    final _argumentsPlayersName =
+    final argumentsPlayersName =
         ModalRoute.of(context)?.settings.arguments as Map;
 
 
@@ -39,10 +40,10 @@ class _NewGameRoleState extends State<NewGameRole> {
               layout: SwiperLayout.TINDER,
               itemWidth: 300,
               itemHeight: 500,
-              itemCount: _argumentsPlayersName.length,
+              itemCount: argumentsPlayersName.length,
               itemBuilder: (_, index) => FlipCard(
                     direction: FlipDirection.HORIZONTAL,
-                    front: _frontSide(index, _argumentsPlayersName),
+                    front: _frontSide(index, argumentsPlayersName),
                     back: Text('BACK'),
                   )),
           Container(

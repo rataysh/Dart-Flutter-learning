@@ -2,11 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import '../classes/AllTheme.dart';
 import '../const/slyles.dart';
-import 'elementsOfScreens/backButton.dart';
 import 'elementsOfScreens/background.dart';
 
-// var nonLocalThemeNumberForShow = 0;
-// var dataChekStandartThemeFlag;
 
 class ListThemeChoice extends StatelessWidget {
   const ListThemeChoice({super.key});
@@ -18,7 +15,7 @@ class ListThemeChoice extends StatelessWidget {
         children: [
           MainBackground(),
           ListView.builder(
-            padding: const EdgeInsets.fromLTRB(10, 50, 10, 50),// mySecondaryScreensPadding,
+            padding: const EdgeInsets.fromLTRB(10, 50, 10, 50),
             physics: const BouncingScrollPhysics(),
             itemCount: myAllTheme.listAllTheme.length,
             itemBuilder: (_, index) => Column(
@@ -27,7 +24,6 @@ class ListThemeChoice extends StatelessWidget {
                 const SizedBox(height: 10),
                 ElevatedButton(
                   onPressed: () {
-                    // nonLocalThemeNumberForShow = index;
                     Navigator.pop(context, index);
                   },
                   style: themeMenuButtonStyle,
@@ -39,8 +35,6 @@ class ListThemeChoice extends StatelessWidget {
               ],
             ),
           ),
-          // AddNewThemeButton(), Добавить потом, база уже есть
-          //  MyBackButton(), // separatorBuilder: (_, __) => const Divider(),
         ],
       ),
     );

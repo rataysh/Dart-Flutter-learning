@@ -1,10 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import '../classes/AllTheme.dart';
-import '../const/slyles.dart';
-import 'addThemeScreen.dart';
-import 'eachThemeScreen.dart';
-import 'elementsOfScreens/addNewThemeButton.dart';
 import 'elementsOfScreens/backButton.dart';
 import 'elementsOfScreens/background.dart';
 import 'newGameStart.dart';

@@ -4,7 +4,6 @@ import 'package:lern_base/screens/themeScreen.dart';
 import '../const/slyles.dart';
 import 'elementsOfScreens/backButton.dart';
 import 'elementsOfScreens/background.dart';
-import 'elementsOfScreens/changeThemeButton.dart';
 import 'elementsOfScreens/eachThemePart.dart';
 
 class EachThemeScreen extends StatelessWidget {
@@ -38,21 +37,5 @@ class EachThemeScreen extends StatelessWidget {
       ),
     );
   }
-  // _eachTheme(data) {
-  //   return
-  //     TextField(
-  //       enabled: false,
-  //       // textAlign: TextAlign.center,
-  //       decoration: InputDecoration(
-  //         // alignLabelWithHint: false,
-  //         focusedBorder: myBorderStyleForAddTheme,
-  //         enabledBorder: myBorderStyleForAddTheme,
-  //         disabledBorder: myBorderStyleForAddTheme,
-  //         border: myBorderStyleForAddTheme,
-  //         labelText: data,
-  //         labelStyle: eachThemeHeaderTextStyle,
-  //       ),
-  //     );
-  // }
 }
 

@@ -6,7 +6,6 @@ import 'package:lern_base/screens/newGame.dart';
 import 'package:lern_base/screens/newGameQuantity.dart';
 import 'package:lern_base/screens/newGameRole.dart';
 import 'package:lern_base/screens/themeScreen.dart';
-import 'const/slyles.dart';
 
 
 void main() => runApp(MyApp());
@@ -27,9 +26,6 @@ class MyApp extends StatelessWidget {
         '/newGameQuantity': (context) => NewGameQuantity(),
         '/newGameRole': (context) => NewGameRole(),
       },
-      // home: Scaffold(
-      //   body: HomeScreen(),
-      // ),
     );
   }
 }
