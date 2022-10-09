@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import '../classes/AllTheme.dart';
@@ -6,7 +8,6 @@ import 'elementsOfScreens/backButton.dart';
 import 'elementsOfScreens/background.dart';
 import 'package:flip_card/flip_card.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
-
 
 class NewGameRole extends StatefulWidget {
   @override
@@ -21,9 +22,40 @@ class _NewGameRoleState extends State<NewGameRole> {
 
   @override
   Widget build(BuildContext context) {
-    final argumentsPlayersName =
-        ModalRoute.of(context)?.settings.arguments as Map;
+    final argumentsListFromQuantity =
+        ModalRoute.of(context)?.settings.arguments as List;
+    final Map argumentsPlayersName = argumentsListFromQuantity[0];
+    final int argumentsThemeNumber = argumentsListFromQuantity[1];
 
+    int randomElementOfList = Random().nextInt(
+        myAllTheme.listAllTheme[argumentsThemeNumber].allElements.length);
+
+    _backSide() {
+      var tempWord = myAllTheme
+          .listAllTheme[argumentsThemeNumber].allElements[randomElementOfList];
+      return Container(
+        alignment: Alignment.center,
+        width: 300,
+        height: 500,
+        decoration: BoxDecoration(
+          gradient: const LinearGradient(
+              begin: Alignment.center,
+              end: Alignment.bottomRight,
+              colors: [colorDisabledButton, colorBackgroundButton]),
+          borderRadius: BorderRadius.all(Radius.circular(30.0)),
+          border: Border.all(
+            style: BorderStyle.solid,
+            width: 4,
+            color: Colors.black,
+          ),
+          color: colorDisabledButton,
+        ),
+        child: Text(
+          '$tempWord',
+          style: eachThemeHeaderTextStyle,
+        ),
+      );
+    }
 
     return Material(
       child: Stack(
@@ -44,14 +76,15 @@ class _NewGameRoleState extends State<NewGameRole> {
               itemBuilder: (_, index) => FlipCard(
                     direction: FlipDirection.HORIZONTAL,
                     front: _frontSide(index, argumentsPlayersName),
-                    back: Text('BACK'),
+                    back: _backSide(), //_backSide(index, argumentsThemeNumber),
                   )),
           Container(
             alignment: Alignment.bottomCenter,
             child: ElevatedButton(
               style: mainMenuButtonStyle,
               onPressed: () {
-                print(myAllTheme.listAllTheme[0].name);
+                print(myAllTheme.listAllTheme[argumentsThemeNumber]
+                    .allElements[randomElementOfList]);
               },
               child: const Text(
                 'TEST',
@@ -65,10 +98,10 @@ class _NewGameRoleState extends State<NewGameRole> {
     );
   }
 
-  _frontSide(index, arguments) {
-      var _tempName;
-      index++;
-      _tempName = arguments["$index"];
+  _frontSide(int index, Map arguments) {
+    var tempName;
+    index++;
+    tempName = arguments["$index"];
     return Container(
       alignment: Alignment.center,
       width: 300,
@@ -76,9 +109,8 @@ class _NewGameRoleState extends State<NewGameRole> {
       decoration: BoxDecoration(
         gradient: const LinearGradient(
             begin: Alignment.center,
-          end: Alignment.bottomRight,
-          colors: [colorDisabledButton, colorBackgroundButton]
-        ),
+            end: Alignment.bottomRight,
+            colors: [colorDisabledButton, colorBackgroundButton]),
         borderRadius: BorderRadius.all(Radius.circular(30.0)),
         border: Border.all(
           style: BorderStyle.solid,
@@ -88,8 +120,9 @@ class _NewGameRoleState extends State<NewGameRole> {
         color: colorDisabledButton,
       ),
       child: Text(
-          '$_tempName',
-      style: eachThemeHeaderTextStyle,),
+        '$tempName',
+        style: eachThemeHeaderTextStyle,
+      ),
     );
   }
 }

@@ -21,8 +21,10 @@ class _NewGameQuantityState extends State<NewGameQuantity> {
 
   @override
   Widget build(BuildContext context) {
-    final argumentsQuantity =
-        (ModalRoute.of(context)?.settings.arguments ?? 3) as int;
+    final argumentsListFromStart =
+        (ModalRoute.of(context)?.settings.arguments ?? 3) as List;
+    final argumentsQuantity = argumentsListFromStart[0];
+    final argumentsThemeNumber = argumentsListFromStart[1];
 
     void _chekValidatorDate() {
       if (_values?.length != argumentsQuantity) {
@@ -68,7 +70,7 @@ class _NewGameQuantityState extends State<NewGameQuantity> {
                             onPressed: () {
                               _chekValidatorDate();
                               Navigator.pushNamed(context, '/newGameRole',
-                                  arguments: _values);
+                                  arguments: [_values, argumentsThemeNumber]);
                             },
                             child: const Text(
                               'Далее',

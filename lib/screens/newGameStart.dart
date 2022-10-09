@@ -70,7 +70,7 @@ class _AddNewPlayersState extends State<AddNewPlayers> {
             style: mainMenuButtonStyle,
             onPressed: () async {
               Navigator.pushNamed(context, '/newGameQuantity',
-                  arguments: quantity);
+                  arguments: [quantity, themeNumberForShow]);
             },
             child: const Text(
               'Далее',
