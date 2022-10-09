@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import '../const/slyles.dart';
 import 'elementsOfScreens/backButton.dart';
 import 'elementsOfScreens/background.dart';
-import 'elementsOfScreens/newGameQuantityTextForm.dart';
+import 'elementsOfScreens/newGame/newGameQuantityTextForm.dart';
 
 class NewGameQuantity extends StatefulWidget {
   @override

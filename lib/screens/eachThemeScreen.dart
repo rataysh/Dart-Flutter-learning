@@ -4,7 +4,7 @@ import 'package:lern_base/screens/themeScreen.dart';
 import '../const/slyles.dart';
 import 'elementsOfScreens/backButton.dart';
 import 'elementsOfScreens/background.dart';
-import 'elementsOfScreens/eachThemePart.dart';
+import 'elementsOfScreens/theme/eachThemePart.dart';
 
 class EachThemeScreen extends StatelessWidget {
 

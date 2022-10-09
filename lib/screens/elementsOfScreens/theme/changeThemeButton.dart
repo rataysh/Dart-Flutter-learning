@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import '../addThemeScreen.dart';
+import '../../addThemeScreen.dart';
 import 'package:lern_base/screens/themeScreen.dart';
 
 class ChangeThemeButton extends StatelessWidget {

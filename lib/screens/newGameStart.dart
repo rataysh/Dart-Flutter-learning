@@ -3,8 +3,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import '../classes/AllTheme.dart';
 import '../const/slyles.dart';
-import 'elementsOfScreens/myChoiceQuantity.dart';
-import 'elementsOfScreens/myChoiceTheme.dart';
+import 'elementsOfScreens/newGame/myChoiceQuantity.dart';
+import 'elementsOfScreens/newGame/myChoiceTheme.dart';
 import 'listThemeChoice.dart';
 
 class AddNewPlayers extends StatefulWidget {

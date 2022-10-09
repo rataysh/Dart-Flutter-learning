@@ -1,5 +1,4 @@
 import 'dart:math';
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import '../classes/AllTheme.dart';
@@ -8,6 +7,9 @@ import 'elementsOfScreens/backButton.dart';
 import 'elementsOfScreens/background.dart';
 import 'package:flip_card/flip_card.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
+
+import 'elementsOfScreens/newGame/backSide.dart';
+import 'elementsOfScreens/newGame/frontSide.dart';
 
 class NewGameRole extends StatefulWidget {
   @override
@@ -30,44 +32,17 @@ class _NewGameRoleState extends State<NewGameRole> {
     int randomElementOfList = Random().nextInt(
         myAllTheme.listAllTheme[argumentsThemeNumber].allElements.length);
 
-    _backSide() {
-      var tempWord = myAllTheme
-          .listAllTheme[argumentsThemeNumber].allElements[randomElementOfList];
-      return Container(
-        alignment: Alignment.center,
-        width: 300,
-        height: 500,
-        decoration: BoxDecoration(
-          gradient: const LinearGradient(
-              begin: Alignment.center,
-              end: Alignment.bottomRight,
-              colors: [colorDisabledButton, colorBackgroundButton]),
-          borderRadius: BorderRadius.all(Radius.circular(30.0)),
-          border: Border.all(
-            style: BorderStyle.solid,
-            width: 4,
-            color: Colors.black,
-          ),
-          color: colorDisabledButton,
-        ),
-        child: Text(
-          '$tempWord',
-          style: eachThemeHeaderTextStyle,
-        ),
-      );
-    }
+    int rabbitFlag = Random().nextInt(argumentsPlayersName.length);
 
     return Material(
       child: Stack(
         children: [
           MainBackground(),
           Swiper(
-              control: SwiperControl(
+              control: const SwiperControl(
                 color: colorBackgroundButton,
               ),
               scrollDirection: Axis.horizontal,
-              // shrinkWrap: true,
-              // padding: mySecondaryScreensPadding,
               physics: const BouncingScrollPhysics(),
               layout: SwiperLayout.TINDER,
               itemWidth: 300,
@@ -75,16 +50,19 @@ class _NewGameRoleState extends State<NewGameRole> {
               itemCount: argumentsPlayersName.length,
               itemBuilder: (_, index) => FlipCard(
                     direction: FlipDirection.HORIZONTAL,
-                    front: _frontSide(index, argumentsPlayersName),
-                    back: _backSide(), //_backSide(index, argumentsThemeNumber),
+                    front: frontSide(index, argumentsPlayersName),
+                    back: backSide(
+                        index,
+                        argumentsThemeNumber,
+                        randomElementOfList,
+                        rabbitFlag), //_backSide(index, argumentsThemeNumber),
                   )),
           Container(
             alignment: Alignment.bottomCenter,
             child: ElevatedButton(
               style: mainMenuButtonStyle,
               onPressed: () {
-                print(myAllTheme.listAllTheme[argumentsThemeNumber]
-                    .allElements[randomElementOfList]);
+                print(rabbitFlag);
               },
               child: const Text(
                 'TEST',
@@ -94,34 +72,6 @@ class _NewGameRoleState extends State<NewGameRole> {
           ),
           MyBackButton(), // separatorBuilder: (_, __) => const Divider(),
         ],
-      ),
-    );
-  }
-
-  _frontSide(int index, Map arguments) {
-    var tempName;
-    index++;
-    tempName = arguments["$index"];
-    return Container(
-      alignment: Alignment.center,
-      width: 300,
-      height: 500,
-      decoration: BoxDecoration(
-        gradient: const LinearGradient(
-            begin: Alignment.center,
-            end: Alignment.bottomRight,
-            colors: [colorDisabledButton, colorBackgroundButton]),
-        borderRadius: BorderRadius.all(Radius.circular(30.0)),
-        border: Border.all(
-          style: BorderStyle.solid,
-          width: 4,
-          color: Colors.black,
-        ),
-        color: colorDisabledButton,
-      ),
-      child: Text(
-        '$tempName',
-        style: eachThemeHeaderTextStyle,
       ),
     );
   }
