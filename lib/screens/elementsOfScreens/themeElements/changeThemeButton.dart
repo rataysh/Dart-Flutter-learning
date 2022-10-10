@@ -1,27 +1,35 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import '../../addThemeScreen.dart';
+import '../../theme/themeMain.dart';
 
 
-class AddNewThemeButton extends StatelessWidget {
+class ChangeThemeButton extends StatelessWidget {
+
+  // Тут нужно изменить функцию
+  // void chekStandartThemeFunc() {
+  //   dataChekStandartThemeFlag == true
+  //       ? print('Страндартную тему изменять нельзя')
+  //       : print('Эту тему можно изменить');
+  // }
+
   @override
   Widget build(BuildContext context) {
     return Container(
       alignment: Alignment.bottomRight,
       padding: const EdgeInsets.all(10.0),
       child: IconButton(
-        iconSize: 80,
+        iconSize: 45,
         color: Colors.white,
         icon: const Icon(
-          Icons.add_circle,
+          Icons.edit,
         ),
-        tooltip: "Добавить новую тему",
+        tooltip: "Изменить тему",
         // hoverColor: Colors.black,
         // splashRadius: 100,
         // splashColor: Colors.blue,
         // highlightColor: Colors.red,
         onPressed: () {
-          Navigator.pushNamed(context, '/addTheme');
+          // chekStandartThemeFunc();
         },
       ),
     );

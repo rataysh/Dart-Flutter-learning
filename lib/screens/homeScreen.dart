@@ -34,7 +34,7 @@ class HomeScreen extends StatelessWidget {
                         child: ElevatedButton(
                           style: mainMenuButtonStyle,
                           onPressed: () {
-                            Navigator.pushNamed(context, '/newGame');
+                            Navigator.pushNamed(context, '/newGameStart');
                           },
                           child: const Text(
                             'Новая игра',
@@ -47,7 +47,7 @@ class HomeScreen extends StatelessWidget {
                         child: ElevatedButton(
                           style: mainMenuButtonStyle,
                           onPressed: () {
-                            Navigator.pushNamed(context, '/theme');
+                            Navigator.pushNamed(context, '/themeMain');
                             // Navigator.push(
                             //     context,
                             //     CupertinoPageRoute(

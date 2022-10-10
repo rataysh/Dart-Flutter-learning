@@ -1,15 +1,18 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:lern_base/screens/themeScreen.dart';
-import '../const/slyles.dart';
-import 'elementsOfScreens/backButton.dart';
-import 'elementsOfScreens/background.dart';
-import 'elementsOfScreens/theme/eachThemePart.dart';
+import 'package:lern_base/screens/theme/themeMain.dart';
+import '../../classes/AllTheme.dart';
+import '../../const/slyles.dart';
+import '../elementsOfScreens/backButton.dart';
+import '../elementsOfScreens/background.dart';
+import '../elementsOfScreens/themeElements/eachThemePart.dart';
 
-class EachThemeScreen extends StatelessWidget {
-
+class ThemeEach extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    final argumentsIndexTheme =
+        (ModalRoute.of(context)?.settings.arguments ?? 0) as int;
+
     return Material(
       child: Stack(
         children: [
@@ -17,14 +20,17 @@ class EachThemeScreen extends StatelessWidget {
           ListView.builder(
             padding: mySecondaryScreensPadding,
             physics: const BouncingScrollPhysics(),
-            itemCount: dataKindOfTheme.values.toList()[0].length+1,
+            itemCount: myAllTheme
+                    .listAllTheme[argumentsIndexTheme].allElements.length+1,
             itemBuilder: (_, index) => Column(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 index == 0
-                ? eachThemeForm(dataKindOfTheme.keys.toList()[0])
-                : eachThemeForm(dataKindOfTheme.values.toList()[0][index-1]),
+                    ? eachThemeForm(
+                        myAllTheme.listAllTheme[argumentsIndexTheme].name)
+                    : eachThemeForm(myAllTheme
+                        .listAllTheme[argumentsIndexTheme].allElements[index-1].toString()),
                 const SizedBox(
                   height: 10,
                 )
@@ -38,4 +44,3 @@ class EachThemeScreen extends StatelessWidget {
     );
   }
 }
-

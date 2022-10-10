@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:lern_base/screens/addThemeScreen.dart';
-import 'package:lern_base/screens/eachThemeScreen.dart';
 import 'package:lern_base/screens/homeScreen.dart';
-import 'package:lern_base/screens/newGame.dart';
-import 'package:lern_base/screens/newGameQuantity.dart';
-import 'package:lern_base/screens/newGameRole.dart';
-import 'package:lern_base/screens/themeScreen.dart';
+import 'package:lern_base/screens/newGame/newGameFinal.dart';
+import 'package:lern_base/screens/newGame/newGameQuantity.dart';
+import 'package:lern_base/screens/newGame/newGameRole.dart';
+import 'package:lern_base/screens/newGame/newGameStart.dart';
+import 'package:lern_base/screens/theme/themeEach.dart';
+import 'package:lern_base/screens/theme/themeMain.dart';
 
 
 void main() => runApp(MyApp());
@@ -19,12 +19,12 @@ class MyApp extends StatelessWidget {
       initialRoute: '/',
       routes: {
         '/': (context) => const HomeScreen(),
-        '/theme': (context) => ThemeScreen(),
-        '/eachTheme': (context) => EachThemeScreen(),
-        '/addTheme': (context) => AddThemeScreen(),
-        '/newGame': (context) => NewGame(),
+        '/themeMain': (context) => ThemeMain(),
+        '/themeEach': (context) => ThemeEach(),
+        '/newGameStart': (context) => NewGameStart(),
         '/newGameQuantity': (context) => NewGameQuantity(),
         '/newGameRole': (context) => NewGameRole(),
+        '/newGameFinal': (context) => NewGameFinal(),
       },
     );
   }

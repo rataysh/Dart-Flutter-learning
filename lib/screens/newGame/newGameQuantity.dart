@@ -1,9 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import '../const/slyles.dart';
-import 'elementsOfScreens/backButton.dart';
-import 'elementsOfScreens/background.dart';
-import 'elementsOfScreens/newGame/newGameQuantityTextForm.dart';
+import '../../const/slyles.dart';
+import '../elementsOfScreens/backButton.dart';
+import '../elementsOfScreens/background.dart';
+import '../elementsOfScreens/newGameElements/newGameQuantityTextForm.dart';
+
+
 
 class NewGameQuantity extends StatefulWidget {
   @override

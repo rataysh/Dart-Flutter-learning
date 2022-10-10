@@ -1,8 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import '../classes/AllTheme.dart';
-import '../const/slyles.dart';
-import 'elementsOfScreens/background.dart';
+import '../../../classes/AllTheme.dart';
+import '../../../const/slyles.dart';
+import '../background.dart';
 
 
 class ListThemeChoice extends StatelessWidget {

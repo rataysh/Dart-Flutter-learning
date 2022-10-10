@@ -1,14 +1,14 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import '../classes/AllTheme.dart';
-import '../const/slyles.dart';
-import 'elementsOfScreens/backButton.dart';
-import 'elementsOfScreens/background.dart';
+import '../../classes/AllTheme.dart';
+import '../../const/slyles.dart';
+import '../elementsOfScreens/backButton.dart';
+import '../elementsOfScreens/background.dart';
 
-var dataKindOfTheme;
-var dataChekStandartThemeFlag;
 
-class ThemeScreen extends StatelessWidget {
+// var dataChekStandartThemeFlag;
+
+class ThemeMain extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Material(
@@ -25,11 +25,11 @@ class ThemeScreen extends StatelessWidget {
                 const SizedBox(height: 10),
                 ElevatedButton(
                   onPressed: () {
-                    dataKindOfTheme = myAllTheme.listAllTheme[index].dict;
-                    dataChekStandartThemeFlag =
-                        myAllTheme.listAllTheme[index].standartThemeFlag;
-                    print(myAllTheme.listAllTheme[index].standartThemeFlag);
-                    Navigator.pushNamed(context, '/eachTheme');
+                    // dataChekStandartThemeFlag =
+                    //     myAllTheme.listAllTheme[index].standartThemeFlag;
+                    // print(myAllTheme.listAllTheme[index].allElements.length);
+                    Navigator.pushNamed(context, '/themeEach',
+                        arguments: index);
                   },
                   style: themeMenuButtonStyle,
                   child: Text(
@@ -41,7 +41,7 @@ class ThemeScreen extends StatelessWidget {
             ),
           ),
           // AddNewThemeButton(), Добавить потом, база уже есть
-          MyBackButton(), // separatorBuilder: (_, __) => const Divider(),
+          MyBackButton(),
         ],
       ),
     );

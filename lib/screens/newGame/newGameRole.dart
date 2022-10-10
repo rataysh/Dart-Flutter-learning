@@ -1,17 +1,20 @@
 import 'dart:math';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import '../classes/AllTheme.dart';
-import '../const/slyles.dart';
-import 'elementsOfScreens/backButton.dart';
-import 'elementsOfScreens/background.dart';
+import '../../classes/AllTheme.dart';
+import '../../const/slyles.dart';
+import '../elementsOfScreens/backButton.dart';
+import '../elementsOfScreens/background.dart';
 import 'package:flip_card/flip_card.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
 
-import 'elementsOfScreens/newGame/backSide.dart';
-import 'elementsOfScreens/newGame/frontSide.dart';
+import '../elementsOfScreens/newGameElements/backSide.dart';
+import '../elementsOfScreens/newGameElements/frontSide.dart';
+
 
 class NewGameRole extends StatefulWidget {
+  const NewGameRole({super.key});
+
   @override
   State<NewGameRole> createState() => _NewGameRoleState();
 }
@@ -62,7 +65,8 @@ class _NewGameRoleState extends State<NewGameRole> {
             child: ElevatedButton(
               style: mainMenuButtonStyle,
               onPressed: () {
-                print(rabbitFlag);
+                Navigator.pushNamed(context, '/newGameFinal');
+                    // arguments: [quantity, themeNumberForShow]);
               },
               child: const Text(
                 'TEST',
