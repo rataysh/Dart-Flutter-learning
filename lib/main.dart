@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:lern_base/screens/homeScreen.dart';
 import 'package:lern_base/screens/newGame/newGameFinal.dart';
 import 'package:lern_base/screens/newGame/newGameQuantity.dart';
@@ -7,9 +8,14 @@ import 'package:lern_base/screens/newGame/newGameStart.dart';
 import 'package:lern_base/screens/theme/themeEach.dart';
 import 'package:lern_base/screens/theme/themeMain.dart';
 
-
-void main() => runApp(MyApp());
-
+void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+  SystemChrome.setPreferredOrientations([
+    DeviceOrientation.portraitUp,
+    DeviceOrientation.portraitDown,
+  ]);
+  runApp(MyApp());
+}
 
 class MyApp extends StatelessWidget {
   @override
@@ -29,5 +35,3 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-
-

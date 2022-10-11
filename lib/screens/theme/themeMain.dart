@@ -1,16 +1,23 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import '../../classes/AllTheme.dart';
+import '../../const/orientation.dart';
 import '../../const/slyles.dart';
 import '../elementsOfScreens/backButton.dart';
 import '../elementsOfScreens/background.dart';
 
 
-// var dataChekStandartThemeFlag;
+class ThemeMain extends StatefulWidget {
+  @override
+  State<ThemeMain> createState() => _ThemeMainState();
+}
 
-class ThemeMain extends StatelessWidget {
+class _ThemeMainState extends State<ThemeMain> {
   @override
   Widget build(BuildContext context) {
+    setState(() {
+      myOrientationPortrait();
+    });
     return Material(
       child: Stack(
         children: [

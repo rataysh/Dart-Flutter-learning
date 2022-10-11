@@ -1,8 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import '../../const/orientation.dart';
 import '../../const/slyles.dart';
 
 class MyBackButton extends StatelessWidget {
+  const MyBackButton({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -18,6 +21,7 @@ class MyBackButton extends StatelessWidget {
         onPressed: () {
           // BuildContext context;
           Navigator.pop(context);
+          myOrientationPortrait();
         },
       ),
     );

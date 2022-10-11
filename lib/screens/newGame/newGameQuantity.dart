@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import '../../const/orientation.dart';
 import '../../const/slyles.dart';
 import '../elementsOfScreens/backButton.dart';
 import '../elementsOfScreens/background.dart';
@@ -23,6 +24,10 @@ class _NewGameQuantityState extends State<NewGameQuantity> {
 
   @override
   Widget build(BuildContext context) {
+    setState(() {
+      myOrientationPortrait();
+    });
+
     final argumentsListFromStart =
         (ModalRoute.of(context)?.settings.arguments ?? 3) as List;
     final argumentsQuantity = argumentsListFromStart[0];

@@ -2,6 +2,7 @@ import 'dart:math';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import '../../classes/AllTheme.dart';
+import '../../const/orientation.dart';
 import '../../const/slyles.dart';
 import '../elementsOfScreens/backButton.dart';
 import '../elementsOfScreens/background.dart';
@@ -57,6 +58,9 @@ class _NewGameStartState extends State<NewGameStart> {
 
   @override
   Widget build(BuildContext context) {
+    setState(() {
+      myOrientationPortrait();
+    });
     return Material(
       child: Stack(
         children: [

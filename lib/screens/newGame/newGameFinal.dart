@@ -1,12 +1,15 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import '../../const/orientation.dart';
 import '../../const/slyles.dart';
+import '../elementsOfScreens/backButton.dart';
 
 class NewGameFinal extends StatelessWidget {
   const NewGameFinal({super.key});
 
   @override
   Widget build(BuildContext context) {
+    myOrientationLandscape();
     return Material(
       child: Stack(
         fit: StackFit.passthrough,
@@ -15,8 +18,9 @@ class NewGameFinal extends StatelessWidget {
             decoration: const BoxDecoration(
               color: colorBackgroundMain,
             ),
-            child: Text('eddddd'),
+            child: Center(child: Text('My test text')),
           ),
+          MyBackButton(),
         ],
       ),
     );

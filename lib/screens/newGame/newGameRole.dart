@@ -2,6 +2,7 @@ import 'dart:math';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import '../../classes/AllTheme.dart';
+import '../../const/orientation.dart';
 import '../../const/slyles.dart';
 import '../elementsOfScreens/backButton.dart';
 import '../elementsOfScreens/background.dart';
@@ -27,6 +28,10 @@ class _NewGameRoleState extends State<NewGameRole> {
 
   @override
   Widget build(BuildContext context) {
+    setState(() {
+      myOrientationPortrait();
+    });
+
     final argumentsListFromQuantity =
         ModalRoute.of(context)?.settings.arguments as List;
     final Map argumentsPlayersName = argumentsListFromQuantity[0];

@@ -1,18 +1,30 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:lern_base/const/orientation.dart';
 import '../const/ref.dart';
 import '../const/slyles.dart';
 import 'elementsOfScreens/background.dart';
 
-
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
 
   @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
+  @override
   Widget build(BuildContext context) {
+    MediaQuery.of(context).orientation == Orientation.landscape
+        ? setState(() {
+            myOrientationPortrait();
+          })
+        : setState(() {
+            myOrientationPortrait();
+          });
     return Material(
       child: Stack(
-          alignment: Alignment.bottomCenter,
+        alignment: Alignment.bottomCenter,
         children: [
           MainBackground(),
           Column(
@@ -48,10 +60,6 @@ class HomeScreen extends StatelessWidget {
                           style: mainMenuButtonStyle,
                           onPressed: () {
                             Navigator.pushNamed(context, '/themeMain');
-                            // Navigator.push(
-                            //     context,
-                            //     CupertinoPageRoute(
-                            //         builder: (context) => ThemeScreen()));
                           },
                           child: const Text(
                             'Темы',
@@ -64,7 +72,7 @@ class HomeScreen extends StatelessWidget {
                         child: ElevatedButton(
                           style: mainMenuButtonStyle,
                           onPressed: () {
-
+                            Navigator.pushNamed(context, '/newGameFinal');
                           },
                           child: const Text(
                             'Правила',
