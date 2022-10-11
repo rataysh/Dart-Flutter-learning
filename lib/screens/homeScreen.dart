@@ -5,6 +5,7 @@ import '../const/ref.dart';
 import '../const/slyles.dart';
 import 'elementsOfScreens/background.dart';
 
+
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
 
@@ -14,17 +15,19 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   @override
+  void initState() {
+    myOrientationPortrait();
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
-    MediaQuery.of(context).orientation == Orientation.landscape
-        ? setState(() {
-            myOrientationPortrait();
-          })
-        : setState(() {
-            myOrientationPortrait();
-          });
+    setState(() {
+      myOrientationPortrait();
+    });
     return Material(
       child: Stack(
-        alignment: Alignment.bottomCenter,
+          alignment: Alignment.bottomCenter,
         children: [
           MainBackground(),
           Column(
