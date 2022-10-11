@@ -96,3 +96,5 @@ const eachThemeHeaderTextStyle = TextStyle(
   //   ),
   // ],
 );
+
+const newGameFinalHeightSizedBox = 70.0;

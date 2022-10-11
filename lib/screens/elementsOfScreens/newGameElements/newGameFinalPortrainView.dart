@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import '../../../classes/AllTheme.dart';
 
 
-myPortraitView(sizeGridPortrait) {
+myPortraitView(sizeGridPortrait, int indexTheme) {
   return GridView.builder(
     shrinkWrap: true,
     physics: const NeverScrollableScrollPhysics(),
@@ -15,7 +15,7 @@ myPortraitView(sizeGridPortrait) {
       childAspectRatio: sizeGridPortrait,
     ),
     itemCount:
-    myAllTheme.listAllTheme[0].allElements.length,
+    myAllTheme.listAllTheme[indexTheme].allElements.length,
     itemBuilder: (_, index) => Container(
       width: 50,
       height: 50,
@@ -24,7 +24,7 @@ myPortraitView(sizeGridPortrait) {
       ),
       alignment: Alignment.center,
       child: Text(
-          myAllTheme.listAllTheme[0].allElements[index]),
+          myAllTheme.listAllTheme[indexTheme].allElements[index]),
     ),
   );
 }

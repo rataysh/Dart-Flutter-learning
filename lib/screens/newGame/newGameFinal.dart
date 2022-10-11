@@ -12,12 +12,19 @@ class NewGameFinal extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // final argumentsThemeNumber =
+    //     ModalRoute.of(context)?.settings.arguments as int;
+    int argumentsThemeNumber = 2;
+
+    // Блок определения высоты/широты экрана и адаптивной настройки размера элементов сетки
     var gridWidth = MediaQuery.of(context).size.width;
     var gridHeight = MediaQuery.of(context).size.height;
     var sizeGridPortrait;
+    var sizeGridLandscape;
     gridHeight > 680
         ? sizeGridPortrait = (gridWidth / 2) / (gridHeight / 10)
         : sizeGridPortrait = (gridWidth / 2) / (gridHeight / 11);
+    sizeGridLandscape = ((gridWidth-newGameFinalHeightSizedBox)/4)/(newGameFinalHeightSizedBox*0.8);
 
     _screenRotationChange() {
       MediaQuery.of(context).orientation == Orientation.portrait
@@ -37,7 +44,7 @@ class NewGameFinal extends StatelessWidget {
             child: Column(
               children: [
                 SizedBox(
-                  height: 70,
+                  height: newGameFinalHeightSizedBox,
                   child: Row(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -46,7 +53,7 @@ class NewGameFinal extends StatelessWidget {
                       Container(
                         alignment: Alignment.bottomCenter,
                         child: Text(
-                          myAllTheme.listAllTheme[0].name,
+                          myAllTheme.listAllTheme[argumentsThemeNumber].name,
                           style: eachThemeHeaderTextStyle,
                         ),
                       ),
@@ -55,10 +62,35 @@ class NewGameFinal extends StatelessWidget {
                   ),
                 ),
                 OrientationBuilder(
-                  builder: (context, orientation) =>
-                      orientation == Orientation.portrait
-                          ? myPortraitView(sizeGridPortrait)
-                          : myLandscapeView(),
+                  builder: (context, orientation) => MediaQuery.of(context)
+                              .orientation ==
+                          Orientation.portrait
+                      ? myPortraitView(sizeGridPortrait, argumentsThemeNumber)
+                      : GridView.builder(
+                          shrinkWrap: true,
+                          // physics: const NeverScrollableScrollPhysics(),
+                          gridDelegate:
+                              SliverGridDelegateWithFixedCrossAxisCount(
+                            crossAxisCount: 4,
+                            crossAxisSpacing: 5,
+                            mainAxisSpacing: 5,
+                            childAspectRatio: sizeGridLandscape,
+                          ),
+                          itemCount: myAllTheme
+                              .listAllTheme[argumentsThemeNumber]
+                              .allElements
+                              .length,
+                          itemBuilder: (_, index) => Container(
+                                width: 50,
+                                height: 50,
+                                decoration: const BoxDecoration(
+                                  color: Colors.white,
+                                ),
+                                alignment: Alignment.center,
+                                child: Text(myAllTheme
+                                    .listAllTheme[argumentsThemeNumber]
+                                    .allElements[index]),
+                              )),
                 ),
               ],
             ),
@@ -66,22 +98,5 @@ class NewGameFinal extends StatelessWidget {
         ],
       ),
     );
-  }
-
-  myLandscapeView() {
-    GridView.builder(
-        physics: const NeverScrollableScrollPhysics(),
-        gridDelegate:
-            SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 4),
-        itemCount: 16,
-        itemBuilder: (_, index) => Container(
-              width: 50,
-              height: 50,
-              decoration: const BoxDecoration(
-                color: Colors.white,
-              ),
-              alignment: Alignment.center,
-              child: Text('$index'),
-            ));
   }
 }
