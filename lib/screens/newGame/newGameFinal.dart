@@ -4,6 +4,7 @@ import '../../classes/AllTheme.dart';
 import '../../const/orientation.dart';
 import '../../const/slyles.dart';
 import '../elementsOfScreens/newGameElements/backButtonForNewGameFinal.dart';
+import '../elementsOfScreens/newGameElements/myHomeButton.dart';
 import '../elementsOfScreens/newGameElements/newGameFinalPortrainView.dart';
 import '../elementsOfScreens/newGameElements/rotationButton.dart';
 
@@ -12,9 +13,9 @@ class NewGameFinal extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // final argumentsThemeNumber =
-    //     ModalRoute.of(context)?.settings.arguments as int;
-    int argumentsThemeNumber = 2;
+    final argumentsThemeNumber =
+        ModalRoute.of(context)?.settings.arguments as int;
+    // int argumentsThemeNumber = 2;
 
     // Блок определения высоты/широты экрана и адаптивной настройки размера элементов сетки
     var gridWidth = MediaQuery.of(context).size.width;
@@ -23,14 +24,15 @@ class NewGameFinal extends StatelessWidget {
     var sizeGridLandscape;
     gridHeight > 680
         ? sizeGridPortrait = (gridWidth / 2) / (gridHeight / 10)
-        : sizeGridPortrait = (gridWidth / 2) / (gridHeight / 11);
-    sizeGridLandscape = ((gridWidth-newGameFinalHeightSizedBox)/4)/(newGameFinalHeightSizedBox*0.8);
+        : sizeGridPortrait = (gridWidth / 2) / (gridHeight / 11.3);
+    sizeGridLandscape = ((gridWidth - newGameFinalHeightSizedBox) / 4) /
+        (newGameFinalHeightSizedBox * 0.8);
 
     _screenRotationChange() {
       MediaQuery.of(context).orientation == Orientation.portrait
           ? myOrientationLandscape()
           : myOrientationPortrait();
-      print(gridHeight);
+      // print(gridHeight);
     }
 
     return Material(
@@ -54,10 +56,13 @@ class NewGameFinal extends StatelessWidget {
                         alignment: Alignment.bottomCenter,
                         child: Text(
                           myAllTheme.listAllTheme[argumentsThemeNumber].name,
-                          style: eachThemeHeaderTextStyle,
+                          style: TextStyle(
+                            fontSize: 22,
+                          ),
                         ),
                       ),
                       myRotationButton(_screenRotationChange),
+                      myHomeButton(context),
                     ],
                   ),
                 ),

@@ -5,7 +5,6 @@ import '../const/ref.dart';
 import '../const/slyles.dart';
 import 'elementsOfScreens/background.dart';
 
-
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
 
@@ -27,7 +26,7 @@ class _HomeScreenState extends State<HomeScreen> {
     });
     return Material(
       child: Stack(
-          alignment: Alignment.bottomCenter,
+        alignment: Alignment.bottomCenter,
         children: [
           MainBackground(),
           Column(
@@ -75,7 +74,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         child: ElevatedButton(
                           style: mainMenuButtonStyle,
                           onPressed: () {
-                            Navigator.pushNamed(context, '/newGameFinal');
+                            // Navigator.pushNamed(context, '/newGameFinal');
                           },
                           child: const Text(
                             'Правила',

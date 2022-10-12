@@ -3,19 +3,19 @@ import 'package:flutter/material.dart';
 import '../../../const/slyles.dart';
 
 
-myRotationButton(func) {
+myHomeButton(context) {
   return Container(
     alignment: Alignment.bottomRight,
-    // padding: const EdgeInsets.all(1.0),
+    // padding: const EdgeInsets.all(5.0),
     margin: const EdgeInsets.fromLTRB(0, 30, 0, 0),
     child: IconButton(
       iconSize: 30,
       color: colorBackgroundButton,
       icon: const Icon(
-        Icons.screen_rotation,
+        Icons.home,
       ),
       onPressed: () {
-        func();
+        Navigator.pushNamed(context, '/');
       },
     ),
   );

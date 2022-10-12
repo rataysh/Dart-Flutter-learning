@@ -21,9 +21,20 @@ class NewGameRole extends StatefulWidget {
 }
 
 class _NewGameRoleState extends State<NewGameRole> {
-  @override
-  void initState() {
-    super.initState();
+  // @override
+  // void initState() {
+  //   super.initState();
+  // }
+
+  // swipeCard(index) {
+  //   print('Swipe $index');
+  // }
+
+  // int indexSwiper = 0;
+
+  tapCard(int index) {
+    print(index);
+    print('Tap');
   }
 
   @override
@@ -39,7 +50,6 @@ class _NewGameRoleState extends State<NewGameRole> {
 
     int randomElementOfList = Random().nextInt(
         myAllTheme.listAllTheme[argumentsThemeNumber].allElements.length);
-
     int rabbitFlag = Random().nextInt(argumentsPlayersName.length);
 
     return Material(
@@ -50,28 +60,37 @@ class _NewGameRoleState extends State<NewGameRole> {
               control: const SwiperControl(
                 color: colorBackgroundButton,
               ),
+              loop: false,
               scrollDirection: Axis.horizontal,
               physics: const BouncingScrollPhysics(),
               layout: SwiperLayout.TINDER,
               itemWidth: 300,
               itemHeight: 500,
+              // index: indexSwiper,
               itemCount: argumentsPlayersName.length,
-              itemBuilder: (_, index) => FlipCard(
-                    direction: FlipDirection.HORIZONTAL,
-                    front: frontSide(index, argumentsPlayersName),
-                    back: backSide(
-                        index,
-                        argumentsThemeNumber,
-                        randomElementOfList,
-                        rabbitFlag), //_backSide(index, argumentsThemeNumber),
-                  )),
+              itemBuilder: (_, index) {
+                // indexSwiper = index;
+                return FlipCard(
+                  direction: FlipDirection.HORIZONTAL,
+                  front: frontSide(index, argumentsPlayersName),
+                  back: backSide(
+                      index,
+                      argumentsThemeNumber,
+                      randomElementOfList,
+                      rabbitFlag), //_backSide(index, argumentsThemeNumber),
+                );
+              },
+              // controller: ,
+            // onTap: tapCard(indexSwiper),
+            // onIndexChanged: swipeCard(index),
+          ),
           Container(
             alignment: Alignment.bottomCenter,
             child: ElevatedButton(
               style: mainMenuButtonStyle,
               onPressed: () {
-                Navigator.pushNamed(context, '/newGameFinal');
-                    // arguments: [quantity, themeNumberForShow]);
+                Navigator.pushNamed(context, '/newGameFinal',
+                    arguments: argumentsThemeNumber);
               },
               child: const Text(
                 'TEST',

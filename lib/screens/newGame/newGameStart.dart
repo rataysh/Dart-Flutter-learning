@@ -1,11 +1,12 @@
 import 'dart:math';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:lern_base/screens/elementsOfScreens/background.dart';
 import '../../classes/AllTheme.dart';
 import '../../const/orientation.dart';
 import '../../const/slyles.dart';
 import '../elementsOfScreens/backButton.dart';
-import '../elementsOfScreens/background.dart';
+import '../elementsOfScreens/backgroundWithNoImage.dart';
 import '../elementsOfScreens/newGameElements/myChoiceQuantity.dart';
 import '../elementsOfScreens/newGameElements/myChoiceTheme.dart';
 import '../elementsOfScreens/newGameElements/listThemeChoice.dart';
@@ -64,6 +65,7 @@ class _NewGameStartState extends State<NewGameStart> {
     return Material(
       child: Stack(
         children: [
+          // BackgroundWithNoImage(),
           MainBackground(),
           Column(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -71,11 +73,13 @@ class _NewGameStartState extends State<NewGameStart> {
               const Text('Выберите количество игроков',
                   style: eachThemeHeaderTextStyle),
               myChoiceQuantity(quantity, minusPlayers, plusPlayers),
+              // const SizedBox(height: 100),
               const Text('Выберите тему', style: eachThemeHeaderTextStyle),
               myChoiceTheme(myAllTheme.listAllTheme[themeNumberForShow].name,
                   _myIconThemeButton, _miniViewAllTheme, _randomTheme),
+              // const SizedBox(height: 25),
               Padding(
-                padding: const EdgeInsets.all(6.0),
+                padding: const EdgeInsets.all(7.0),
                 child: ElevatedButton(
                   style: mainMenuButtonStyle,
                   onPressed: () async {
