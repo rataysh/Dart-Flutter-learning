@@ -6,7 +6,7 @@ import '../../../const/slyles.dart';
 newGameQuantityTextForm(int index, onUpdate) {
   var key = index + 1;
   return TextField(
-    style: eachThemeHeaderTextStyle,
+    style: textStyleEachThemeHeader,
     enabled: true,
     decoration: InputDecoration(
       focusedBorder: myBorderStyleForAddTheme,
@@ -14,7 +14,7 @@ newGameQuantityTextForm(int index, onUpdate) {
       disabledBorder: myBorderStyleForAddTheme,
       border: myBorderStyleForAddTheme,
       hintText: 'Игрок $key',
-      hintStyle: eachThemeHeaderTextStyle,
+      hintStyle: textStyleEachThemeHeader,
       suffixIcon: const Icon(
         Icons.create,
       ),

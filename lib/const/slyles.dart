@@ -22,21 +22,6 @@ final ButtonStyle mainMenuButtonStyle = ElevatedButton.styleFrom(
   ),
 );
 
-// Текст кнопок главного меню И меню ТЕМЫ
-const mainMenuButtonTextStyle = TextStyle(
-  color: Colors.white,
-  fontSize: 20.0,
-  fontWeight: FontWeight.w800,
-  fontFamily: 'AbhayaLibre',
-  shadows: [
-    Shadow(
-      offset: Offset(0.5, 0.5),
-      blurRadius: 0.5,
-      color: Colors.green,
-    ),
-  ],
-);
-
 // Кнопки меню ТЕМЫ
 final ButtonStyle themeMenuButtonStyle = ElevatedButton.styleFrom(
   minimumSize: Size(200, 45),
@@ -52,22 +37,24 @@ final ButtonStyle themeMenuButtonStyle = ElevatedButton.styleFrom(
   ),
 );
 
-// Паддинг для второстепенных экранов, которые сохроняют главную тему
-const mySecondaryScreensPadding = EdgeInsets.fromLTRB(5, 140, 5, 140);
-const myEachThemeScreensPadding = EdgeInsets.fromLTRB(5, 210, 5, 140);
-
-// Стиль рамки выделения при создании новой темы
-const colorBorderForAddTheme = Color(0xFFFFE27D);
-const InputBorder myBorderStyleForAddTheme = OutlineInputBorder(
-  borderSide: BorderSide(
-    color: colorBorderForAddTheme,
-    width: 2,
-  ),
-  borderRadius: BorderRadius.all(Radius.circular(15.0)),
+// TEXT
+// Текст кнопок главного меню И меню ТЕМЫ
+const mainMenuButtonTextStyle = TextStyle(
+  color: Colors.white,
+  fontSize: 20.0,
+  fontWeight: FontWeight.w800,
+  fontFamily: 'AbhayaLibre',
+  shadows: [
+    Shadow(
+      offset: Offset(0.5, 0.5),
+      blurRadius: 0.5,
+      color: Colors.green,
+    ),
+  ],
 );
 
 // Текст каждого слова в теме
-const eachThemeTextStyle = TextStyle(
+const textStyleEachThemeElements = TextStyle(
   color: Color(0xFF9b8134),
   fontSize: 20.0,
   fontWeight: FontWeight.w800,
@@ -82,8 +69,7 @@ const eachThemeTextStyle = TextStyle(
 );
 
 // Текст заголовка в теме
-const eachThemeHeaderTextStyle = TextStyle(
-
+const textStyleEachThemeHeader = TextStyle(
   color: Color(0xFF8c6e1c),
   fontSize: 25.0,
   fontWeight: FontWeight.w800,
@@ -97,4 +83,54 @@ const eachThemeHeaderTextStyle = TextStyle(
   // ],
 );
 
+// Стиль текста заголовков для правил
+const textStyleHeaderRules = TextStyle(
+  color: Color(0xFFFFE27D),
+  fontSize: 24.0,
+  fontWeight: FontWeight.w800,
+  fontFamily: 'AbhayaLibre',
+  letterSpacing: 0.6,
+  wordSpacing: 1,
+  shadows: [
+    Shadow(
+      offset: Offset(2.0, 2.0),
+      blurRadius: 1.0,
+      color: Color(0xFFCCAB45),
+    ),
+  ],
+);
+
+// Стиль текста описания правил
+const textStyleDescriptionRules = TextStyle(
+  color: Colors.black,
+  fontSize: 18.0,
+  fontWeight: FontWeight.w400,
+  fontFamily: 'DMSans',
+  letterSpacing: 0.6,
+  wordSpacing: 1,
+  // shadows: [
+  //   Shadow(
+  //     offset: Offset(2.0, 2.0),
+  //     blurRadius: 1.0,
+  //     color: Color(0xFFCCAB45),
+  //   ),
+  // ],
+);
+
+
+// Константа для размера бокса на экране
 const newGameFinalHeightSizedBox = 70.0;
+
+// Паддинг для второстепенных экранов, которые сохроняют главную тему
+const mySecondaryScreensPadding = EdgeInsets.fromLTRB(5, 140, 5, 140);
+const myEachThemeScreensPadding = EdgeInsets.fromLTRB(5, 210, 5, 140);
+
+// Стиль рамки выделения при создании новой темы
+const colorBorderForAddTheme = Color(0xFFFFE27D);
+const InputBorder myBorderStyleForAddTheme = OutlineInputBorder(
+  borderSide: BorderSide(
+    color: colorBorderForAddTheme,
+    width: 2,
+  ),
+  borderRadius: BorderRadius.all(Radius.circular(15.0)),
+);

@@ -27,11 +27,11 @@ backSide(int index, int argumentsThemeNumber, int randomElementOfList,
     child: index == rabbitFlag
         ? const Text(
             'Ты заяц',
-            style: eachThemeHeaderTextStyle,
+            style: textStyleEachThemeHeader,
           )
         : Text(
             '$tempWord',
-            style: eachThemeHeaderTextStyle,
+            style: textStyleEachThemeHeader,
           ),
   );
 }

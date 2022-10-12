@@ -28,7 +28,7 @@ myChoiceTheme(data, myIconThemeButton, miniViewAllTheme, randomTheme) {
             alignment: Alignment.centerLeft,
             child: Text(
               data,
-              style: eachThemeHeaderTextStyle,
+              style: textStyleEachThemeHeader,
               overflow: TextOverflow.ellipsis,
             ),
           ),

@@ -15,7 +15,7 @@ eachThemeForm(data) {
         disabledBorder: myBorderStyleForAddTheme,
         border: myBorderStyleForAddTheme,
         labelText: data,
-        labelStyle: eachThemeHeaderTextStyle,
+        labelStyle: textStyleEachThemeHeader,
       ),
     );
 }

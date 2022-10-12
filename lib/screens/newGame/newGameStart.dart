@@ -70,10 +70,10 @@ class _NewGameStartState extends State<NewGameStart> {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               const Text('Выберите количество игроков',
-                  style: eachThemeHeaderTextStyle),
+                  style: textStyleEachThemeHeader),
               myChoiceQuantity(quantity, minusPlayers, plusPlayers),
               // const SizedBox(height: 100),
-              const Text('Выберите тему', style: eachThemeHeaderTextStyle),
+              const Text('Выберите тему', style: textStyleEachThemeHeader),
               myChoiceTheme(myAllTheme.listAllTheme[themeNumberForShow].name,
                   _myIconThemeButton, _miniViewAllTheme, _randomTheme),
               // const SizedBox(height: 25),

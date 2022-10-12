@@ -27,7 +27,7 @@ frontSide(int index, Map arguments) {
     ),
     child: Text(
       '$tempName',
-      style: eachThemeHeaderTextStyle,
+      style: textStyleEachThemeHeader,
     ),
   );
 }

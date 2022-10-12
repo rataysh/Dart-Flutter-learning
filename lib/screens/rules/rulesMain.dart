@@ -54,9 +54,9 @@ class _RulesMainState extends State<RulesMain> {
                 child: Column(
                   children: [
                     Text(rulesMeaning.header,
-                    style: eachThemeHeaderTextStyle,),
+                    style: textStyleHeaderRules,),
                     Text(rulesMeaning.description,
-                      ),
+                      style: textStyleDescriptionRules,),
                   ],
                 ),
               ),
