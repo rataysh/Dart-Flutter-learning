@@ -6,7 +6,6 @@ import '../../classes/AllTheme.dart';
 import '../../const/orientation.dart';
 import '../../const/slyles.dart';
 import '../elementsOfScreens/backButton.dart';
-import '../elementsOfScreens/backgroundWithNoImage.dart';
 import '../elementsOfScreens/newGameElements/myChoiceQuantity.dart';
 import '../elementsOfScreens/newGameElements/myChoiceTheme.dart';
 import '../elementsOfScreens/newGameElements/listThemeChoice.dart';

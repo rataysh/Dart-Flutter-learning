@@ -5,6 +5,7 @@ import 'package:lern_base/screens/newGame/newGameFinal.dart';
 import 'package:lern_base/screens/newGame/newGameQuantity.dart';
 import 'package:lern_base/screens/newGame/newGameRole.dart';
 import 'package:lern_base/screens/newGame/newGameStart.dart';
+import 'package:lern_base/screens/rules/rulesMain.dart';
 import 'package:lern_base/screens/theme/themeEach.dart';
 import 'package:lern_base/screens/theme/themeMain.dart';
 
@@ -33,6 +34,7 @@ class MyApp extends StatelessWidget {
         '/newGameQuantity': (context) => NewGameQuantity(),
         '/newGameRole': (context) => NewGameRole(),
         '/newGameFinal': (context) => NewGameFinal(),
+        '/rulesMain': (context) => RulesMain(),
       },
     );
   }

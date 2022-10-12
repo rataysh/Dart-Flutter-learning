@@ -74,7 +74,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         child: ElevatedButton(
                           style: mainMenuButtonStyle,
                           onPressed: () {
-                            // Navigator.pushNamed(context, '/newGameFinal');
+                            Navigator.pushNamed(context, '/rulesMain');
                           },
                           child: const Text(
                             'Правила',
