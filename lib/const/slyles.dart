@@ -7,6 +7,7 @@ const colorBackgroundButton = Color(0xFF3EE3A8); //Цвет кнопок
 const colorDisabledButton = Color(0xFF9ee2c9); //Цвет Неактивных кнопок
 const colorRulesHeaderText = Color(0xFFFFE27D); // Цвет заголовка правил
 const colorRulesHeaderSwadowText = Color(0xFFCCAB45); // Цвет тени заголовка правил
+const colorEachThemeElements = Color(0xFF9b8134); // Цвет каждого элемента темы
 
 // Стили
 // Кнопки главного меню
@@ -57,25 +58,34 @@ const mainMenuButtonTextStyle = TextStyle(
 
 // Текст каждого слова в теме
 const textStyleEachThemeElements = TextStyle(
-  color: Color(0xFF9b8134),
-  fontSize: 18.0,
+  color: colorEachThemeElements,
+  fontSize: 24.0,
   fontWeight: FontWeight.w800,
   fontFamily: 'AbhayaLibre',
-  // shadows: [
-  //   Shadow(
-  //     offset: Offset(0.5, 1.5),
-  //     blurRadius: 1.0,
-  //     color: Colors.green,
-  //   ),
-  // ],
+  shadows: [
+    Shadow(
+      offset: Offset(1.5, 1.5),
+      blurRadius: 1.0,
+      color: colorBackgroundMain,
+    ),
+  ],
 );
 
 // Текст заголовка в теме
 const textStyleEachThemeHeader = TextStyle(
-  color: Color(0xFFCCAB45),
-  fontSize: 25.0,
+  color: colorRulesHeaderText,
+  fontSize: 30.0,
   fontWeight: FontWeight.w800,
   fontFamily: 'AbhayaLibre',
+  letterSpacing: 1,
+  wordSpacing: 1,
+  shadows: [
+    Shadow(
+      offset: Offset(1.5, 2.0),
+      blurRadius: 2,
+      color: colorRulesHeaderSwadowText,
+    ),
+  ],
 );
 
 // Стиль текста заголовков для правил
@@ -104,9 +114,7 @@ const textStyleDescriptionRules = TextStyle(
   letterSpacing: 0.4,
   wordSpacing: 1,
   overflow: TextOverflow.clip,
-
 );
-
 
 // Константа для размера бокса на экране
 const newGameFinalHeightSizedBox = 70.0;
@@ -116,15 +124,23 @@ const mySecondaryScreensPadding = EdgeInsets.fromLTRB(5, 140, 5, 140);
 const myEachThemeScreensPadding = EdgeInsets.fromLTRB(5, 210, 5, 140);
 
 // Стиль рамки выделения при создании новой темы
-const colorBorderForAddTheme = Color(0xFFFFE27D);
+const colorBorderForAddTheme = colorRulesHeaderText;
 const InputBorder myBorderStyleForAddTheme = OutlineInputBorder(
   borderSide: BorderSide(
     color: colorBorderForAddTheme,
-    width: 2,
+    width: 3,
   ),
   borderRadius: BorderRadius.all(Radius.circular(15.0)),
 );
 
+// Cтиль рамки Длы заголовка Темы в themeEach
+const InputBorder themeEachBorderHeader = UnderlineInputBorder(
+  borderSide: BorderSide(
+    style: BorderStyle.none,
+    color: colorBorderForAddTheme,
+    width: 2,
+  ),
+);
 
 // Стили для контейнера с правилами
 final boxDecorationRulesContainer = BoxDecoration(

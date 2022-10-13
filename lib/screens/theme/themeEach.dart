@@ -25,10 +25,12 @@ class ThemeEach extends StatelessWidget {
             itemBuilder: (_, index) => Column(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
+              // mainAxisSize: MainAxisSize.max,
               children: [
                 index == 0
-                    ? eachThemeForm(
-                        myAllTheme.listAllTheme[argumentsIndexTheme].name)
+                    ? eachThemeFormHeader(
+                        myAllTheme.listAllTheme[argumentsIndexTheme].name,
+                    context)
                     : eachThemeForm(myAllTheme
                         .listAllTheme[argumentsIndexTheme].allElements[index-1].toString()),
                 const SizedBox(
