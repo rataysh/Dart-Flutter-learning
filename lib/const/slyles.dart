@@ -71,6 +71,38 @@ const textStyleEachThemeElements = TextStyle(
   ],
 );
 
+// Текст для заполнения newGameStart
+const textStyleNewGameStartElements = TextStyle(
+  color: colorEachThemeElements,
+  fontSize: 22.0,
+  fontWeight: FontWeight.w800,
+  fontFamily: 'AbhayaLibre',
+  shadows: [
+    Shadow(
+      offset: Offset(1.5, 1.5),
+      blurRadius: 1.0,
+      color: colorBackgroundMain,
+    ),
+  ],
+);
+
+// Текст заголовка на экране newGameStart
+const textStyleNewGameStartHeader = TextStyle(
+  color: colorRulesHeaderText,
+  fontSize: 24.0,
+  fontWeight: FontWeight.w600,
+  fontFamily: 'AbhayaLibre',
+  letterSpacing: 1,
+  wordSpacing: 1,
+  shadows: [
+    Shadow(
+      offset: Offset(1.0, 2.0),
+      blurRadius: 2,
+      color: colorRulesHeaderSwadowText,
+    ),
+  ],
+);
+
 // Текст заголовка в теме
 const textStyleEachThemeHeader = TextStyle(
   color: colorRulesHeaderText,

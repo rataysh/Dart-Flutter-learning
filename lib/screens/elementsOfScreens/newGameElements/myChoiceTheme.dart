@@ -10,6 +10,7 @@ myChoiceTheme(data, myIconThemeButton, miniViewAllTheme, randomTheme) {
     width: 350,
     height: 50,
     decoration: BoxDecoration(
+      color: Colors.white70,
       border: Border.all(
         color: colorBorderForAddTheme,
         width: 2,
@@ -28,7 +29,7 @@ myChoiceTheme(data, myIconThemeButton, miniViewAllTheme, randomTheme) {
             alignment: Alignment.centerLeft,
             child: Text(
               data,
-              style: textStyleEachThemeHeader,
+              style: textStyleNewGameStartElements,
               overflow: TextOverflow.ellipsis,
             ),
           ),

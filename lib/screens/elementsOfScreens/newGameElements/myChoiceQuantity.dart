@@ -31,7 +31,7 @@ myChoiceQuantity(quantity, minusPlayers, plusPlayers) {
         padding: const EdgeInsets.all(8.0),
         child: Text(
           '$quantity',
-          style: textStyleEachThemeHeader,
+          style: textStyleEachThemeElements,
         ),
       ),
       quantity == 12

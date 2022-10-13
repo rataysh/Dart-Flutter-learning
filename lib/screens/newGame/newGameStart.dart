@@ -66,32 +66,50 @@ class _NewGameStartState extends State<NewGameStart> {
         children: [
           // BackgroundWithNoImage(),
           MainBackground(),
-          Column(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              const Text('Выберите количество игроков',
-                  style: textStyleEachThemeHeader),
-              myChoiceQuantity(quantity, minusPlayers, plusPlayers),
-              // const SizedBox(height: 100),
-              const Text('Выберите тему', style: textStyleEachThemeHeader),
-              myChoiceTheme(myAllTheme.listAllTheme[themeNumberForShow].name,
-                  _myIconThemeButton, _miniViewAllTheme, _randomTheme),
-              // const SizedBox(height: 25),
-              Padding(
-                padding: const EdgeInsets.all(7.0),
-                child: ElevatedButton(
-                  style: mainMenuButtonStyle,
-                  onPressed: () async {
-                    Navigator.pushNamed(context, '/newGameQuantity',
-                        arguments: [quantity, themeNumberForShow]);
-                  },
-                  child: const Text(
-                    'Далее',
-                    style: mainMenuButtonTextStyle,
+          Padding(
+            padding: const EdgeInsets.all(10.0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    const Text('Выберите количество игроков',
+                        style: textStyleNewGameStartHeader,
+                    textAlign: TextAlign.center,),
+                    const SizedBox(height: 25),
+                    myChoiceQuantity(quantity, minusPlayers, plusPlayers),
+                    // const SizedBox(height: 100),
+                  ],
+                ),
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    const Text('Выберите тему', style: textStyleNewGameStartHeader),
+                    const SizedBox(height: 25),
+                    myChoiceTheme(myAllTheme.listAllTheme[themeNumberForShow].name,
+                        _myIconThemeButton, _miniViewAllTheme, _randomTheme),
+                  ],
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(7.0),
+                  child: ElevatedButton(
+                    style: mainMenuButtonStyle,
+                    onPressed: () async {
+                      Navigator.pushNamed(context, '/newGameQuantity',
+                          arguments: [quantity, themeNumberForShow]);
+                    },
+                    child: const Text(
+                      'Далее',
+                      style: mainMenuButtonTextStyle,
+                    ),
                   ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
           MyBackButton(), // separatorBuilder: (_, __) => const Divider(),
         ],
