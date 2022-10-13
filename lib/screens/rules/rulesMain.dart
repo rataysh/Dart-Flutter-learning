@@ -1,16 +1,14 @@
-import 'dart:math';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_swiper/flutter_swiper.dart';
 import 'package:lern_base/const/rulesAll.dart';
 import 'package:lern_base/screens/elementsOfScreens/background.dart';
-import '../../classes/AllTheme.dart';
 import '../../const/orientation.dart';
 import '../../const/ref.dart';
 import '../../const/slyles.dart';
 import '../elementsOfScreens/backButton.dart';
-import '../elementsOfScreens/newGameElements/myChoiceQuantity.dart';
-import '../elementsOfScreens/newGameElements/myChoiceTheme.dart';
-import '../elementsOfScreens/newGameElements/listThemeChoice.dart';
+import '../elementsOfScreens/rulesElements/rulesMainContainer.dart';
+import '../elementsOfScreens/rulesElements/rulesMainImageRab.dart';
 
 class RulesMain extends StatefulWidget {
   const RulesMain({Key? key}) : super(key: key);
@@ -38,43 +36,36 @@ class _RulesMainState extends State<RulesMain> {
     return Material(
       child: Stack(
         children: [
-          // BackgroundWithNoImage(),
           MainBackground(),
-          Center(
-            child: Padding(
-              padding: EdgeInsets.fromLTRB(screenWidth / 40, screenHeight / 8,
-                  screenWidth / 40, screenHeight / 3),
-              child: Container(
-                alignment: Alignment.center,
-                width: screenWidth * 0.85,
-                height: screenHeight,
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                ),
-                child: Column(
-                  children: [
-                    Text(rulesMeaning.header,
-                    style: textStyleHeaderRules,),
-                    Text(rulesMeaning.description,
-                      style: textStyleDescriptionRules,),
-                  ],
-                ),
+          Swiper(
+            loop: false,
+            scrollDirection: Axis.horizontal,
+            pagination: SwiperPagination(
+              margin: EdgeInsets.only(bottom: screenHeight / 3.3),
+              builder: const DotSwiperPaginationBuilder(
+                color: colorBackgroundButton,
+                size: 10,
+                activeColor: colorRulesHeaderText,
+                activeSize: 15,
               ),
             ),
+            layout: SwiperLayout.DEFAULT,
+            itemCount: 3,
+            itemBuilder: (_, index) {
+              return Center(
+                child: Padding(
+                  padding: EdgeInsets.fromLTRB(screenWidth / 50, screenHeight / 7.5,
+                      screenWidth / 50, screenHeight / 3.5),
+                  child: rulesMainContainerText(
+                      screenWidth, screenHeight, rulesAll[index]),
+                ),
+              );
+            }
           ),
-          Center(
-            child: Container(
-              // height: screenHeight,
-              width: screenWidth/2.2,
-              alignment: Alignment.bottomCenter,
-              child: Image.asset(
-                alignment: Alignment.bottomCenter,
-                pathHandRabImage,
-                fit: BoxFit.scaleDown,
-                // scale: 3.3,
-              ),
-            ),
-          ),
+          rulesMainContainerImage(screenWidth, pathHandRabImage),
+          // pathRunRabImage
+          // pathBackRabImage
+          // pathHandRabImage
           MyBackButton(), // separatorBuilder: (_, __) => const Divider(),
         ],
       ),

@@ -5,6 +5,8 @@ import 'package:flutter/src/material/input_border.dart';
 const colorBackgroundMain = Color(0xFFEAFED0); // Главный цвет
 const colorBackgroundButton = Color(0xFF3EE3A8); //Цвет кнопок
 const colorDisabledButton = Color(0xFF9ee2c9); //Цвет Неактивных кнопок
+const colorRulesHeaderText = Color(0xFFFFE27D); // Цвет заголовка правил
+const colorRulesHeaderSwadowText = Color(0xFFCCAB45); // Цвет тени заголовка правил
 
 // Стили
 // Кнопки главного меню
@@ -56,7 +58,7 @@ const mainMenuButtonTextStyle = TextStyle(
 // Текст каждого слова в теме
 const textStyleEachThemeElements = TextStyle(
   color: Color(0xFF9b8134),
-  fontSize: 20.0,
+  fontSize: 18.0,
   fontWeight: FontWeight.w800,
   fontFamily: 'AbhayaLibre',
   // shadows: [
@@ -70,22 +72,15 @@ const textStyleEachThemeElements = TextStyle(
 
 // Текст заголовка в теме
 const textStyleEachThemeHeader = TextStyle(
-  color: Color(0xFF8c6e1c),
+  color: Color(0xFFCCAB45),
   fontSize: 25.0,
   fontWeight: FontWeight.w800,
   fontFamily: 'AbhayaLibre',
-  // shadows: [
-  //   Shadow(
-  //     offset: Offset(0.5, 1.5),
-  //     blurRadius: 1.0,
-  //     color: Colors.green,
-  //   ),
-  // ],
 );
 
 // Стиль текста заголовков для правил
 const textStyleHeaderRules = TextStyle(
-  color: Color(0xFFFFE27D),
+  color: colorRulesHeaderText,
   fontSize: 24.0,
   fontWeight: FontWeight.w800,
   fontFamily: 'AbhayaLibre',
@@ -95,7 +90,7 @@ const textStyleHeaderRules = TextStyle(
     Shadow(
       offset: Offset(2.0, 2.0),
       blurRadius: 1.0,
-      color: Color(0xFFCCAB45),
+      color: colorRulesHeaderSwadowText,
     ),
   ],
 );
@@ -103,18 +98,13 @@ const textStyleHeaderRules = TextStyle(
 // Стиль текста описания правил
 const textStyleDescriptionRules = TextStyle(
   color: Colors.black,
-  fontSize: 18.0,
+  fontSize: 17,
   fontWeight: FontWeight.w400,
   fontFamily: 'DMSans',
-  letterSpacing: 0.6,
+  letterSpacing: 0.4,
   wordSpacing: 1,
-  // shadows: [
-  //   Shadow(
-  //     offset: Offset(2.0, 2.0),
-  //     blurRadius: 1.0,
-  //     color: Color(0xFFCCAB45),
-  //   ),
-  // ],
+  overflow: TextOverflow.clip,
+
 );
 
 
@@ -133,4 +123,22 @@ const InputBorder myBorderStyleForAddTheme = OutlineInputBorder(
     width: 2,
   ),
   borderRadius: BorderRadius.all(Radius.circular(15.0)),
+);
+
+
+// Стили для контейнера с правилами
+final boxDecorationRulesContainer = BoxDecoration(
+  color: Colors.white,
+  borderRadius: const BorderRadius.all(Radius.circular(18.0)),
+  border: Border.all(
+    color: const Color(0xFFD1E8B3),
+    width: 2,
+  ),
+  boxShadow: const [
+    BoxShadow(
+      color: Color(0xFFD1E8B3),
+      offset: Offset(3.0, 4.0),
+      blurRadius: 1.0,
+    ),
+  ],
 );
