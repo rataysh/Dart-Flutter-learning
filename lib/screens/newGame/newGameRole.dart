@@ -29,7 +29,7 @@ class _NewGameRoleState extends State<NewGameRole> {
 
     int randomElementOfList = Random().nextInt(
         myAllTheme.listAllTheme[argumentsThemeNumber].allElements.length);
-    int rabbitFlag = Random().nextInt(argumentsPlayersNameMap.length);
+    int rabbitFlag = (Random().nextInt(argumentsPlayersNameMap.length)+1);
 
     List argumentsPlayersNameList = [];
     convertMapToList(argumentsPlayersNameMap) {
@@ -86,6 +86,7 @@ class _NewGameRoleState extends State<NewGameRole> {
                 // for (int i = 1; i < argumentsPlayersNameMap.length+1; i++) {
                 //   print(argumentsPlayersNameMap['$i']);
                 // };
+                print(rabbitFlag);
                 print(argumentsPlayersNameList);
                 // print(argumentsPlayersNameList.reversed);
                 // Navigator.pushNamed(context, '/newGameFinal',

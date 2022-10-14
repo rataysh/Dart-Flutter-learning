@@ -74,15 +74,7 @@ class _NewGameQuantityState extends State<NewGameQuantity> {
                             style: mainMenuButtonStyle,
                             onPressed: () {
                               _chekValidatorDate();
-                              // var _valuesList = _valuesMap?.entries
-                              //     .map((e) =>
-                              //         ListDataSendToNextScreen(e.key, e.value))
-                              // //     .toList();
-                              // var testData = _valuesMap?.length;
-                              // for (int i = 1; i < testData!; i++) {
-                              //   print(i);
-                              // };
-                              print(_valuesMap?.length);
+                             // print(_valuesMap?.length);
                               Navigator.pushNamed(context, '/newGameRole',
                                   arguments: [_valuesMap, argumentsThemeNumber]);
                             },
