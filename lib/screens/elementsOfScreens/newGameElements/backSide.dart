@@ -4,13 +4,13 @@ import '../../../classes/AllTheme.dart';
 import '../../../const/slyles.dart';
 
 backSide(int index, int argumentsThemeNumber, int randomElementOfList,
-    int rabbitFlag) {
+    int rabbitFlag, context) {
   var tempWord = myAllTheme
       .listAllTheme[argumentsThemeNumber].allElements[randomElementOfList];
   return Container(
     alignment: Alignment.center,
-    width: 300,
-    height: 500,
+    width: MediaQuery.of(context).size.width/1.15,
+    height: MediaQuery.of(context).size.height/1.35,
     decoration: BoxDecoration(
       gradient: const LinearGradient(
           begin: Alignment.center,

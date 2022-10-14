@@ -4,14 +4,13 @@ import '../../../const/slyles.dart';
 
 
 
-frontSide(int index, Map arguments) {
-  var tempName;
-  index++;
-  tempName = arguments["$index"];
+frontSide(List arguments, context) {
+  // var tempName = arguments[1];
+  // tempName = arguments["$index"];
   return Container(
     alignment: Alignment.center,
-    width: 300,
-    height: 500,
+    width: MediaQuery.of(context).size.width/1.15,
+    height: MediaQuery.of(context).size.height/1.35,
     decoration: BoxDecoration(
       gradient: const LinearGradient(
           begin: Alignment.center,
@@ -26,7 +25,7 @@ frontSide(int index, Map arguments) {
       color: colorDisabledButton,
     ),
     child: Text(
-      '$tempName',
+      arguments[1],
       style: textStyleEachThemeHeader,
     ),
   );

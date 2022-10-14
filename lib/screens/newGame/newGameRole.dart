@@ -12,7 +12,6 @@ import 'package:flutter_swiper/flutter_swiper.dart';
 import '../elementsOfScreens/newGameElements/backSide.dart';
 import '../elementsOfScreens/newGameElements/frontSide.dart';
 
-
 class NewGameRole extends StatefulWidget {
   const NewGameRole({super.key});
 
@@ -21,76 +20,76 @@ class NewGameRole extends StatefulWidget {
 }
 
 class _NewGameRoleState extends State<NewGameRole> {
-  // @override
-  // void initState() {
-  //   super.initState();
-  // }
-
-  // swipeCard(index) {
-  //   print('Swipe $index');
-  // }
-
-  // int indexSwiper = 0;
-
-  tapCard(int index) {
-    print(index);
-    print('Tap');
-  }
-
   @override
   Widget build(BuildContext context) {
-    setState(() {
-      myOrientationPortrait();
-    });
-
     final argumentsListFromQuantity =
         ModalRoute.of(context)?.settings.arguments as List;
-    final Map argumentsPlayersName = argumentsListFromQuantity[0];
+    final Map argumentsPlayersNameMap = argumentsListFromQuantity[0];
     final int argumentsThemeNumber = argumentsListFromQuantity[1];
 
     int randomElementOfList = Random().nextInt(
         myAllTheme.listAllTheme[argumentsThemeNumber].allElements.length);
-    int rabbitFlag = Random().nextInt(argumentsPlayersName.length);
+    int rabbitFlag = Random().nextInt(argumentsPlayersNameMap.length);
+
+    List argumentsPlayersNameList = [];
+    convertMapToList(argumentsPlayersNameMap) {
+      List tempData;
+      for (int i = 1; i < argumentsPlayersNameMap.length + 1; i++) {
+        tempData = [];
+        tempData = [i, argumentsPlayersNameMap['$i']];
+        argumentsPlayersNameList.add(tempData);
+      }
+    }
+
+    setState(() {
+      convertMapToList(argumentsPlayersNameMap);
+    });
 
     return Material(
       child: Stack(
         children: [
           MainBackground(),
-          Swiper(
-              control: const SwiperControl(
-                color: colorBackgroundButton,
-              ),
-              loop: false,
-              scrollDirection: Axis.horizontal,
-              physics: const BouncingScrollPhysics(),
-              layout: SwiperLayout.TINDER,
-              itemWidth: 300,
-              itemHeight: 500,
-              // index: indexSwiper,
-              itemCount: argumentsPlayersName.length,
-              itemBuilder: (_, index) {
-                // indexSwiper = index;
-                return FlipCard(
-                  direction: FlipDirection.HORIZONTAL,
-                  front: frontSide(index, argumentsPlayersName),
-                  back: backSide(
-                      index,
-                      argumentsThemeNumber,
-                      randomElementOfList,
-                      rabbitFlag), //_backSide(index, argumentsThemeNumber),
+          // GestureDetector(
+          //   child: Dismissible(
+          //     key: ValueKey(Random().toString()),
+          //     onDismissed: (directional) {
+          //       setState(() {
+          //         frontSide(index, argumentsPlayersNameMap, context)
+          //             .remove(index);
+          //         backSide(index, argumentsThemeNumber, randomElementOfList,
+          //             rabbitFlag)
+          //             .remove(index);
+          //       });
+          //     },
+          Center(
+            child: Stack(
+              alignment: AlignmentDirectional.center,
+              children: argumentsPlayersNameList.reversed.map((element) {
+                return Dismissible(
+                  key: ValueKey(element),
+                  child: FlipCard(
+                    alignment: Alignment.center,
+                    direction: FlipDirection.HORIZONTAL,
+                    front: frontSide(element, context),
+                    back: backSide(element[0], argumentsThemeNumber,
+                        randomElementOfList, rabbitFlag, context),
+                  ),
                 );
-              },
-              // controller: ,
-            // onTap: tapCard(indexSwiper),
-            // onIndexChanged: swipeCard(index),
+              }).toList(),
+            ),
           ),
           Container(
             alignment: Alignment.bottomCenter,
             child: ElevatedButton(
               style: mainMenuButtonStyle,
               onPressed: () {
-                Navigator.pushNamed(context, '/newGameFinal',
-                    arguments: argumentsThemeNumber);
+                // for (int i = 1; i < argumentsPlayersNameMap.length+1; i++) {
+                //   print(argumentsPlayersNameMap['$i']);
+                // };
+                print(argumentsPlayersNameList);
+                // print(argumentsPlayersNameList.reversed);
+                // Navigator.pushNamed(context, '/newGameFinal',
+                //     arguments: argumentsThemeNumber);
               },
               child: const Text(
                 'TEST',
@@ -98,9 +97,67 @@ class _NewGameRoleState extends State<NewGameRole> {
               ),
             ),
           ),
-          MyBackButton(), // separatorBuilder: (_, __) => const Divider(),
+          MyBackButton(),
+          // separatorBuilder: (_, __) => const Divider(),
         ],
       ),
     );
   }
+
+  myBuildWidget(argumentsPlayersNameList) {
+    return argumentsPlayersNameList.map((e) {
+      return Text(e[0].toString());
+    });
+    // return testData;
+  }
+
+  myFlipCard(frontSide, backSide) {
+    return FlipCard(
+      alignment: Alignment.center,
+      direction: FlipDirection.HORIZONTAL,
+      front: frontSide,
+      back: backSide,
+    );
+  }
 }
+
+// Swiper(
+// control: const SwiperControl(
+// color: colorBackgroundButton,
+// ),
+// // controller: _controller,
+// // index: 0,
+// loop: false,
+// scrollDirection: Axis.horizontal,
+// physics: const BouncingScrollPhysics(),
+// // physics: NeverScrollableScrollPhysics(),
+// layout: SwiperLayout.TINDER,
+// itemWidth: MediaQuery.of(context).size.width / 1.1,
+// itemHeight: MediaQuery.of(context).size.height / 1.3,
+// itemCount: argumentsPlayersName.length,
+// itemBuilder: (_, index) {
+// return GestureDetector(
+// child: Dismissible(
+// key: ValueKey(Random().toString()),
+// onDismissed: (directional) {
+// setState(() {
+// frontSide(index, argumentsPlayersName, context)
+//     .remove(index);
+// backSide(index, argumentsThemeNumber, randomElementOfList,
+// rabbitFlag)
+//     .remove(index);
+// });
+// },
+// child: FlipCard(
+// direction: FlipDirection.HORIZONTAL,
+// front: frontSide(index, argumentsPlayersName, context),
+// back: backSide(index, argumentsThemeNumber,
+// randomElementOfList, rabbitFlag),
+// onFlip: () {
+// print(rabbitFlag);
+// },
+// ),
+// ),
+// );
+// },
+// ),

@@ -6,20 +6,18 @@ import '../elementsOfScreens/backButton.dart';
 import '../elementsOfScreens/background.dart';
 import '../elementsOfScreens/newGameElements/newGameQuantityTextForm.dart';
 
-
-
 class NewGameQuantity extends StatefulWidget {
   @override
   State<NewGameQuantity> createState() => _NewGameQuantityState();
 }
 
 class _NewGameQuantityState extends State<NewGameQuantity> {
-  Map<String, dynamic>? _values;
+  Map<String, dynamic>? _valuesMap;
 
   @override
   void initState() {
     super.initState();
-    _values = {};
+    _valuesMap = {};
   }
 
   @override
@@ -34,15 +32,15 @@ class _NewGameQuantityState extends State<NewGameQuantity> {
     final argumentsThemeNumber = argumentsListFromStart[1];
 
     void _chekValidatorDate() {
-      if (_values?.length != argumentsQuantity) {
-        if (_values?.length == 0) {
+      if (_valuesMap?.length != argumentsQuantity) {
+        if (_valuesMap?.length == 0) {
           for (int i = 1; i < argumentsQuantity + 1; i++) {
-            _values?[i.toString()] = 'Игрок $i';
+            _valuesMap?[i.toString()] = 'Игрок $i';
           }
         } else {
           for (int i = 1; i < argumentsQuantity + 1; i++) {
-            if (_values?.containsKey(i.toString()) == false) {
-              _values?[i.toString()] = 'Игрок $i';
+            if (_valuesMap?.containsKey(i.toString()) == false) {
+              _valuesMap?[i.toString()] = 'Игрок $i';
             }
           }
         }
@@ -51,7 +49,7 @@ class _NewGameQuantityState extends State<NewGameQuantity> {
 
     _onUpdate(int key, String val) {
       var tempKey = key.toString();
-      _values?[tempKey] = val;
+      _valuesMap?[tempKey] = val;
     }
 
     return Material(
@@ -76,8 +74,17 @@ class _NewGameQuantityState extends State<NewGameQuantity> {
                             style: mainMenuButtonStyle,
                             onPressed: () {
                               _chekValidatorDate();
+                              // var _valuesList = _valuesMap?.entries
+                              //     .map((e) =>
+                              //         ListDataSendToNextScreen(e.key, e.value))
+                              // //     .toList();
+                              // var testData = _valuesMap?.length;
+                              // for (int i = 1; i < testData!; i++) {
+                              //   print(i);
+                              // };
+                              print(_valuesMap?.length);
                               Navigator.pushNamed(context, '/newGameRole',
-                                  arguments: [_values, argumentsThemeNumber]);
+                                  arguments: [_valuesMap, argumentsThemeNumber]);
                             },
                             child: const Text(
                               'Далее',
@@ -94,5 +101,17 @@ class _NewGameQuantityState extends State<NewGameQuantity> {
         ],
       ),
     );
+  }
+}
+
+class ListDataSendToNextScreen {
+  String id;
+  String name;
+
+  ListDataSendToNextScreen(this.id, this.name);
+
+  @override
+  String toString() {
+    return '[${this.id}, ${this.name}]';
   }
 }
