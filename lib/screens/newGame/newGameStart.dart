@@ -45,6 +45,7 @@ class _NewGameStartState extends State<NewGameStart> {
 
   _miniViewAllTheme() {
     return showModalBottomSheet(
+      // isDismissible: false,
       // isScrollControlled: true,
       shape: const RoundedRectangleBorder(
         borderRadius: BorderRadius.vertical(

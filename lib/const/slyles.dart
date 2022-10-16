@@ -126,7 +126,7 @@ const textStyleNewGameFinalHeader = TextStyle(
 // Текст заголовка в теме
 const textStyleEachThemeHeader = TextStyle(
   color: colorNewGameStartHeaderText,
-  fontSize: 30.0,
+  fontSize: 26.0,
   fontWeight: FontWeight.w900,
   fontFamily: 'AbhayaLibre',
   letterSpacing: 2,

@@ -3,7 +3,7 @@ import '../../../const/slyles.dart';
 
 rulesMainContainerText(double screenWidth, double screenHeight, rulesPart) {
   return Container(
-    padding: const EdgeInsets.fromLTRB(1, 0, 1, 0),
+    padding: const EdgeInsets.fromLTRB(5, 0, 2, 0),
     alignment: Alignment.center,
     width: screenWidth * 0.85,
     height: screenHeight,

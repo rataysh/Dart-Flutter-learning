@@ -14,25 +14,31 @@ class ListThemeChoice extends StatelessWidget {
       child: Stack(
         children: [
           MainBackground(),
-          ListView.builder(
-            padding: const EdgeInsets.fromLTRB(10, 50, 10, 50),
-            physics: const BouncingScrollPhysics(),
-            itemCount: myAllTheme.listAllTheme.length,
-            itemBuilder: (_, index) => Column(
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              children: [
-                const SizedBox(height: 10),
-                ElevatedButton(
-                  onPressed: () {
-                    Navigator.pop(context, index);
-                  },
-                  style: themeMenuButtonStyle,
-                  child: Text(
-                    myAllTheme.listAllTheme[index].name,
-                    style: mainMenuButtonTextStyle,
+        WillPopScope(
+          onWillPop: () async {
+            Navigator.pop(context, 0);
+            return false;
+          },
+            child: ListView.builder(
+              padding: const EdgeInsets.fromLTRB(10, 50, 10, 50),
+              physics: const BouncingScrollPhysics(),
+              itemCount: myAllTheme.listAllTheme.length,
+              itemBuilder: (_, index) => Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
+                  const SizedBox(height: 10),
+                  ElevatedButton(
+                    onPressed: () {
+                      Navigator.pop(context, index);
+                    },
+                    style: themeMenuButtonStyle,
+                    child: Text(
+                      myAllTheme.listAllTheme[index].name,
+                      style: mainMenuButtonTextStyle,
+                    ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
           ),
         ],

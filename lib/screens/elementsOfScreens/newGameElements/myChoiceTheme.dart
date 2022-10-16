@@ -36,7 +36,7 @@ myChoiceTheme(data, myIconThemeButton, miniViewAllTheme, randomTheme) {
         ),
         Flexible(
           flex: 1,
-          child: myIconThemeButton(Icons.dehaze, miniViewAllTheme),
+          child: myIconThemeButton(Icons.dehaze, miniViewAllTheme ?? 0),
         ),
         Flexible(
           flex: 1,

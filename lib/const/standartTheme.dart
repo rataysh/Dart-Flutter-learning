@@ -13,7 +13,7 @@ final standardThemeDrink = ListTheme(name: "Напитки", allElements: [
   "Тархун",
   "Вино",
   "Молочный коктейль",
-  "Coca-cola",
+  "Кока-кола",
   "Пиво",
   "Сироп",
   "Смузи",
@@ -38,7 +38,7 @@ final standardThemeJobs = ListTheme(name: "Профессии", allElements: [
   "Повар",
   "Футболист",
   "Журналист",
-  "Стендап исполнитель",
+  "Стендапер",
 ],
   standardThemeFlag: true,
 );
@@ -148,7 +148,7 @@ final standardThemeTypeOfArts = ListTheme(name: "Виды искусства", a
   standardThemeFlag: true,
 );
 
-final standardThemeMood = ListTheme(name: "Эмоциональные состояния", allElements: [
+final standardThemeMood = ListTheme(name: "Эмоции", allElements: [
   "Озарение",
   "Тревога",
   "Восторг",
@@ -232,26 +232,26 @@ final standardThemeFilms = ListTheme(name: "Кинофильмы", allElements: 
   standardThemeFlag: true,
 );
 
-final standardThemeMusicalInstruments = ListTheme(name: "Музыкальные инструменты", allElements: [
-  "Гитара",
-  "Саксофон",
-  "Кларнет",
-  "Арфа",
-  "Фортепиано",
-  "Виолончель",
-  "Труба",
-  "Волынка",
-  "Скрипка",
-  "Флейта",
-  "Бубен",
-  "Губная гармоника",
-  "Барабаны",
-  "Маракасы",
-  "Укулеле",
-  "Банджо",
-],
-  standardThemeFlag: true,
-);
+// final standardThemeMusicalInstruments = ListTheme(name: "Музыкальные инструменты", allElements: [
+//   "Гитара",
+//   "Саксофон",
+//   "Кларнет",
+//   "Арфа",
+//   "Фортепиано",
+//   "Виолончель",
+//   "Труба",
+//   "Волынка",
+//   "Скрипка",
+//   "Флейта",
+//   "Бубен",
+//   "Губная гармоника",
+//   "Барабаны",
+//   "Маракасы",
+//   "Укулеле",
+//   "Банджо",
+// ],
+//   standardThemeFlag: true,
+// );
 
 final standardThemeHobby = ListTheme(name: "Хобби", allElements: [
   "Фотография",

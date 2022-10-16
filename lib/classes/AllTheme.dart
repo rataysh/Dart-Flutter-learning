@@ -24,7 +24,7 @@ var myAllTheme = AllTheme(listAllTheme: [
   standardThemeFood,
   standardThemeRooms,
   standardThemeFilms,
-  standardThemeMusicalInstruments,
+  // standardThemeMusicalInstruments,
   standardThemeHobby,
   standardTheme,
   standardThemeCity,
