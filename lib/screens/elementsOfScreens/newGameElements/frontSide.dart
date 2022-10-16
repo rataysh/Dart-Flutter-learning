@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import '../../../const/ref.dart';
 import '../../../const/slyles.dart';
 
 
@@ -15,19 +16,26 @@ frontSide(List arguments, context) {
         width: 7,
         color: Colors.black26,
       ),
-      boxShadow: const [
-        BoxShadow(
-          color: colorRulesHeaderSwadowText,
-          offset: Offset(4.0, 4.0),
-          blurRadius: 7.0,
-        ),
-      ],
-      gradient: const LinearGradient(
-          begin: Alignment.center,
-          end: Alignment.bottomCenter,
-          colors: [Colors.white, Colors.tealAccent]),
-      // color: Colors.tealAccent,
+      // boxShadow: const [
+      //   BoxShadow(
+      //     color: colorRulesHeaderSwadowText,
+      //     offset: Offset(4.0, 4.0),
+      //     blurRadius: 7.0,
+      //   ),
+      // ],
+      // gradient: const LinearGradient(
+      //     begin: Alignment.center,
+      //     end: Alignment.bottomCenter,
+      //     colors: [Colors.white, Colors.tealAccent]),
+
+      // image: DecorationImage(
+      //   image: Image.asset(pathCardRoleBackgroundImage).image,
+      //   alignment: Alignment.bottomCenter,
+      //   fit: BoxFit.scaleDown,
+      //   // colorFilter: const ColorFilter.linearToSrgbGamma(),
+      // ),
     ),
+
     child: Column(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       crossAxisAlignment: CrossAxisAlignment.center,
