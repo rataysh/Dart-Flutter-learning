@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import '../../../classes/AllTheme.dart';
 import '../../../const/slyles.dart';
+import 'newGameRoleImageYouAreRabbit.dart';
 
 backSide(int index, int argumentsThemeNumber, int randomElementOfList,
     int rabbitFlag, context) {
@@ -9,8 +10,8 @@ backSide(int index, int argumentsThemeNumber, int randomElementOfList,
       .listAllTheme[argumentsThemeNumber].allElements[randomElementOfList];
   return Container(
     alignment: Alignment.center,
-    width: MediaQuery.of(context).size.width/1.15,
-    height: MediaQuery.of(context).size.height/1.35,
+    width: MediaQuery.of(context).size.width / 1.15,
+    height: MediaQuery.of(context).size.height / 1.35,
     decoration: BoxDecoration(
       // gradient: const LinearGradient(
       //     begin: Alignment.center,
@@ -19,16 +20,13 @@ backSide(int index, int argumentsThemeNumber, int randomElementOfList,
       borderRadius: const BorderRadius.all(Radius.circular(30.0)),
       border: Border.all(
         style: BorderStyle.solid,
-        width: 4,
-        color: Colors.black,
+        width: 15,
+        color: Colors.black12,
       ),
       color: colorDisabledButton,
     ),
     child: index == rabbitFlag
-        ? Text(
-            'Ты заяц',
-            style: textStyleEachThemeHeader,
-          )
+        ? newGameRoleImageYouAreRabbit(context)
         : Text(
             '$tempWord',
             style: textStyleEachThemeHeader,
