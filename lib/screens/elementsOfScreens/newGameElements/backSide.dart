@@ -18,6 +18,7 @@ backSide(int index, int argumentsThemeNumber, int randomElementOfList,
         : Text(
             '$tempWord',
             style: textStyleHeaderNewGameRules,
+            textAlign: TextAlign.center,
           ),
   );
 }
