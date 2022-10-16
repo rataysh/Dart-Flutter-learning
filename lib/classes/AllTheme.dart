@@ -13,9 +13,9 @@ class AllTheme {
 
 // Добавляю стадартные темы
 var myAllTheme = AllTheme(listAllTheme: [
-  standartThemeDrink,
-  standartThemeJobs,
-  standartThemeAqua,
+  standardThemeDrink,
+  standardThemeJobs,
+  standardThemeAqua,
 ]
 );
 

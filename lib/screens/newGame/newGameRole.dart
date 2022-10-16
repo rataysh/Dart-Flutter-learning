@@ -29,10 +29,10 @@ class _NewGameRoleState extends State<NewGameRole> {
 
     int randomElementOfList = Random().nextInt(
         myAllTheme.listAllTheme[argumentsThemeNumber].allElements.length);
-    int rabbitFlag = (Random().nextInt(argumentsPlayersNameMap.length)+1);
+    int rabbitFlag = (Random().nextInt(argumentsPlayersNameMap.length) + 1);
 
     List argumentsPlayersNameList = [];
-    convertMapToList(argumentsPlayersNameMap) {
+    void _convertMapToList(argumentsPlayersNameMap) {
       List tempData;
       for (int i = 1; i < argumentsPlayersNameMap.length + 1; i++) {
         tempData = [];
@@ -42,31 +42,30 @@ class _NewGameRoleState extends State<NewGameRole> {
     }
 
     setState(() {
-      convertMapToList(argumentsPlayersNameMap);
+      _convertMapToList(argumentsPlayersNameMap);
     });
+
+    _chekLastCard(index) {
+      index == argumentsPlayersNameList.length
+          ? Navigator.pushNamed(context, '/newGameFinal',
+              arguments: argumentsThemeNumber)
+          : null;
+    }
 
     return Material(
       child: Stack(
         children: [
           MainBackground(),
           // GestureDetector(
-          //   child: Dismissible(
-          //     key: ValueKey(Random().toString()),
-          //     onDismissed: (directional) {
-          //       setState(() {
-          //         frontSide(index, argumentsPlayersNameMap, context)
-          //             .remove(index);
-          //         backSide(index, argumentsThemeNumber, randomElementOfList,
-          //             rabbitFlag)
-          //             .remove(index);
-          //       });
-          //     },
           Center(
             child: Stack(
               alignment: AlignmentDirectional.center,
               children: argumentsPlayersNameList.reversed.map((element) {
                 return Dismissible(
                   key: ValueKey(element),
+                  onDismissed: (direction) {
+                    _chekLastCard(element[0]);
+                  },
                   child: FlipCard(
                     alignment: Alignment.center,
                     direction: FlipDirection.HORIZONTAL,
@@ -83,9 +82,6 @@ class _NewGameRoleState extends State<NewGameRole> {
             child: ElevatedButton(
               style: mainMenuButtonStyle,
               onPressed: () {
-                // for (int i = 1; i < argumentsPlayersNameMap.length+1; i++) {
-                //   print(argumentsPlayersNameMap['$i']);
-                // };
                 print(rabbitFlag);
                 print(argumentsPlayersNameList);
                 // print(argumentsPlayersNameList.reversed);
@@ -102,22 +98,6 @@ class _NewGameRoleState extends State<NewGameRole> {
           // separatorBuilder: (_, __) => const Divider(),
         ],
       ),
-    );
-  }
-
-  myBuildWidget(argumentsPlayersNameList) {
-    return argumentsPlayersNameList.map((e) {
-      return Text(e[0].toString());
-    });
-    // return testData;
-  }
-
-  myFlipCard(frontSide, backSide) {
-    return FlipCard(
-      alignment: Alignment.center,
-      direction: FlipDirection.HORIZONTAL,
-      front: frontSide,
-      back: backSide,
     );
   }
 }

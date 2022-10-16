@@ -3,12 +3,12 @@ class ListTheme {
   Map<String, List>? dict;
   String name;
   List<String> allElements;
-  bool? standartThemeFlag;
+  bool? standardThemeFlag;
 
   ListTheme(
       {required this.name,
       required this.allElements,
-      this.standartThemeFlag = false}) {
+      this.standardThemeFlag = false}) {
     // standartThemeFlag = false;
     name = name[0].toUpperCase() + name.substring(1).toLowerCase();
     dict = {

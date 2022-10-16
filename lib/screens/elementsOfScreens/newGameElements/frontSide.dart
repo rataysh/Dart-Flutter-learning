@@ -5,8 +5,6 @@ import '../../../const/slyles.dart';
 
 
 frontSide(List arguments, context) {
-  // var tempName = arguments[1];
-  // tempName = arguments["$index"];
   return Container(
     alignment: Alignment.center,
     width: MediaQuery.of(context).size.width/1.15,
@@ -15,12 +13,13 @@ frontSide(List arguments, context) {
       gradient: const LinearGradient(
           begin: Alignment.center,
           end: Alignment.bottomRight,
-          colors: [colorDisabledButton, colorBackgroundButton]),
+          colors: [Colors.white24, colorBackgroundButton]),
       borderRadius: BorderRadius.all(Radius.circular(30.0)),
+
       border: Border.all(
         style: BorderStyle.solid,
-        width: 4,
-        color: Colors.black,
+        width: 2,
+        color: colorBackgroundButton,
       ),
       color: colorDisabledButton,
     ),
