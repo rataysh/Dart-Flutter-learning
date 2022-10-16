@@ -12,10 +12,10 @@ backSide(int index, int argumentsThemeNumber, int randomElementOfList,
     width: MediaQuery.of(context).size.width/1.15,
     height: MediaQuery.of(context).size.height/1.35,
     decoration: BoxDecoration(
-      gradient: const LinearGradient(
-          begin: Alignment.center,
-          end: Alignment.bottomRight,
-          colors: [colorDisabledButton, colorBackgroundButton]),
+      // gradient: const LinearGradient(
+      //     begin: Alignment.center,
+      //     end: Alignment.bottomRight,
+      //     colors: [colorDisabledButton, colorBackgroundButton]),
       borderRadius: const BorderRadius.all(Radius.circular(30.0)),
       border: Border.all(
         style: BorderStyle.solid,
@@ -25,7 +25,7 @@ backSide(int index, int argumentsThemeNumber, int randomElementOfList,
       color: colorDisabledButton,
     ),
     child: index == rabbitFlag
-        ? const Text(
+        ? Text(
             'Ты заяц',
             style: textStyleEachThemeHeader,
           )
