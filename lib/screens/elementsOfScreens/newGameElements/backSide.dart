@@ -12,18 +12,25 @@ backSide(int index, int argumentsThemeNumber, int randomElementOfList,
     alignment: Alignment.center,
     width: MediaQuery.of(context).size.width / 1.15,
     height: MediaQuery.of(context).size.height / 1.35,
-    decoration: BoxDecoration(
-      // gradient: const LinearGradient(
-      //     begin: Alignment.center,
-      //     end: Alignment.bottomRight,
-      //     colors: [colorDisabledButton, colorBackgroundButton]),
-      borderRadius: const BorderRadius.all(Radius.circular(30.0)),
+    decoration:BoxDecoration(
+      borderRadius: BorderRadius.all(Radius.circular(30.0)),
       border: Border.all(
         style: BorderStyle.solid,
-        width: 15,
-        color: Colors.black12,
+        width: 7,
+        color: Colors.black26,
       ),
-      color: colorDisabledButton,
+      boxShadow: const [
+        BoxShadow(
+          color: colorRulesHeaderSwadowText,
+          offset: Offset(4.0, 4.0),
+          blurRadius: 7.0,
+        ),
+      ],
+      gradient: const LinearGradient(
+          begin: Alignment.center,
+          end: Alignment.bottomCenter,
+          colors: [Colors.white, Colors.tealAccent]),
+      // color: Colors.tealAccent,
     ),
     child: index == rabbitFlag
         ? newGameRoleImageYouAreRabbit(context)

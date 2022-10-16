@@ -1,14 +1,12 @@
 import 'dart:math';
+import 'package:flip_card/flip_card_controller.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import '../../classes/AllTheme.dart';
-import '../../const/orientation.dart';
 import '../../const/slyles.dart';
 import '../elementsOfScreens/backButton.dart';
 import '../elementsOfScreens/background.dart';
 import 'package:flip_card/flip_card.dart';
-import 'package:flutter_swiper/flutter_swiper.dart';
-
 import '../elementsOfScreens/newGameElements/backSide.dart';
 import '../elementsOfScreens/newGameElements/frontSide.dart';
 
@@ -20,6 +18,14 @@ class NewGameRole extends StatefulWidget {
 }
 
 class _NewGameRoleState extends State<NewGameRole> {
+  late FlipCardController _controller;
+
+  @override
+  void initState() {
+    super.initState();
+    _controller = FlipCardController();
+  }
+
   @override
   Widget build(BuildContext context) {
     final argumentsListFromQuantity =
@@ -52,6 +58,8 @@ class _NewGameRoleState extends State<NewGameRole> {
           : null;
     }
 
+    bool _checkedCard = false;
+
     return Material(
       child: Stack(
         children: [
@@ -69,29 +77,23 @@ class _NewGameRoleState extends State<NewGameRole> {
                   child: FlipCard(
                     alignment: Alignment.center,
                     direction: FlipDirection.HORIZONTAL,
+                    // controller: _controller,
+                    // onFlip: () {
+                    //   if (_controller.state!.isFront) {
+                    //     print('TEST');
+                    //     _checkedCard == true;
+                    //     // _controller.toggleCard();
+                    //   }
+                    // },
                     front: frontSide(element, context),
+                        // _checkedCard == true
+                        //     ? frontSideAfter(element, context)
+                        //     : frontSide(element, context),
                     back: backSide(element[0], argumentsThemeNumber,
                         randomElementOfList, rabbitFlag, context),
                   ),
                 );
               }).toList(),
-            ),
-          ),
-          Container(
-            alignment: Alignment.bottomCenter,
-            child: ElevatedButton(
-              style: mainMenuButtonStyle,
-              onPressed: () {
-                print(rabbitFlag);
-                print(argumentsPlayersNameList);
-                // print(argumentsPlayersNameList.reversed);
-                // Navigator.pushNamed(context, '/newGameFinal',
-                //     arguments: argumentsThemeNumber);
-              },
-              child: const Text(
-                'TEST',
-                style: mainMenuButtonTextStyle,
-              ),
             ),
           ),
           MyBackButton(),
@@ -101,44 +103,3 @@ class _NewGameRoleState extends State<NewGameRole> {
     );
   }
 }
-
-// Swiper(
-// control: const SwiperControl(
-// color: colorBackgroundButton,
-// ),
-// // controller: _controller,
-// // index: 0,
-// loop: false,
-// scrollDirection: Axis.horizontal,
-// physics: const BouncingScrollPhysics(),
-// // physics: NeverScrollableScrollPhysics(),
-// layout: SwiperLayout.TINDER,
-// itemWidth: MediaQuery.of(context).size.width / 1.1,
-// itemHeight: MediaQuery.of(context).size.height / 1.3,
-// itemCount: argumentsPlayersName.length,
-// itemBuilder: (_, index) {
-// return GestureDetector(
-// child: Dismissible(
-// key: ValueKey(Random().toString()),
-// onDismissed: (directional) {
-// setState(() {
-// frontSide(index, argumentsPlayersName, context)
-//     .remove(index);
-// backSide(index, argumentsThemeNumber, randomElementOfList,
-// rabbitFlag)
-//     .remove(index);
-// });
-// },
-// child: FlipCard(
-// direction: FlipDirection.HORIZONTAL,
-// front: frontSide(index, argumentsPlayersName, context),
-// back: backSide(index, argumentsThemeNumber,
-// randomElementOfList, rabbitFlag),
-// onFlip: () {
-// print(rabbitFlag);
-// },
-// ),
-// ),
-// );
-// },
-// ),
