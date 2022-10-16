@@ -137,6 +137,17 @@ const textStyleHeaderRules = TextStyle(
   ],
 );
 
+// Стиль текста слов в карточке
+const textStyleWordsInFinalCard= TextStyle(
+  color: Colors.black,
+  fontSize: 18,
+  fontWeight: FontWeight.w400,
+  fontFamily: 'DMSans',
+  letterSpacing: 0.4,
+  wordSpacing: 1,
+  overflow: TextOverflow.clip,
+);
+
 // Стиль текста описания правил
 const textStyleDescriptionRules = TextStyle(
   color: Colors.black,

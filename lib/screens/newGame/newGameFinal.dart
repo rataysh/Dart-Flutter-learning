@@ -5,6 +5,7 @@ import '../../const/orientation.dart';
 import '../../const/slyles.dart';
 import '../elementsOfScreens/newGameElements/backButtonForNewGameFinal.dart';
 import '../elementsOfScreens/newGameElements/myHomeButton.dart';
+import '../elementsOfScreens/newGameElements/newGameFinalLandscapeView.dart';
 import '../elementsOfScreens/newGameElements/newGameFinalPortrainView.dart';
 import '../elementsOfScreens/newGameElements/rotationButton.dart';
 
@@ -32,7 +33,6 @@ class NewGameFinal extends StatelessWidget {
       MediaQuery.of(context).orientation == Orientation.portrait
           ? myOrientationLandscape()
           : myOrientationPortrait();
-      // print(gridHeight);
     }
 
     return Material(
@@ -56,9 +56,7 @@ class NewGameFinal extends StatelessWidget {
                         alignment: Alignment.bottomCenter,
                         child: Text(
                           myAllTheme.listAllTheme[argumentsThemeNumber].name,
-                          style: TextStyle(
-                            fontSize: 22,
-                          ),
+                          style: textStyleHeaderRules,
                         ),
                       ),
                       myRotationButton(_screenRotationChange),
@@ -71,31 +69,8 @@ class NewGameFinal extends StatelessWidget {
                               .orientation ==
                           Orientation.portrait
                       ? myPortraitView(sizeGridPortrait, argumentsThemeNumber)
-                      : GridView.builder(
-                          shrinkWrap: true,
-                          // physics: const NeverScrollableScrollPhysics(),
-                          gridDelegate:
-                              SliverGridDelegateWithFixedCrossAxisCount(
-                            crossAxisCount: 4,
-                            crossAxisSpacing: 5,
-                            mainAxisSpacing: 5,
-                            childAspectRatio: sizeGridLandscape,
-                          ),
-                          itemCount: myAllTheme
-                              .listAllTheme[argumentsThemeNumber]
-                              .allElements
-                              .length,
-                          itemBuilder: (_, index) => Container(
-                                width: 50,
-                                height: 50,
-                                decoration: const BoxDecoration(
-                                  color: Colors.white,
-                                ),
-                                alignment: Alignment.center,
-                                child: Text(myAllTheme
-                                    .listAllTheme[argumentsThemeNumber]
-                                    .allElements[index]),
-                              )),
+                      : myLandscapeView(
+                          sizeGridLandscape, argumentsThemeNumber),
                 ),
               ],
             ),

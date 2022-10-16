@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import '../../../classes/AllTheme.dart';
+import 'newGameFinalViewContainer.dart';
 
 
 myPortraitView(sizeGridPortrait, int indexTheme) {
@@ -16,15 +17,6 @@ myPortraitView(sizeGridPortrait, int indexTheme) {
     ),
     itemCount:
     myAllTheme.listAllTheme[indexTheme].allElements.length,
-    itemBuilder: (_, index) => Container(
-      width: 50,
-      height: 50,
-      decoration: const BoxDecoration(
-        color: Colors.white,
-      ),
-      alignment: Alignment.center,
-      child: Text(
-          myAllTheme.listAllTheme[indexTheme].allElements[index]),
-    ),
+    itemBuilder: (_, index) => myBothViewContainer(index, indexTheme),
   );
 }
