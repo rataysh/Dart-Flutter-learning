@@ -53,10 +53,12 @@ class NewGameFinal extends StatelessWidget {
                     children: [
                       myBackButtonForNewGameFinal(context),
                       Container(
+                        width: gridWidth/2,
                         alignment: Alignment.bottomCenter,
                         child: Text(
                           myAllTheme.listAllTheme[argumentsThemeNumber].name,
-                          style: textStyleHeaderRules,
+                          style: textStyleNewGameFinalHeader,
+                          overflow: TextOverflow.ellipsis,
                         ),
                       ),
                       myRotationButton(_screenRotationChange),

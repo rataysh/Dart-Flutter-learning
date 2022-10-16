@@ -88,17 +88,36 @@ const textStyleNewGameStartElements = TextStyle(
 
 // Текст заголовка на экране newGameStart
 const textStyleNewGameStartHeader = TextStyle(
-  color: colorRulesHeaderText,
-  fontSize: 24.0,
+  color: colorRulesHeaderSwadowText,
+  fontSize: 30.0,
   fontWeight: FontWeight.w600,
   fontFamily: 'AbhayaLibre',
   letterSpacing: 1,
   wordSpacing: 1,
+  overflow: TextOverflow.clip,
   shadows: [
     Shadow(
-      offset: Offset(1.0, 2.0),
-      blurRadius: 2,
-      color: colorRulesHeaderSwadowText,
+      offset: Offset(1.0, 1.0),
+      blurRadius: 1,
+      color: colorRulesHeaderText,
+    ),
+  ],
+);
+
+// Текст заголовка на экране newGameFinal
+const textStyleNewGameFinalHeader = TextStyle(
+  color: colorRulesHeaderSwadowText,
+  fontSize: 18.0,
+  fontWeight: FontWeight.w600,
+  fontFamily: 'AbhayaLibre',
+  letterSpacing: 1,
+  wordSpacing: 1,
+  overflow: TextOverflow.ellipsis,
+  shadows: [
+    Shadow(
+      offset: Offset(1.0, 1.0),
+      blurRadius: 1,
+      color: colorRulesHeaderText,
     ),
   ],
 );
