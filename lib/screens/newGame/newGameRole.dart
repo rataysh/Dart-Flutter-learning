@@ -18,14 +18,6 @@ class NewGameRole extends StatefulWidget {
 }
 
 class _NewGameRoleState extends State<NewGameRole> {
-  late FlipCardController _controller;
-
-  @override
-  void initState() {
-    super.initState();
-    _controller = FlipCardController();
-  }
-
   @override
   Widget build(BuildContext context) {
     final argumentsListFromQuantity =
@@ -58,13 +50,10 @@ class _NewGameRoleState extends State<NewGameRole> {
           : null;
     }
 
-    bool _checkedCard = false;
-
     return Material(
       child: Stack(
         children: [
           MainBackground(),
-          // GestureDetector(
           Center(
             child: Stack(
               alignment: AlignmentDirectional.center,
@@ -77,18 +66,7 @@ class _NewGameRoleState extends State<NewGameRole> {
                   child: FlipCard(
                     alignment: Alignment.center,
                     direction: FlipDirection.HORIZONTAL,
-                    // controller: _controller,
-                    // onFlip: () {
-                    //   if (_controller.state!.isFront) {
-                    //     print('TEST');
-                    //     _checkedCard == true;
-                    //     // _controller.toggleCard();
-                    //   }
-                    // },
                     front: frontSide(element, context),
-                        // _checkedCard == true
-                        //     ? frontSideAfter(element, context)
-                        //     : frontSide(element, context),
                     back: backSide(element[0], argumentsThemeNumber,
                         randomElementOfList, rabbitFlag, context),
                   ),

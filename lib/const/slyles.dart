@@ -158,6 +158,24 @@ const textStyleHeaderRules = TextStyle(
   ],
 );
 
+// Стиль текста заголовков для правил
+const textStyleHeaderNewGameRules = TextStyle(
+  color: colorRulesHeaderText,
+  fontSize: 40.0,
+  fontWeight: FontWeight.w800,
+  fontFamily: 'AbhayaLibre',
+  letterSpacing: 0.6,
+  wordSpacing: 1,
+  overflow: TextOverflow.clip,
+  shadows: [
+    Shadow(
+      offset: Offset(2.0, 2.0),
+      blurRadius: 1.0,
+      color: colorRulesHeaderSwadowText,
+    ),
+  ],
+);
+
 // Стиль текста слов в карточке
 const textStyleWordsInFinalCard= TextStyle(
   color: Colors.black,
