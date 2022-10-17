@@ -35,13 +35,8 @@ dependencies:
   google_fonts: ^3.0.1
   flip_card: ^0.6.0
   flutter_swiper: ^1.1.6
-  flutter_launcher_icons: ^0.10.0
 #    flutter_swipable: ^1.2.1
 
-flutter_icons:
-  image_path: "assets/images/runRab.png"
-  android: true
-  ios: true
 
 
 
@@ -49,6 +44,17 @@ flutter_icons:
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  flutter_launcher_icons: ^0.10.0
+  flutter_native_splash: ^2.2.11
+
+flutter_native_splash:
+  color: "#EAFED0"
+  image: "assets/images/runRab.png"
+
+flutter_icons:
+  image_path: "assets/images/runRab.png"
+  android: true
+  ios: true
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
