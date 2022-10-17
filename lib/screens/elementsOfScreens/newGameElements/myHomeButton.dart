@@ -1,5 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:vibration/vibration.dart';
+import '../../../const/durationVibration.dart';
 import '../../../const/slyles.dart';
 
 
@@ -15,6 +17,7 @@ myHomeButton(context) {
         Icons.home,
       ),
       onPressed: () {
+        Vibration.vibrate(duration: durationVibration);
         Navigator.pushNamed(context, '/');
       },
     ),

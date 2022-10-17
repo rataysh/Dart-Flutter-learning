@@ -1,0 +1,1 @@
+const durationVibration = 50;

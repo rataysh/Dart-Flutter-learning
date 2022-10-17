@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:vibration/vibration.dart';
 import '../../classes/AllTheme.dart';
+import '../../const/durationVibration.dart';
 import '../../const/orientation.dart';
 import '../../const/slyles.dart';
 import '../elementsOfScreens/backButton.dart';
@@ -32,9 +34,7 @@ class _ThemeMainState extends State<ThemeMain> {
                 const SizedBox(height: 10),
                 ElevatedButton(
                   onPressed: () {
-                    // dataChekStandartThemeFlag =
-                    //     myAllTheme.listAllTheme[index].standartThemeFlag;
-                    // print(myAllTheme.listAllTheme[index].allElements.length);
+                    Vibration.vibrate(duration: durationVibration);
                     Navigator.pushNamed(context, '/themeEach',
                         arguments: index);
                   },

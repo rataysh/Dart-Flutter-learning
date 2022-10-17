@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:vibration/vibration.dart';
 import '../../../classes/AllTheme.dart';
+import '../../../const/durationVibration.dart';
 import '../../../const/slyles.dart';
 import '../background.dart';
 
@@ -29,6 +31,7 @@ class ListThemeChoice extends StatelessWidget {
                   const SizedBox(height: 10),
                   ElevatedButton(
                     onPressed: () {
+                      Vibration.vibrate(duration: durationVibration);
                       Navigator.pop(context, index);
                     },
                     style: themeMenuButtonStyle,

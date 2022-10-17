@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:lern_base/const/orientation.dart';
+import 'package:vibration/vibration.dart';
+import '../const/durationVibration.dart';
 import '../const/ref.dart';
 import '../const/slyles.dart';
 import 'elementsOfScreens/background.dart';
@@ -48,6 +50,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         child: ElevatedButton(
                           style: mainMenuButtonStyle,
                           onPressed: () {
+                            Vibration.vibrate(duration: durationVibration);
                             Navigator.pushNamed(context, '/newGameStart');
                           },
                           child: const Text(
@@ -61,6 +64,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         child: ElevatedButton(
                           style: mainMenuButtonStyle,
                           onPressed: () {
+                            Vibration.vibrate(duration: durationVibration);
                             Navigator.pushNamed(context, '/themeMain');
                           },
                           child: const Text(
@@ -74,6 +78,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         child: ElevatedButton(
                           style: mainMenuButtonStyle,
                           onPressed: () {
+                            Vibration.vibrate(duration: durationVibration);
                             Navigator.pushNamed(context, '/rulesMain');
                           },
                           child: const Text(

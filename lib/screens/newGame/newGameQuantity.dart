@@ -1,5 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:vibration/vibration.dart';
+import '../../const/durationVibration.dart';
 import '../../const/orientation.dart';
 import '../../const/slyles.dart';
 import '../elementsOfScreens/backButton.dart';
@@ -73,8 +75,8 @@ class _NewGameQuantityState extends State<NewGameQuantity> {
                           ElevatedButton(
                             style: mainMenuButtonStyle,
                             onPressed: () {
+                              Vibration.vibrate(duration: durationVibration);
                               _chekValidatorDate();
-                             // print(_valuesMap?.length);
                               Navigator.pushNamed(context, '/newGameRole',
                                   arguments: [_valuesMap, argumentsThemeNumber]);
                             },
