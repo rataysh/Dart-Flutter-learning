@@ -1,5 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:vibration/vibration.dart';
+import '../../const/durationVibration.dart';
 import '../../const/orientation.dart';
 import '../../const/slyles.dart';
 
@@ -19,7 +21,7 @@ class MyBackButton extends StatelessWidget {
           Icons.arrow_back,
         ),
         onPressed: () {
-          // BuildContext context;
+          Vibration.vibrate(duration: durationVibration);
           Navigator.pop(context);
           myOrientationPortrait();
         },
