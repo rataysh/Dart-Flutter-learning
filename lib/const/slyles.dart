@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/material/input_border.dart';
+// import 'package:flutter/src/material/input_border.dart';
 
 // Цвета
 const colorBackgroundMain = Color(0xFFEAFED0); // Главный цвет
@@ -13,7 +13,7 @@ const colorNewGameStartHeaderText = Color(0xFF786A3E); // Цвет тени за
 // Стили
 // Кнопки главного меню
 final ButtonStyle mainMenuButtonStyle = ElevatedButton.styleFrom(
-  primary: colorBackgroundButton,
+  backgroundColor: colorBackgroundButton,
   fixedSize: const Size(200, 45),
   side: const BorderSide(
     color: Color(0xFF43CD9C),
@@ -29,7 +29,7 @@ final ButtonStyle mainMenuButtonStyle = ElevatedButton.styleFrom(
 // Кнопки меню ТЕМЫ
 final ButtonStyle themeMenuButtonStyle = ElevatedButton.styleFrom(
   minimumSize: Size(200, 45),
-  primary: colorBackgroundButton,
+  backgroundColor: colorBackgroundButton,
   side: const BorderSide(
     color: Color(0xFF43CD9C),
     // width: 2.0,

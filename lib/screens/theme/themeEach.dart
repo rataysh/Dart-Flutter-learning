@@ -1,6 +1,5 @@
-import 'package:flutter/cupertino.dart';
+// import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:lern_base/screens/theme/themeMain.dart';
 import '../../classes/AllTheme.dart';
 import '../../const/slyles.dart';
 import '../elementsOfScreens/backButton.dart';
