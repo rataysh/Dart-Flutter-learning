@@ -1,6 +1,8 @@
 // import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:vibration/vibration.dart';
 import '../../classes/AllTheme.dart';
+import '../../const/durationVibration.dart';
 import '../../const/orientation.dart';
 import '../../const/styles.dart';
 import '../elementsOfScreens/newGameElements/backButtonForNewGameFinal.dart';
@@ -35,7 +37,14 @@ class NewGameFinal extends StatelessWidget {
           : myOrientationPortrait();
     }
 
-    return Material(
+    return WillPopScope(
+      onWillPop: () async {
+        Vibration.vibrate(duration: durationVibration);
+        Navigator.pop(context);
+        myOrientationPortrait();
+        return false;
+      },
+      child: Material(
       child: Stack(
         fit: StackFit.passthrough,
         children: [
@@ -79,6 +88,7 @@ class NewGameFinal extends StatelessWidget {
           ),
         ],
       ),
+    ),
     );
   }
 }

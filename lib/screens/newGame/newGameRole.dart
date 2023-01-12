@@ -41,12 +41,14 @@ class _NewGameRoleState extends State<NewGameRole> {
       _convertMapToList(argumentsPlayersNameMap);
     });
 
-    _chekLastCard(index) {
+    _checkLastCard(index) {
       index == argumentsPlayersNameList.length
           ? Navigator.pushNamed(context, '/newGameFinal',
               arguments: argumentsThemeNumber)
           : null;
     }
+
+    bool _checkViewFlag = false;
 
     return Material(
       child: Stack(
@@ -59,12 +61,16 @@ class _NewGameRoleState extends State<NewGameRole> {
                 return Dismissible(
                   key: ValueKey(element),
                   onDismissed: (direction) {
-                    _chekLastCard(element[0]);
+                    _checkLastCard(element[0]);
+                    _checkViewFlag = false;
                   },
                   child: FlipCard(
+                    onFlip: () {
+                        _checkViewFlag = true;
+                    },
                     alignment: Alignment.center,
                     direction: FlipDirection.HORIZONTAL,
-                    front: frontSide(element, context),
+                    front: frontSide(element, context, _checkViewFlag),
                     back: backSide(element[0], argumentsThemeNumber,
                         randomElementOfList, rabbitFlag, context),
                   ),

@@ -224,9 +224,26 @@ const InputBorder themeEachBorderHeader = UnderlineInputBorder(
   ),
 );
 
-// Стили для контейнера с правилами
+// Стили для контейнера с правилами до просмотра
 final boxDecorationRulesContainer = BoxDecoration(
   color: Colors.white,
+  borderRadius: const BorderRadius.all(Radius.circular(18.0)),
+  border: Border.all(
+    color: const Color(0xFFD1E8B3),
+    width: 2,
+  ),
+  boxShadow: const [
+    BoxShadow(
+      color: Color(0xFFD1E8B3),
+      offset: Offset(3.0, 4.0),
+      blurRadius: 1.0,
+    ),
+  ],
+);
+
+// Стили для контейнера с правилами после просмотра
+final boxDecorationRulesContainerAfterCheck = BoxDecoration(
+  color: Colors.black,
   borderRadius: const BorderRadius.all(Radius.circular(18.0)),
   border: Border.all(
     color: const Color(0xFFD1E8B3),
