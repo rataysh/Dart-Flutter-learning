@@ -2,7 +2,7 @@
 import 'package:flutter/material.dart';
 import '../../classes/AllTheme.dart';
 import '../../const/orientation.dart';
-import '../../const/slyles.dart';
+import '../../const/styles.dart';
 import '../elementsOfScreens/newGameElements/backButtonForNewGameFinal.dart';
 import '../elementsOfScreens/newGameElements/myHomeButton.dart';
 import '../elementsOfScreens/newGameElements/newGameFinalLandscapeView.dart';

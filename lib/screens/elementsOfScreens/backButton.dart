@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:vibration/vibration.dart';
 import '../../const/durationVibration.dart';
 import '../../const/orientation.dart';
-import '../../const/slyles.dart';
+import '../../const/styles.dart';
 
 class MyBackButton extends StatelessWidget {
   const MyBackButton({super.key});

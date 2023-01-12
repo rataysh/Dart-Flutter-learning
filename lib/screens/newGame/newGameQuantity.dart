@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:vibration/vibration.dart';
 import '../../const/durationVibration.dart';
 import '../../const/orientation.dart';
-import '../../const/slyles.dart';
+import '../../const/styles.dart';
 import '../elementsOfScreens/backButton.dart';
 import '../elementsOfScreens/background.dart';
 import '../elementsOfScreens/newGameElements/newGameQuantityTextForm.dart';

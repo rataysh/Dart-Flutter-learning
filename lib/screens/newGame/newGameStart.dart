@@ -6,7 +6,7 @@ import 'package:vibration/vibration.dart';
 import '../../classes/AllTheme.dart';
 import '../../const/durationVibration.dart';
 import '../../const/orientation.dart';
-import '../../const/slyles.dart';
+import '../../const/styles.dart';
 import '../elementsOfScreens/backButton.dart';
 import '../elementsOfScreens/newGameElements/myChoiceQuantity.dart';
 import '../elementsOfScreens/newGameElements/myChoiceTheme.dart';

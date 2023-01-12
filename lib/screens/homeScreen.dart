@@ -4,8 +4,9 @@ import 'package:lern_base/const/orientation.dart';
 import 'package:vibration/vibration.dart';
 import '../const/durationVibration.dart';
 import '../const/ref.dart';
-import '../const/slyles.dart';
+import '../const/styles.dart';
 import 'elementsOfScreens/background.dart';
+import 'elementsOfScreens/homeScreen/vibrationIcon.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -31,9 +32,11 @@ class _HomeScreenState extends State<HomeScreen> {
         alignment: Alignment.bottomCenter,
         children: [
           MainBackground(),
+          VibrationIcon(),
           Column(
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
+
               Column(
                 mainAxisAlignment: MainAxisAlignment.end,
                 crossAxisAlignment: CrossAxisAlignment.center,

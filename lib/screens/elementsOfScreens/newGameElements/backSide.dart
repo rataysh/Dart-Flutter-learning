@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import '../../../classes/AllTheme.dart';
-import '../../../const/slyles.dart';
+import '../../../const/styles.dart';
 import 'newGameRoleImageYouAreRabbit.dart';
 
 backSide(int index, int argumentsThemeNumber, int randomElementOfList,

@@ -5,7 +5,7 @@ import 'package:lern_base/const/rulesAll.dart';
 import 'package:lern_base/screens/elementsOfScreens/background.dart';
 import '../../const/orientation.dart';
 import '../../const/ref.dart';
-import '../../const/slyles.dart';
+import '../../const/styles.dart';
 import '../elementsOfScreens/backButton.dart';
 import '../elementsOfScreens/rulesElements/rulesMainContainer.dart';
 import '../elementsOfScreens/rulesElements/rulesMainImageRab.dart';

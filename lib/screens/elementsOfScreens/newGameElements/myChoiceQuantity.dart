@@ -1,6 +1,6 @@
 // import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import '../../../const/slyles.dart';
+import '../../../const/styles.dart';
 
 
 myChoiceQuantity(quantity, minusPlayers, plusPlayers) {

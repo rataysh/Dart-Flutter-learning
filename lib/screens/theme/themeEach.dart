@@ -1,7 +1,7 @@
 // import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import '../../classes/AllTheme.dart';
-import '../../const/slyles.dart';
+import '../../const/styles.dart';
 import '../elementsOfScreens/backButton.dart';
 import '../elementsOfScreens/background.dart';
 import '../elementsOfScreens/themeElements/eachThemePart.dart';

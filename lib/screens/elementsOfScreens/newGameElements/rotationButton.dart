@@ -2,7 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:vibration/vibration.dart';
 import '../../../const/durationVibration.dart';
-import '../../../const/slyles.dart';
+import '../../../const/styles.dart';
 
 
 myRotationButton(func) {

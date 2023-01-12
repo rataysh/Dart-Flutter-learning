@@ -1,7 +1,7 @@
 // import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import '../../const/ref.dart';
-import '../../const/slyles.dart';
+import '../../const/styles.dart';
 
 class MainBackground extends StatelessWidget {
   @override

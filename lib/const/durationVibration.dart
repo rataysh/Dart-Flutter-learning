@@ -1,1 +1,1 @@
-const durationVibration = 50;
+var durationVibration = 50;

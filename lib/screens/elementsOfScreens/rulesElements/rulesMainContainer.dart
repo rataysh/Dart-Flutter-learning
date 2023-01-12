@@ -1,5 +1,5 @@
 import 'package:flutter/cupertino.dart';
-import '../../../const/slyles.dart';
+import '../../../const/styles.dart';
 
 rulesMainContainerText(double screenWidth, double screenHeight, rulesPart) {
   return Container(

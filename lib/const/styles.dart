@@ -6,7 +6,7 @@ const colorBackgroundMain = Color(0xFFEAFED0); // Главный цвет
 const colorBackgroundButton = Color(0xFF3EE3A8); //Цвет кнопок
 const colorDisabledButton = Color(0xFF9ee2c9); //Цвет Неактивных кнопок
 const colorRulesHeaderText = Color(0xFFFFE27D); // Цвет заголовка правил
-const colorRulesHeaderSwadowText = Color(0xFFCCAB45); // Цвет тени заголовка правил
+const colorRulesHeaderShadowText = Color(0xFFCCAB45); // Цвет тени заголовка правил
 const colorEachThemeElements = Color(0xFF9b8134); // Цвет каждого элемента темы
 const colorNewGameStartHeaderText = Color(0xFF786A3E); // Цвет тени заголовка правил
 
@@ -107,7 +107,7 @@ const textStyleNewGameStartHeader = TextStyle(
 
 // Текст заголовка на экране newGameFinal
 const textStyleNewGameFinalHeader = TextStyle(
-  color: colorRulesHeaderSwadowText,
+  color: colorRulesHeaderShadowText,
   fontSize: 18.0,
   fontWeight: FontWeight.w600,
   fontFamily: 'AbhayaLibre',
@@ -136,7 +136,7 @@ const textStyleEachThemeHeader = TextStyle(
     Shadow(
       offset: Offset(1.5, 1.0),
       blurRadius: 1.5,
-      color: colorRulesHeaderSwadowText,
+      color: colorRulesHeaderShadowText,
     ),
   ],
 );
@@ -153,7 +153,7 @@ const textStyleHeaderRules = TextStyle(
     Shadow(
       offset: Offset(2.0, 2.0),
       blurRadius: 1.0,
-      color: colorRulesHeaderSwadowText,
+      color: colorRulesHeaderShadowText,
     ),
   ],
 );
@@ -171,7 +171,7 @@ const textStyleHeaderNewGameRules = TextStyle(
     Shadow(
       offset: Offset(2.0, 2.0),
       blurRadius: 1.0,
-      color: colorRulesHeaderSwadowText,
+      color: colorRulesHeaderShadowText,
     ),
   ],
 );
