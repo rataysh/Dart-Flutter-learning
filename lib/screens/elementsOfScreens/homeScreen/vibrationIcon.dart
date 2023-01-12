@@ -19,7 +19,7 @@ class _VibrationIconState extends State<VibrationIcon> {
       top: 25.0,
       right: 10.0,
       child:IconButton(
-        iconSize: 35,
+        iconSize: 36,
         color: colorRulesHeaderShadowText,
         icon: Icon(
             durationVibration == 0
