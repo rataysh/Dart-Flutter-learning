@@ -1,4 +1,4 @@
-import 'package:lern_base/classes/rules.dart';
+import '../classes/rules.dart';
 
 final rulesMeaning = RulesContain(header: 'СМЫСЛ ИГРЫ', description: '''
   Это игра про блеф и ассоциации.

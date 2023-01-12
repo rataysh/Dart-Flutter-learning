@@ -1,7 +1,7 @@
 import 'dart:math';
 // import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:lern_base/screens/elementsOfScreens/background.dart';
+import '../../screens/elementsOfScreens/background.dart';
 import 'package:vibration/vibration.dart';
 import '../../classes/AllTheme.dart';
 import '../../const/durationVibration.dart';

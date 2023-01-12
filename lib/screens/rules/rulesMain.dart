@@ -1,8 +1,8 @@
 // import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
-import 'package:lern_base/const/rulesAll.dart';
-import 'package:lern_base/screens/elementsOfScreens/background.dart';
+import '../../const/rulesAll.dart';
+import '../../screens/elementsOfScreens/background.dart';
 import '../../const/orientation.dart';
 import '../../const/ref.dart';
 import '../../const/styles.dart';

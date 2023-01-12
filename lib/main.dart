@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:lern_base/screens/homeScreen.dart';
-import 'package:lern_base/screens/newGame/newGameFinal.dart';
-import 'package:lern_base/screens/newGame/newGameQuantity.dart';
-import 'package:lern_base/screens/newGame/newGameRole.dart';
-import 'package:lern_base/screens/newGame/newGameStart.dart';
-import 'package:lern_base/screens/rules/rulesMain.dart';
-import 'package:lern_base/screens/theme/themeEach.dart';
-import 'package:lern_base/screens/theme/themeMain.dart';
+import './screens/homeScreen.dart';
+import './screens/newGame/newGameFinal.dart';
+import './screens/newGame/newGameQuantity.dart';
+import './screens/newGame/newGameRole.dart';
+import './screens/newGame/newGameStart.dart';
+import './screens/rules/rulesMain.dart';
+import './screens/theme/themeEach.dart';
+import './screens/theme/themeMain.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
