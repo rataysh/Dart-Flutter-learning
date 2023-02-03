@@ -442,6 +442,54 @@ final standardThemeAnimals = ListTheme(name: "Животные", allElements: [
   standardThemeFlag: true,
 );
 
+// new elements
+final standardThemeDesserts = ListTheme(name: "Десерты", allElements: [
+  "Тирамису",
+  "Пудинг",
+  "Шоколадный торт",
+  "Пирожные",
+  "Чизкейк",
+  "Фруктовый пломбир",
+  "Брауни",
+  "Мороженое",
+  "Крем-брюле",
+  "Пастила",
+  "Карамель",
+  "Наполеон",
+  "Профитроли",
+  "Пончики",
+  "Кекс",
+  "Штрудель"
+],
+  standardThemeFlag: true,
+);
+
+final standardThemeTech = ListTheme(name: "Бытовая техника", allElements: [
+  "Холодильник",
+  "Плита",
+  "Стиральная машина",
+  "Микроволновая печь",
+  "Телевизор",
+  "Кондиционер",
+  "Пылесос",
+  "Электрочайник",
+  "Кофемашина",
+  "Утюг",
+  "Фен",
+  "Мультиварка",
+  "Блендер",
+  "Тостер",
+  "Увлажнитель воздуха",
+  "Посудомоечная машина"
+],
+  standardThemeFlag: true,
+);
+
+
+
+
+
+
 // final standardTheme = ListTheme(name: "", allElements: [
 //   "",
 //   "",

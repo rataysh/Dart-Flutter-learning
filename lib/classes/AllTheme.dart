@@ -34,6 +34,9 @@ var myAllTheme = AllTheme(listAllTheme: [
   standardThemeSchoolTheme,
   standardThemeNature,
   standardThemeAnimals,
+  standardThemeTech,
+  standardThemeDesserts,
+
 ]
 );
 
