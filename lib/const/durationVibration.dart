@@ -1,1 +1,1 @@
-var durationVibration = 50;
+var durationVibration = 0;

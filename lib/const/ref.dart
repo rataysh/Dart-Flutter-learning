@@ -8,4 +8,5 @@ const String pathHandRabImage = "assets/images/handRab.png";
 const String pathRunRabImage = "assets/images/runRab.png";
 const String pathBackRabImage = "assets/images/backRab.png";
 const String pathYouAreNotRabbitImage = "assets/images/youAreRabbit.png";
+const String pathSpeakImage = "assets/images/speak.png";
 // const String pathCardRoleBackgroundImage = "assets/images/cardRoleBackground.png";
