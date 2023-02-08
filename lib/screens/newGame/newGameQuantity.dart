@@ -20,13 +20,14 @@ class _NewGameQuantityState extends State<NewGameQuantity> {
   void initState() {
     super.initState();
     _valuesMap = {};
+    myOrientationPortrait();
   }
 
   @override
   Widget build(BuildContext context) {
-    setState(() {
-      myOrientationPortrait();
-    });
+    // setState(() {
+    //   myOrientationPortrait();
+    // });
 
     final argumentsListFromStart =
         (ModalRoute.of(context)?.settings.arguments ?? 3) as List;

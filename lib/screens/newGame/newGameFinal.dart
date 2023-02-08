@@ -45,50 +45,50 @@ class NewGameFinal extends StatelessWidget {
         return false;
       },
       child: Material(
-      child: Stack(
-        fit: StackFit.passthrough,
-        children: [
-          Container(
-            decoration: const BoxDecoration(
-              color: colorBackgroundMain,
-            ),
-            child: Column(
-              children: [
-                SizedBox(
-                  height: newGameFinalHeightSizedBox,
-                  child: Row(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      myBackButtonForNewGameFinal(context),
-                      Container(
-                        width: gridWidth/2,
-                        alignment: Alignment.bottomCenter,
-                        child: Text(
-                          myAllTheme.listAllTheme[argumentsThemeNumber].name,
-                          style: textStyleNewGameFinalHeader,
-                          overflow: TextOverflow.ellipsis,
+        child: Stack(
+          fit: StackFit.passthrough,
+          children: [
+            Container(
+              decoration: const BoxDecoration(
+                color: colorBackgroundMain,
+              ),
+              child: Column(
+                children: [
+                  SizedBox(
+                    height: newGameFinalHeightSizedBox,
+                    child: Row(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        myBackButtonForNewGameFinal(context),
+                        Container(
+                          width: gridWidth / 2,
+                          alignment: Alignment.bottomCenter,
+                          child: Text(
+                            myAllTheme.listAllTheme[argumentsThemeNumber].name,
+                            style: textStyleNewGameFinalHeader,
+                            overflow: TextOverflow.ellipsis,
+                          ),
                         ),
-                      ),
-                      myRotationButton(_screenRotationChange),
-                      myHomeButton(context),
-                    ],
+                        myRotationButton(_screenRotationChange),
+                        myHomeButton(context),
+                      ],
+                    ),
                   ),
-                ),
-                OrientationBuilder(
-                  builder: (context, orientation) => MediaQuery.of(context)
-                              .orientation ==
-                          Orientation.portrait
-                      ? myPortraitView(sizeGridPortrait, argumentsThemeNumber)
-                      : myLandscapeView(
-                          sizeGridLandscape, argumentsThemeNumber),
-                ),
-              ],
+                  OrientationBuilder(
+                    builder: (context, orientation) => MediaQuery.of(context)
+                                .orientation ==
+                            Orientation.portrait
+                        ? myPortraitView(sizeGridPortrait, argumentsThemeNumber)
+                        : myLandscapeView(
+                            sizeGridLandscape, argumentsThemeNumber),
+                  ),
+                ],
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
-    ),
     );
   }
 }
