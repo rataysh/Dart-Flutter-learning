@@ -1,7 +1,7 @@
 // import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:vibration/vibration.dart';
-import '../../../const/durationVibration.dart';
+import '../../../const/SharedPreferenceConst.dart';
 import '../../../const/orientation.dart';
 import '../../../const/styles.dart';
 

@@ -1,3 +1,4 @@
+import 'package:Rabbit/const/SharedPreferenceConst.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import './screens/homeScreen.dart';
@@ -8,6 +9,7 @@ import './screens/newGame/newGameStart.dart';
 import './screens/rules/rulesMain.dart';
 import './screens/theme/themeEach.dart';
 import './screens/theme/themeMain.dart';
+import '../const/SharedPreferenceConst.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();

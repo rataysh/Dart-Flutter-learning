@@ -1,14 +1,15 @@
-// import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import '../const/orientation.dart';
 import '../const/ref.dart';
 import 'elementsOfScreens/background.dart';
-import 'elementsOfScreens/homeScreen/homeSceanButton.dart';
+import 'elementsOfScreens/homeScreen/HomeScreanMenu.dart';
+import 'elementsOfScreens/homeScreen/languageButton.dart';
 import 'elementsOfScreens/homeScreen/speak.dart';
 import 'elementsOfScreens/homeScreen/vibrationIcon.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 
 class HomeScreen extends StatefulWidget {
+
   const HomeScreen({Key? key}) : super(key: key);
 
   @override
@@ -16,53 +17,40 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+
+  late bool _controller = false;
+
   @override
   void initState() {
     myOrientationPortrait();
     super.initState();
   }
 
-  bool _controller = false;
-
   @override
   Widget build(BuildContext context) {
-    // setState(() {
-    //   myOrientationPortrait();
-    // });
+    final mainBackground = MainBackground();
+    final vibrationIcon = VibrationIcon();
+    final languageButton = LanguageButton();
+
     return Material(
       child: Stack(
         alignment: Alignment.bottomCenter,
         children: [
-          MainBackground(),
-          VibrationIcon(),
+          mainBackground,
+          vibrationIcon,
+          languageButton,
           Column(
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
               Column(
                 mainAxisAlignment: MainAxisAlignment.end,
-                crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Image.asset(
                     pathNameImage,
                     fit: BoxFit.scaleDown,
                     scale: 3,
                   ),
-                  Column(
-                    children: [
-                      HomeButton(
-                        title: 'Новая игра',
-                        navigatorPath: '/newGameStart',
-                      ),
-                      HomeButton(
-                        title: 'Темы',
-                        navigatorPath: '/themeMain',
-                      ),
-                      HomeButton(
-                        title: 'Правила',
-                        navigatorPath: '/rulesMain',
-                      ),
-                    ],
-                  ),
+                  HomeButtonsColumn(),
                   Stack(
                     children: [
                       GestureDetector(
