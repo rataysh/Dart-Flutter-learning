@@ -16,7 +16,7 @@ myPortraitView(sizeGridPortrait, int indexTheme) {
       childAspectRatio: sizeGridPortrait,
     ),
     itemCount:
-    myAllTheme.listAllTheme[indexTheme].allElements.length,
+    myAllTheme.languageTheme[indexTheme].allElements.length,
     itemBuilder: (_, index) => myBothViewContainer(index, indexTheme),
   );
 }

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import '../../../const/SharedPreferenceConst.dart';
 import '../../../const/ref.dart';
+
 
 class LanguageButton extends StatefulWidget {
   const LanguageButton({Key? key}) : super(key: key);
@@ -10,7 +12,6 @@ class LanguageButton extends StatefulWidget {
 }
 
 class _LanguageButtonState extends State<LanguageButton> {
-  static const currentLanguage = 'language';
   late int _curLang = 0;
 
   @override
@@ -20,22 +21,25 @@ class _LanguageButtonState extends State<LanguageButton> {
   }
 
   Future _initLang() async {
-    _curLang = await _getCurLang();
+    _curLang = await getCurLang();
+    curLanguage = _curLang;
   }
 
-  Future<int> _getCurLang() async {
-    var prefs = await SharedPreferences.getInstance();
-    return prefs.getInt(currentLanguage) ?? 0;
-  }
+  // Future<int> getCurLang() async {
+  //   var prefs = await SharedPreferences.getInstance();
+  //   return prefs.getInt(currentLanguageKey) ?? 0;
+  // }
 
   Future _setCurLang() async {
     var prefs = await SharedPreferences.getInstance();
-    prefs.setInt(currentLanguage, _curLang == 0 ? _curLang = 1 : _curLang = 0);
+    prefs.setInt(
+        currentLanguageKey, _curLang == 0 ? _curLang = 1 : _curLang = 0);
   }
 
   void _changeLanguage() {
     _setCurLang();
     print(_curLang);
+    curLanguage = _curLang;
     setState(() {});
   }
 

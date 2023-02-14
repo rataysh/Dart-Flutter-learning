@@ -24,7 +24,7 @@ class ListThemeChoice extends StatelessWidget {
             child: ListView.builder(
               padding: const EdgeInsets.fromLTRB(10, 50, 10, 50),
               physics: const BouncingScrollPhysics(),
-              itemCount: myAllTheme.listAllTheme.length,
+              itemCount: myAllTheme.languageTheme.length,
               itemBuilder: (_, index) => Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
@@ -36,7 +36,7 @@ class ListThemeChoice extends StatelessWidget {
                     },
                     style: themeMenuButtonStyle,
                     child: Text(
-                      myAllTheme.listAllTheme[index].name,
+                      myAllTheme.languageTheme[index].name,
                       style: mainMenuButtonTextStyle,
                     ),
                   ),

@@ -27,7 +27,7 @@ class _ThemeMainState extends State<ThemeMain> {
           ListView.builder(
             padding: mySecondaryScreensPadding,
             physics: const BouncingScrollPhysics(),
-            itemCount: myAllTheme.listAllTheme.length,
+            itemCount: myAllTheme.languageTheme.length,
             itemBuilder: (_, index) => Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
@@ -40,7 +40,7 @@ class _ThemeMainState extends State<ThemeMain> {
                   },
                   style: themeMenuButtonStyle,
                   child: Text(
-                    myAllTheme.listAllTheme[index].name,
+                    myAllTheme.languageTheme[index].name,
                     style: mainMenuButtonTextStyle,
                   ),
                 ),

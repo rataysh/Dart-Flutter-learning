@@ -1,50 +1,68 @@
+import 'package:shared_preferences/shared_preferences.dart';
+
+import '../const/SharedPreferenceConst.dart';
 import '../const/standartTheme.dart';
 import '../const/standartThemeEng.dart';
+import 'ListTheme.dart';
 
+// // Класс содержащий все темы
+// class AllTheme {
+//   List languageTheme;
+//
+//   AllTheme({required this.languageTheme});
+// }
+//
+// // Добавляю стадартные темы
+// var myAllTheme = AllTheme(languageTheme: ruTheme);
 
-// Класс содержащий все темы
 class AllTheme {
-  List listAllTheme;
+  List engTheme;
+  List ruTheme;
+  int curLanguage;
 
+  AllTheme(
+      {required this.engTheme,
+      required this.ruTheme,
+      required this.curLanguage});
 
-  AllTheme({required this.listAllTheme});
-
+  List get languageTheme {
+    if (curLanguage == 0) {
+      return ruTheme;
+    } else {
+      return engTheme;
+    }
+  }
 }
 
-
-// Добавляю стадартные темы
-var myAllTheme = AllTheme(listAllTheme: languageTheme);
-
-final languageTheme = engTheme;
+var myAllTheme =
+AllTheme(engTheme: engTheme, ruTheme: ruTheme, curLanguage: curLanguage);
 
 final List ruTheme = [
-    standardThemeDrink,
-    standardThemeJobs,
-    standardThemeAqua,
-    standardThemeTypeOfFilm,
-    standardThemeBuildings,
-    standardThemeAuthors,
-    standardThemeTypeOfArts,
-    standardThemeMood,
-    standardThemeFood,
-    standardThemeRooms,
-    standardThemeFilms,
-    // standardThemeMusicalInstruments,
-    standardThemeHobby,
-    standardTheme,
-    standardThemeCity,
-    standardThemeSportsmen,
-    standardThemeHistoricalPerson,
-    standardThemeTransport,
-    standardThemeSchoolTheme,
-    standardThemeNature,
-    standardThemeAnimals,
-    standardThemeTech,
-    standardThemeDesserts,
+  standardThemeDrink,
+  standardThemeJobs,
+  standardThemeAqua,
+  standardThemeTypeOfFilm,
+  standardThemeBuildings,
+  standardThemeAuthors,
+  standardThemeTypeOfArts,
+  standardThemeMood,
+  standardThemeFood,
+  standardThemeRooms,
+  standardThemeFilms,
+  // standardThemeMusicalInstruments,
+  standardThemeHobby,
+  standardTheme,
+  standardThemeCity,
+  standardThemeSportsmen,
+  standardThemeHistoricalPerson,
+  standardThemeTransport,
+  standardThemeSchoolTheme,
+  standardThemeNature,
+  standardThemeAnimals,
+  standardThemeTech,
+  standardThemeDesserts,
 ];
 
 final List engTheme = [
-    standardThemeDrinkEng,
+  standardThemeDrinkEng,
 ];
-
-

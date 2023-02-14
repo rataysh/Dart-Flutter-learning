@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import '../const/orientation.dart';
 import '../const/ref.dart';
 import 'elementsOfScreens/background.dart';
-import 'elementsOfScreens/homeScreen/HomeScreanMenu.dart';
-import 'elementsOfScreens/homeScreen/languageButton.dart';
+import 'elementsOfScreens/homeScreen/HomeScreenMenu.dart';
+import 'elementsOfScreens/homeScreen/LanguageButton.dart';
 import 'elementsOfScreens/homeScreen/speak.dart';
 import 'elementsOfScreens/homeScreen/vibrationIcon.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -25,6 +25,7 @@ class _HomeScreenState extends State<HomeScreen> {
     myOrientationPortrait();
     super.initState();
   }
+
 
   @override
   Widget build(BuildContext context) {

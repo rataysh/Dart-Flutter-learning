@@ -13,7 +13,7 @@ myLandscapeView(sizeGridLandscape, int indexTheme) {
         childAspectRatio: sizeGridLandscape,
       ),
       itemCount:
-          myAllTheme.listAllTheme[indexTheme].allElements.length,
+          myAllTheme.languageTheme[indexTheme].allElements.length,
       itemBuilder: (_, index) => myBothViewContainer(index, indexTheme)
   );
 }

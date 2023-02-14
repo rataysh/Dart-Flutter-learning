@@ -44,7 +44,7 @@ class _NewGameStartState extends State<NewGameStart> {
 
   _randomTheme() {
     return themeNumberForShow =
-        Random().nextInt(myAllTheme.listAllTheme.length);
+        Random().nextInt(myAllTheme.languageTheme.length);
   }
 
   _miniViewAllTheme() {
@@ -93,7 +93,7 @@ class _NewGameStartState extends State<NewGameStart> {
                   children: [
                     const Text('Выберите тему', style: textStyleNewGameStartHeader),
                     const SizedBox(height: 25),
-                    myChoiceTheme(myAllTheme.listAllTheme[themeNumberForShow].name,
+                    myChoiceTheme(myAllTheme.languageTheme[themeNumberForShow].name,
                         _myIconThemeButton, _miniViewAllTheme, _randomTheme),
                   ],
                 ),

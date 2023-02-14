@@ -65,7 +65,7 @@ class NewGameFinal extends StatelessWidget {
                           width: gridWidth / 2,
                           alignment: Alignment.bottomCenter,
                           child: Text(
-                            myAllTheme.listAllTheme[argumentsThemeNumber].name,
+                            myAllTheme.languageTheme[argumentsThemeNumber].name,
                             style: textStyleNewGameFinalHeader,
                             overflow: TextOverflow.ellipsis,
                           ),

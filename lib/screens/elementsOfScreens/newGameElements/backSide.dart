@@ -7,7 +7,7 @@ import 'newGameRoleImageYouAreRabbit.dart';
 backSide(int index, int argumentsThemeNumber, int randomElementOfList,
     int rabbitFlag, context) {
   var tempWord = myAllTheme
-      .listAllTheme[argumentsThemeNumber].allElements[randomElementOfList];
+      .languageTheme[argumentsThemeNumber].allElements[randomElementOfList];
   return Container(
     alignment: Alignment.center,
     width: MediaQuery.of(context).size.width / 1.2,

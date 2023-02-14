@@ -2,7 +2,7 @@
 
 import 'package:flutter/cupertino.dart';
 
-import 'homeScreanButton.dart';
+import 'HomeScreenButton.dart';
 
 class HomeButtonsColumn extends StatelessWidget {
   const HomeButtonsColumn({Key? key}) : super(key: key);

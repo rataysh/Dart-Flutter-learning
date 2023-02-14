@@ -24,7 +24,7 @@ class _NewGameRoleState extends State<NewGameRole> {
     final int argumentsThemeNumber = argumentsListFromQuantity[1];
 
     int randomElementOfList = Random().nextInt(
-        myAllTheme.listAllTheme[argumentsThemeNumber].allElements.length);
+        myAllTheme.languageTheme[argumentsThemeNumber].allElements.length);
     int rabbitFlag = (Random().nextInt(argumentsPlayersNameMap.length) + 1);
 
     List argumentsPlayersNameList = [];

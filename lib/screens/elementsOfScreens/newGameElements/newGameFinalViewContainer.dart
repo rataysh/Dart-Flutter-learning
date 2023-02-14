@@ -24,7 +24,7 @@ myBothViewContainer(int index, int indexTheme) {
     ),
     alignment: Alignment.center,
     child: Text(
-      myAllTheme.listAllTheme[indexTheme].allElements[index],
+      myAllTheme.languageTheme[indexTheme].allElements[index],
       textAlign: TextAlign.center,
       style: textStyleWordsInFinalCard,),
   );

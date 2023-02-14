@@ -20,7 +20,7 @@ class ThemeEach extends StatelessWidget {
             padding: mySecondaryScreensPadding,
             physics: const BouncingScrollPhysics(),
             itemCount: myAllTheme
-                    .listAllTheme[argumentsIndexTheme].allElements.length+1,
+                    .languageTheme[argumentsIndexTheme].allElements.length+1,
             itemBuilder: (_, index) => Column(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
@@ -28,10 +28,10 @@ class ThemeEach extends StatelessWidget {
               children: [
                 index == 0
                     ? eachThemeFormHeader(
-                        myAllTheme.listAllTheme[argumentsIndexTheme].name,
+                        myAllTheme.languageTheme[argumentsIndexTheme].name,
                     context)
                     : eachThemeForm(myAllTheme
-                        .listAllTheme[argumentsIndexTheme].allElements[index-1].toString()),
+                        .languageTheme[argumentsIndexTheme].allElements[index-1].toString()),
                 const SizedBox(
                   height: 10,
                 )
