@@ -1,3 +1,4 @@
+import 'package:Rabbit/classes/AllTheme.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import '../../../const/SharedPreferenceConst.dart';
@@ -18,11 +19,11 @@ class _LanguageButtonState extends State<LanguageButton> {
   void initState() {
     super.initState();
     _initLang();
+    myAllTheme.updateLanguage();
   }
 
   Future _initLang() async {
     _curLang = await getCurLang();
-    curLanguage = _curLang;
   }
 
   // Future<int> getCurLang() async {
@@ -36,10 +37,10 @@ class _LanguageButtonState extends State<LanguageButton> {
         currentLanguageKey, _curLang == 0 ? _curLang = 1 : _curLang = 0);
   }
 
-  void _changeLanguage() {
-    _setCurLang();
+  void _changeLanguage() async {
+    await _setCurLang();
     print(_curLang);
-    curLanguage = _curLang;
+    await myAllTheme.updateLanguage();
     setState(() {});
   }
 

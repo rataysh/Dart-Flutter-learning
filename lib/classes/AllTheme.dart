@@ -25,6 +25,11 @@ class AllTheme {
       required this.ruTheme,
       required this.curLanguage});
 
+  Future<void> updateLanguage() async {
+    var prefs = await SharedPreferences.getInstance();
+    curLanguage = prefs.getInt(currentLanguageKey) ?? 0;
+  }
+
   List get languageTheme {
     if (curLanguage == 0) {
       return ruTheme;
@@ -35,7 +40,7 @@ class AllTheme {
 }
 
 var myAllTheme =
-AllTheme(engTheme: engTheme, ruTheme: ruTheme, curLanguage: curLanguage);
+    AllTheme(engTheme: engTheme, ruTheme: ruTheme, curLanguage: 0);
 
 final List ruTheme = [
   standardThemeDrink,

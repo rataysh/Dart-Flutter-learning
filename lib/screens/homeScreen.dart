@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../classes/AllTheme.dart';
 import '../const/orientation.dart';
 import '../const/ref.dart';
 import 'elementsOfScreens/background.dart';
@@ -9,7 +10,6 @@ import 'elementsOfScreens/homeScreen/vibrationIcon.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 
 class HomeScreen extends StatefulWidget {
-
   const HomeScreen({Key? key}) : super(key: key);
 
   @override
@@ -17,7 +17,6 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-
   late bool _controller = false;
 
   @override
@@ -26,12 +25,13 @@ class _HomeScreenState extends State<HomeScreen> {
     super.initState();
   }
 
-
   @override
   Widget build(BuildContext context) {
     final mainBackground = MainBackground();
     final vibrationIcon = VibrationIcon();
-    final languageButton = LanguageButton();
+    final languageButton = LanguageButton(
+      // allTheme: myAllTheme,
+    );
 
     return Material(
       child: Stack(
