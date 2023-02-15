@@ -4,9 +4,11 @@ import 'package:shared_preferences/shared_preferences.dart';
 import '../../../const/SharedPreferenceConst.dart';
 import '../../../const/ref.dart';
 
-
 class LanguageButton extends StatefulWidget {
-  const LanguageButton({Key? key}) : super(key: key);
+  final Function updateLanguage;
+
+  const LanguageButton({Key? key, required this.updateLanguage})
+      : super(key: key);
 
   @override
   State<LanguageButton> createState() => _LanguageButtonState();
@@ -26,11 +28,6 @@ class _LanguageButtonState extends State<LanguageButton> {
     _curLang = await getCurLang();
   }
 
-  // Future<int> getCurLang() async {
-  //   var prefs = await SharedPreferences.getInstance();
-  //   return prefs.getInt(currentLanguageKey) ?? 0;
-  // }
-
   Future _setCurLang() async {
     var prefs = await SharedPreferences.getInstance();
     prefs.setInt(
@@ -39,8 +36,10 @@ class _LanguageButtonState extends State<LanguageButton> {
 
   void _changeLanguage() async {
     await _setCurLang();
-    print(_curLang);
+    // print(_curLang);
     await myAllTheme.updateLanguage();
+    // await updateLanguage();
+    widget.updateLanguage();
     setState(() {});
   }
 

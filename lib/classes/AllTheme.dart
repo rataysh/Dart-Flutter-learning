@@ -1,19 +1,8 @@
 import 'package:shared_preferences/shared_preferences.dart';
-
 import '../const/SharedPreferenceConst.dart';
-import '../const/standartTheme.dart';
-import '../const/standartThemeEng.dart';
-import 'ListTheme.dart';
+import '../const/standardTheme.dart';
+import '../const/standardThemeEng.dart';
 
-// // Класс содержащий все темы
-// class AllTheme {
-//   List languageTheme;
-//
-//   AllTheme({required this.languageTheme});
-// }
-//
-// // Добавляю стадартные темы
-// var myAllTheme = AllTheme(languageTheme: ruTheme);
 
 class AllTheme {
   List engTheme;
@@ -54,7 +43,6 @@ final List ruTheme = [
   standardThemeFood,
   standardThemeRooms,
   standardThemeFilms,
-  // standardThemeMusicalInstruments,
   standardThemeHobby,
   standardTheme,
   standardThemeCity,

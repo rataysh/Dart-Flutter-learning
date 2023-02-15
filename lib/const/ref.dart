@@ -3,6 +3,7 @@ const String pathBackgroundImage = "assets/images/back.png";
 const String pathCloudLeftImage = "assets/images/cloudLeft.png";
 const String pathCloudRightImage = "assets/images/cloudRight.png";
 const String pathNameImage = "assets/images/name.png";
+const String pathNameEngImage = "assets/images/nameEng.png";
 const String pathBodyRabImage = "assets/images/bodyRab.png";
 const String pathHandRabImage = "assets/images/handRab.png";
 const String pathRunRabImage = "assets/images/runRab.png";

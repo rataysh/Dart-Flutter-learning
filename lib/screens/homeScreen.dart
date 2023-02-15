@@ -1,5 +1,6 @@
+import 'package:Rabbit/const/SharedPreferenceConst.dart';
 import 'package:flutter/material.dart';
-import '../classes/AllTheme.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import '../const/orientation.dart';
 import '../const/ref.dart';
 import 'elementsOfScreens/background.dart';
@@ -18,20 +19,32 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   late bool _controller = false;
+  late int _curLang = 0;
 
   @override
   void initState() {
-    myOrientationPortrait();
     super.initState();
+    myOrientationPortrait();
+    _initLang();
+  }
+
+  Future _initLang() async {
+    await updateLanguage();
+  }
+
+  Future updateLanguage() async {
+    var prefs = await SharedPreferences.getInstance();
+    var curLang = prefs.getInt(currentLanguageKey) ?? 0;
+    setState(() {
+      _curLang = curLang;
+    });
   }
 
   @override
   Widget build(BuildContext context) {
     final mainBackground = MainBackground();
     final vibrationIcon = VibrationIcon();
-    final languageButton = LanguageButton(
-      // allTheme: myAllTheme,
-    );
+    final languageButton = LanguageButton(updateLanguage: updateLanguage);
 
     return Material(
       child: Stack(
@@ -46,10 +59,12 @@ class _HomeScreenState extends State<HomeScreen> {
               Column(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
-                  Image.asset(
-                    pathNameImage,
-                    fit: BoxFit.scaleDown,
-                    scale: 3,
+                  Container(
+                    width: MediaQuery.of(context).size.width * 0.8,
+                    child: Image.asset(
+                      _curLang == 0 ? pathNameImage : pathNameEngImage,
+                      fit: BoxFit.contain,
+                    ),
                   ),
                   HomeButtonsColumn(),
                   Stack(
