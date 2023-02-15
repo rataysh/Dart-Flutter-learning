@@ -1,4 +1,5 @@
 import 'package:Rabbit/classes/AllTheme.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import '../../../const/SharedPreferenceConst.dart';
@@ -36,10 +37,12 @@ class _LanguageButtonState extends State<LanguageButton> {
 
   void _changeLanguage() async {
     await _setCurLang();
-    // print(_curLang);
     await myAllTheme.updateLanguage();
-    // await updateLanguage();
     widget.updateLanguage();
+    //Change localization
+    context.locale == Locale("ru")
+        ? context.setLocale(Locale("en"))
+        : context.setLocale(Locale("ru"));
     setState(() {});
   }
 

@@ -1,5 +1,7 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import '../../../const/ref.dart';
+import '../../../generated/locale_keys.g.dart';
 
 
 class SpeakCloud extends StatefulWidget {
@@ -22,8 +24,8 @@ class _SpeakCloudState extends State<SpeakCloud> {
             fit: BoxFit.scaleDown,
             width: 150,
           ),
-          const Text(
-            'Давай \n играть!',
+          Text(
+            LocaleKeys.rabSpeak.tr(),
             maxLines: 2,
             textAlign: TextAlign.center,
             style: TextStyle(
