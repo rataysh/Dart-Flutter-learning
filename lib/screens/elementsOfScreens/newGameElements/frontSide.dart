@@ -1,6 +1,8 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import '../../../const/styles.dart';
+import '../../../generated/locale_keys.g.dart';
 
 frontSide(List arguments, context, bool checkViewFlag) {
 
@@ -22,10 +24,8 @@ frontSide(List arguments, context, bool checkViewFlag) {
           style: textStyleHeaderNewGameRules,
           textAlign: TextAlign.center,
         ),
-        const Text(
-          '''Нажми на карточку, 
-чтобы узнать слово, 
-и передай следующему игроку''',
+        Text(
+          LocaleKeys.newGameCardFrontSide.tr(),
           style: textStyleDescriptionRules,
           textAlign: TextAlign.center,
         ),

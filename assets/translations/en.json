@@ -1,6 +1,18 @@
 {
-  "newGame": "New game",
-  "themes": "Topics",
-  "rules": "Rules",
-  "rabSpeak": "Let's play!"
+  "homeScreenNewGame": "New game",
+  "homeScreenThemes": "Topics",
+  "homeScreenRules": "Rules",
+  "homeScreenRabSpeak": "Let's play!",
+  "newGameNumbersPlayers": "Select the number of players",
+  "newGameSelectTopic": "Choose a topic",
+  "newGameNext": "Next step",
+  "newGamePlayer": "Player",
+  "newGameCardFrontSide": "Click on the card,\nto find out the word,\nand pass it to the next player",
+  "newGameYouAreRab": "You're a rabbit",
+  "rulesHeaderMeaning": "THE MEANING",
+  "rulesHeaderPlay": "GAME MOVE",
+  "rulesHeaderFindRab": "FIND THE RABBIT",
+  "rulesDescriptionMeaning": "This is a game about deception and deduction.\n\nAll players know the secret word except Rabbit.\n\nFind out the identity of the Rabbit, and if you are the Rabbit, blend in with the crowd, keep your cool and avoid detection!",
+  "rulesDescriptionPlay": "All but one has a secret word on the card.\n\nAll players take turns naming associations that look like the secret word, but without giving it away.\n\nThe task of the 'rabbit' is to name a word similar to the others, otherwise he will give himself away.",
+  "rulesDescriptionRab": "When everyone has said their word, vote! Point to the one you think is the rabbit.\n\nIf the player with the most votes is the rabbit, he may try to guess the secret word.\n\nIf the rabbit guesses correctly, he wins.\nIf the rabbit fails to guess correctly, you win!"
 }

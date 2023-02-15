@@ -14,15 +14,15 @@ class HomeButtonsColumn extends StatelessWidget {
     return Column(
       children: [
         HomeButton(
-          title: LocaleKeys.newGame.tr(),
+          title: LocaleKeys.homeScreenNewGame.tr(),
           navigatorPath: '/newGameStart',
         ),
         HomeButton(
-          title: LocaleKeys.themes.tr(),
+          title: LocaleKeys.homeScreenThemes.tr(),
           navigatorPath: '/themeMain',
         ),
         HomeButton(
-          title: LocaleKeys.rules.tr(),
+          title: LocaleKeys.homeScreenRules.tr(),
           navigatorPath: '/rulesMain',
         ),
       ],

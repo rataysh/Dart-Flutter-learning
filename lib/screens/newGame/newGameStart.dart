@@ -1,6 +1,8 @@
 import 'dart:math';
 // import 'package:flutter/cupertino.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import '../../generated/locale_keys.g.dart';
 import '../../screens/elementsOfScreens/background.dart';
 import 'package:vibration/vibration.dart';
 import '../../classes/AllTheme.dart';
@@ -80,7 +82,7 @@ class _NewGameStartState extends State<NewGameStart> {
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    const Text('Выберите количество игроков',
+                    Text(LocaleKeys.newGameNumbersPlayers.tr(),
                         style: textStyleNewGameStartHeader,
                     textAlign: TextAlign.center,),
                     const SizedBox(height: 25),
@@ -91,7 +93,7 @@ class _NewGameStartState extends State<NewGameStart> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    const Text('Выберите тему', style: textStyleNewGameStartHeader),
+                    Text(LocaleKeys.newGameSelectTopic.tr(), style: textStyleNewGameStartHeader),
                     const SizedBox(height: 25),
                     myChoiceTheme(myAllTheme.languageTheme[themeNumberForShow].name,
                         _myIconThemeButton, _miniViewAllTheme, _randomTheme),
@@ -106,8 +108,8 @@ class _NewGameStartState extends State<NewGameStart> {
                       Navigator.pushNamed(context, '/newGameQuantity',
                           arguments: [quantity, themeNumberForShow]);
                     },
-                    child: const Text(
-                      'Далее',
+                    child: Text(
+                      LocaleKeys.newGameNext.tr(),
                       style: mainMenuButtonTextStyle,
                     ),
                   ),

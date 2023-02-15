@@ -25,7 +25,7 @@ class _SpeakCloudState extends State<SpeakCloud> {
             width: 150,
           ),
           Text(
-            LocaleKeys.rabSpeak.tr(),
+            LocaleKeys.homeScreenRabSpeak.tr(),
             maxLines: 2,
             textAlign: TextAlign.center,
             style: TextStyle(
