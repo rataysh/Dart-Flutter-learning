@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import '../const/orientation.dart';
 import '../const/ref.dart';
-import 'elementsOfScreens/background.dart';
+import 'elementsOfScreens/backgroundWithNoImage.dart';
 import 'elementsOfScreens/homeScreen/HomeScreenMenu.dart';
 import 'elementsOfScreens/homeScreen/LanguageButton.dart';
 import 'elementsOfScreens/homeScreen/speak.dart';
@@ -42,7 +42,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final mainBackground = MainBackground();
+    final mainBackground = BackgroundWithNoOpacity();
     final vibrationIcon = VibrationIcon();
     final languageButton = LanguageButton(updateLanguage: updateLanguage);
 

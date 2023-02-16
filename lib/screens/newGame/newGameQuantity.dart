@@ -7,7 +7,7 @@ import '../../const/orientation.dart';
 import '../../const/styles.dart';
 import '../../generated/locale_keys.g.dart';
 import '../elementsOfScreens/backButton.dart';
-import '../elementsOfScreens/background.dart';
+import '../elementsOfScreens/MainBackground.dart';
 import '../elementsOfScreens/newGameElements/newGameQuantityTextForm.dart';
 
 class NewGameQuantity extends StatefulWidget {

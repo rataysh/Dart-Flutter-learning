@@ -3,7 +3,7 @@ import 'dart:math';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import '../../generated/locale_keys.g.dart';
-import '../../screens/elementsOfScreens/background.dart';
+import '../../screens/elementsOfScreens/MainBackground.dart';
 import 'package:vibration/vibration.dart';
 import '../../classes/AllTheme.dart';
 import '../../const/SharedPreferenceConst.dart';

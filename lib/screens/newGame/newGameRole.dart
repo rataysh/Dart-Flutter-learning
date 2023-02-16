@@ -3,7 +3,7 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import '../../classes/AllTheme.dart';
 import '../elementsOfScreens/backButton.dart';
-import '../elementsOfScreens/background.dart';
+import '../elementsOfScreens/MainBackground.dart';
 import 'package:flip_card/flip_card.dart';
 import '../elementsOfScreens/newGameElements/backSide.dart';
 import '../elementsOfScreens/newGameElements/frontSide.dart';

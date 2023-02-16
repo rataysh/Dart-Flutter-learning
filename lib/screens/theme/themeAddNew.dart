@@ -4,7 +4,7 @@
 // import 'package:flutter/material.dart';
 // import '../classes/ListTheme.dart';
 // import '../const/styles.dart';
-// import 'elementsOfScreens/background.dart';
+// import 'elementsOfScreens/MainBackground.dart';
 // import 'elementsOfScreens/backButton.dart';
 //
 // class AddThemeScreen extends StatelessWidget {

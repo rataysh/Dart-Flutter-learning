@@ -6,7 +6,7 @@ import '../../const/SharedPreferenceConst.dart';
 import '../../const/orientation.dart';
 import '../../const/styles.dart';
 import '../elementsOfScreens/backButton.dart';
-import '../elementsOfScreens/background.dart';
+import '../elementsOfScreens/MainBackground.dart';
 
 
 class ThemeMain extends StatefulWidget {

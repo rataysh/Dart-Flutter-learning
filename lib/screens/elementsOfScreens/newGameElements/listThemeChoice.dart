@@ -4,7 +4,7 @@ import 'package:vibration/vibration.dart';
 import '../../../classes/AllTheme.dart';
 import '../../../const/SharedPreferenceConst.dart';
 import '../../../const/styles.dart';
-import '../background.dart';
+import '../MainBackground.dart';
 
 
 class ListThemeChoice extends StatelessWidget {

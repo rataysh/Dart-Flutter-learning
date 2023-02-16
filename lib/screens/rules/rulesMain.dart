@@ -6,7 +6,7 @@ import '../../classes/RulesContain.dart';
 
 // import '../../const/rulesAll.dart';
 import '../../generated/locale_keys.g.dart';
-import '../../screens/elementsOfScreens/background.dart';
+import '../../screens/elementsOfScreens/MainBackground.dart';
 import '../../const/orientation.dart';
 import '../../const/ref.dart';
 import '../../const/styles.dart';

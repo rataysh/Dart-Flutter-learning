@@ -1,8 +1,8 @@
-// import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';import '../../const/ref.dart';
+import 'package:flutter/material.dart';
+import '../../const/ref.dart';
 import '../../const/styles.dart';
 
-class BackgroundWithNoOpacity extends StatelessWidget {
+class MainBackground extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -13,7 +13,7 @@ class BackgroundWithNoOpacity extends StatelessWidget {
           alignment: Alignment.bottomCenter,
           fit: BoxFit.contain,
           colorFilter: const ColorFilter.linearToSrgbGamma(),
-          // opacity: 0.5,
+          opacity: 0.5,
         ),
       ),
       child: Column(

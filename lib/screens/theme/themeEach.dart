@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import '../../classes/AllTheme.dart';
 import '../../const/styles.dart';
 import '../elementsOfScreens/backButton.dart';
-import '../elementsOfScreens/background.dart';
+import '../elementsOfScreens/MainBackground.dart';
 import '../elementsOfScreens/themeElements/eachThemePart.dart';
 
 class ThemeEach extends StatelessWidget {
