@@ -54,8 +54,21 @@ final List ruTheme = [
   standardThemeAnimals,
   standardThemeTech,
   standardThemeDesserts,
+  // standardThemeMusicalInstruments
 ];
 
 final List engTheme = [
   standardThemeDrinkEng,
+  standardThemeJobsEng,
+  standardThemeAquaEng,
+  standardThemeTypeOfFilmEng,
+  standardThemeBuildingsEng,
+  standardThemeTypeOfArtsEng,
+  standardThemeAuthorsEng,
+  standardThemeMoodEng,
+  standardThemeFoodEng,
+  standardThemeRoomsEng,
+  standardThemeFilmsEng,
+
+
 ];

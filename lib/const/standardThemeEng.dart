@@ -1,7 +1,9 @@
 import '../classes/ListTheme.dart';
 
 //Стандартные темы для игры
-final standardThemeDrinkEng = ListTheme(name: "Drinks", allElements: [
+final standardThemeDrinkEng = ListTheme(
+  name: "Drinks",
+  allElements: [
     "Latte",
     "Cocoa",
     "Milk",
@@ -18,6 +20,236 @@ final standardThemeDrinkEng = ListTheme(name: "Drinks", allElements: [
     "Tea",
     "Smoothie",
     "Juice",
-    ],
-    standardThemeFlag: true,
+  ],
+  standardThemeFlag: true,
 );
+
+final standardThemeJobsEng = ListTheme(
+  name: "Jobs",
+  allElements: [
+    "Fisherman",
+    "Developer",
+    "Accountant",
+    "Architect",
+    "Nurse",
+    "Teacher",
+    "Lawyer",
+    "Driver",
+    "Waitress",
+    "Security guard",
+    "Firefighter",
+    "Police officer",
+    "Chef",
+    "Football player",
+    "Journalist",
+    "Comedian",
+  ],
+  standardThemeFlag: true,
+);
+
+final standardThemeAquaEng = ListTheme(
+  name: "Underwater inhabitants",
+  allElements: [
+    "Octopus",
+    "Starfish",
+    "Shark",
+    "Jellyfish",
+    "Whale",
+    "Seal",
+    "Flounder",
+    "Dolphin",
+    "Orca",
+    "Crab",
+    "Sea horse",
+    "Stingray",
+    "Turtle",
+    "Swordfish",
+    "Moray eel",
+    "Sea lion",
+  ],
+  standardThemeFlag: true,
+);
+
+final standardThemeTypeOfFilmEng = ListTheme(
+  name: "Movie Genres",
+  allElements: [
+    "Horror",
+    "Melodrama",
+    "Musical",
+    "Crime",
+    "Action",
+    "Western",
+    "Biography",
+    "Animation",
+    "Thriller",
+    "Comedy",
+    "War",
+    "Tragedy",
+    "Science fiction",
+    "Drama",
+    "Documentary",
+    "Detective",
+  ],
+  standardThemeFlag: true,
+);
+
+final standardThemeBuildingsEng = ListTheme(
+  name: "Buildings",
+  allElements: [
+    "Pyramid of Giza",
+    "Eiffel Tower",
+    "Statue of Liberty",
+    "Big Ben",
+    "Stonehenge",
+    "Western Wall",
+    "Colosseum",
+    "Sydney Opera House",
+    "Christ the Redeemer statue",
+    "Taj Mahal",
+    "Petra",
+    "Great Wall of China",
+    "Acropolis",
+    "Empire State Building",
+    "Leaning Tower of Pisa",
+    "Grand Canyon",
+  ],
+  standardThemeFlag: true,
+);
+
+final standardThemeAuthorsEng = ListTheme(
+  name: "Writers",
+  allElements: [
+    "Paulo Coelho",
+    "Dan Brown",
+    "Agatha Christie",
+    "George Orwell",
+    "Leo Tolstoy",
+    "Johann Wolfgang von Goethe",
+    "Mark Twain",
+    "Stephen King",
+    "Ernest Hemingway",
+    "Margaret Atwood",
+    "Charles Dickens",
+    "William Shakespeare",
+    "J.R.R. Tolkien",
+    "Neil Gaiman",
+    "J.K. Rowling",
+    "Virginia Woolf",
+  ],
+  standardThemeFlag: true,
+);
+
+final standardThemeTypeOfArtsEng = ListTheme(
+  name: "Types of art",
+  allElements: [
+    "Cinema",
+    "Comics",
+    "Choreography",
+    "Photography",
+    "Architecture",
+    "Circus",
+    "Theatre",
+    "Fashion",
+    "Sculpture",
+    "Opera",
+    "Music",
+    "Graffiti",
+    "Painting",
+    "Literature",
+    "Animation",
+    "Poetry",
+  ],
+  standardThemeFlag: true,
+);
+
+final standardThemeMoodEng = ListTheme(
+  name: "Emotions",
+  allElements: [
+    "Enlightenment",
+    "Anxiety",
+    "Elation",
+    "Joy",
+    "Apathy",
+    "Inspiration",
+    "Anger",
+    "Sadness",
+    "Denial",
+    "Loneliness",
+    "Acceptance",
+    "Fear",
+    "Emptiness",
+    "Irritation",
+    "Peace",
+    "Surprise",
+  ],
+  standardThemeFlag: true,
+);
+
+final standardThemeFoodEng = ListTheme(
+  name: "Food",
+  allElements: [
+    "Sausage",
+    "Ice cream",
+    "Chocolate",
+    "Burger",
+    "Chicken",
+    "Egg",
+    "Cheese",
+    "Fruits",
+    "Pasta",
+    "Salad",
+    "Soup",
+    "Pizza",
+    "Potato",
+    "Fish",
+    "Bread",
+    "Pie",
+  ],
+  standardThemeFlag: true,
+);
+
+final standardThemeRoomsEng = ListTheme(
+  name: "Premises",
+  allElements: [
+    "Children's room",
+    "Bunker",
+    "Lobby",
+    "Garage",
+    "Living room",
+    "Basement",
+    "Cellar",
+    "Office",
+    "Corridor",
+    "Laboratory",
+    "Bedroom",
+    "Kitchen",
+    "Bathroom",
+    "Library",
+    "Dining room",
+    "Gym"
+  ],
+  standardThemeFlag: true,
+);
+
+final standardThemeFilmsEng = ListTheme(name: "Movies", allElements: [
+  "Shrek",
+  "Back to the Future",
+  "Transformers",
+  "Jurassic Park",
+  "The Silence of the Lambs",
+  "Finding Nemo",
+  "The Matrix",
+  "King Kong",
+  "Toy Story",
+  "Jaws",
+  "Titanic",
+  "The Avengers",
+  "Avatar",
+  "Gentlemen",
+  "Interstellar",
+  "The Dark Knight"
+],
+  standardThemeFlag: true,
+);
+
+

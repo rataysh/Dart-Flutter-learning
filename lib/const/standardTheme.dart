@@ -142,7 +142,7 @@ final standardThemeTypeOfArts = ListTheme(name: "Виды искусства", a
   "Граффити",
   "Живопись",
   "Литература",
-  "Графика",
+  "Анимация",
   "Поэзия",
 ],
   standardThemeFlag: true,
@@ -485,28 +485,3 @@ final standardThemeTech = ListTheme(name: "Бытовая техника", allEl
   standardThemeFlag: true,
 );
 
-
-
-
-
-
-// final standardTheme = ListTheme(name: "", allElements: [
-//   "",
-//   "",
-//   "",
-//   "",
-//   "",
-//   "",
-//   "",
-//   "",
-//   "",
-//   "",
-//   "",
-//   "",
-//   "",
-//   "",
-//   "",
-//   "",
-// ],
-//   standardThemeFlag: true,
-// );
