@@ -1,6 +1,7 @@
 <h1 align="center">Rabbit</h1>
 
 <h3>Rabbit is a fun and interactive game based on the famous board game.</h3>
+
 ![eng_banner](https://user-images.githubusercontent.com/88318279/219756698-54f36662-5a51-4643-8506-e445561ae4eb.png)
 
 
@@ -23,10 +24,7 @@
 #### - With the help of the Flutter native splash package.
 
 
-# Screen shots:
-## Home screen
-![Screenshot_2023-02-17-18-49-52-312_com rabbit release](https://user-images.githubusercontent.com/88318279/219747785-7bd54b7a-7f9f-4087-ae03-56f6492d89d3.jpg)
 
-## Topics screen
-![Screenshot_2023-02-17-18-49-56-859_com rabbit release](https://user-images.githubusercontent.com/88318279/219748561-bcde8204-1164-4605-b167-8a21d68155f2.jpg)
+
+https://user-images.githubusercontent.com/88318279/219762500-3ca9f76f-50ae-47c6-bf83-800fe0589fb9.mp4
 
