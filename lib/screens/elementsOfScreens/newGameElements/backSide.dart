@@ -13,7 +13,7 @@ backSide(int index, int argumentsThemeNumber, int randomElementOfList,
   return Container(
     alignment: Alignment.center,
     width: MediaQuery.of(context).size.width / 1.2,
-    height: MediaQuery.of(context).size.height / 1.5,
+    height: MediaQuery.of(context).size.height / 1.45,
     decoration: boxDecorationRulesContainer,
     child: index == rabbitFlag
         ? Column(

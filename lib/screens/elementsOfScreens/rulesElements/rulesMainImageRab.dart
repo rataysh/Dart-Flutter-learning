@@ -1,16 +1,13 @@
 import 'package:flutter/cupertino.dart';
 
-
 rulesMainContainerImage(double screenWidth, String path) {
-  return Center(
-    child: Container(
-      width: screenWidth / 3,
+  return Container(
+    height: 180,
+    alignment: Alignment.bottomCenter,
+    child: Image.asset(
       alignment: Alignment.bottomCenter,
-      child: Image.asset(
-        alignment: Alignment.bottomCenter,
-        path,
-        fit: BoxFit.scaleDown,
-      ),
+      path,
+      fit: BoxFit.contain,
     ),
   );
 }

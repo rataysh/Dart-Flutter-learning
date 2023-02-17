@@ -39,10 +39,6 @@ class _LanguageButtonState extends State<LanguageButton> {
     await _setCurLang();
     await myAllTheme.updateLanguage();
     widget.updateLanguage();
-    //Change localization
-    context.locale == Locale("ru")
-        ? context.setLocale(Locale("en"))
-        : context.setLocale(Locale("ru"));
     setState(() {});
   }
 

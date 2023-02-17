@@ -1,4 +1,3 @@
-// import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:vibration/vibration.dart';
 import '../../classes/AllTheme.dart';
@@ -45,46 +44,40 @@ class NewGameFinal extends StatelessWidget {
         return false;
       },
       child: Material(
+        color: colorBackgroundMain,
         child: Stack(
           fit: StackFit.passthrough,
           children: [
-            Container(
-              decoration: const BoxDecoration(
-                color: colorBackgroundMain,
-              ),
-              child: Column(
-                children: [
-                  SizedBox(
-                    height: newGameFinalHeightSizedBox,
-                    child: Row(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        myBackButtonForNewGameFinal(context),
-                        Container(
-                          width: gridWidth / 2,
-                          alignment: Alignment.bottomCenter,
-                          child: Text(
-                            myAllTheme.languageTheme[argumentsThemeNumber].name,
-                            style: textStyleNewGameFinalHeader,
-                            overflow: TextOverflow.ellipsis,
-                          ),
+            Column(
+              children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    myBackButtonForNewGameFinal(context),
+                    Expanded(
+                      child: Padding(
+                        padding: const EdgeInsets.only(top: 30),
+                        child: Text(
+                          myAllTheme.languageTheme[argumentsThemeNumber].name,
+                          textAlign: TextAlign.center,
+                          maxLines: 2,
+                          style: textStyleEachThemeElements,
                         ),
-                        myRotationButton(_screenRotationChange),
-                        myHomeButton(context),
-                      ],
+                      ),
                     ),
-                  ),
-                  OrientationBuilder(
-                    builder: (context, orientation) => MediaQuery.of(context)
-                                .orientation ==
-                            Orientation.portrait
-                        ? myPortraitView(sizeGridPortrait, argumentsThemeNumber)
-                        : myLandscapeView(
-                            sizeGridLandscape, argumentsThemeNumber),
-                  ),
-                ],
-              ),
+                    myRotationButton(_screenRotationChange),
+                    myHomeButton(context),
+                  ],
+                ),
+                OrientationBuilder(
+                  builder: (context, orientation) => MediaQuery.of(context)
+                              .orientation ==
+                          Orientation.portrait
+                      ? myPortraitView(sizeGridPortrait, argumentsThemeNumber)
+                      : myLandscapeView(
+                          sizeGridLandscape, argumentsThemeNumber),
+                ),
+              ],
             ),
           ],
         ),

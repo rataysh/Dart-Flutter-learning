@@ -1,4 +1,5 @@
 import 'package:Rabbit/const/SharedPreferenceConst.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import '../const/orientation.dart';
@@ -35,6 +36,10 @@ class _HomeScreenState extends State<HomeScreen> {
   Future updateLanguage() async {
     var prefs = await SharedPreferences.getInstance();
     var curLang = prefs.getInt(currentLanguageKey) ?? 0;
+    //Change localization
+    curLang == 0
+        ? context.setLocale(Locale("ru"))
+        : context.setLocale(Locale("en"));
     setState(() {
       _curLang = curLang;
     });
@@ -56,42 +61,35 @@ class _HomeScreenState extends State<HomeScreen> {
           Column(
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
-              Column(
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: [
-                  Container(
-                    width: MediaQuery.of(context).size.width * 0.8,
-                    child: Image.asset(
-                      _curLang == 0 ? pathNameImage : pathNameEngImage,
-                      fit: BoxFit.contain,
-                    ),
-                  ),
-                  HomeButtonsColumn(),
-                  Stack(
-                    children: [
-                      GestureDetector(
-                        onTap: () => setState(() => _controller = !_controller),
-                        child: Image.asset(
-                          alignment: Alignment.bottomCenter,
-                          pathBodyRabImage,
-                          fit: BoxFit.scaleDown,
-                          scale: 3.3,
-                        ).animate(target: _controller ? 1 : 0).shakeY(hz: 5),
-                      ),
-                      SpeakCloud()
-                          .animate(target: _controller ? 1 : 0)
-                          .slideX(begin: 0.7, end: 0.7)
-                          .slideY(begin: 0.3, end: 0.3)
-                          .fade(begin: 0, end: 1, duration: 200.ms)
-                          .shimmer(duration: 1200.ms)
-                          .then(delay: 1200.ms)
-                          .fade(begin: 1, end: 0, duration: 200.ms),
-                    ],
-                  ),
-                ],
+              SizedBox(
+                height: MediaQuery.of(context).size.height * 0.15,
+              ),
+              Image.asset(
+                _curLang == 0 ? pathNameImage : pathNameEngImage,
+                // width: MediaQuery.of(context).size.width * 0.7,
+                height: MediaQuery.of(context).size.height * 0.15,
+                fit: BoxFit.contain,
+              ),
+              HomeButtonsColumn(),
+              GestureDetector(
+                onTap: () => setState(() => _controller = !_controller),
+                child: Image.asset(
+                  alignment: Alignment.bottomCenter,
+                  pathBodyRabImage,
+                  height: MediaQuery.of(context).size.height * 0.38,
+                  fit: BoxFit.contain,
+                ).animate(target: _controller ? 1 : 0).shakeY(hz: 5),
               ),
             ],
           ),
+          SpeakCloud()
+              .animate(target: _controller ? 1 : 0)
+              .slideX(begin: 0.75, end: 0.75)
+              .slideY(begin: -1.2, end: -1.2)
+              .fade(begin: 0, end: 1, duration: 200.ms)
+              .shimmer(duration: 1200.ms)
+              .then(delay: 1200.ms)
+              .fade(begin: 1, end: 0, duration: 200.ms),
         ],
       ),
     );

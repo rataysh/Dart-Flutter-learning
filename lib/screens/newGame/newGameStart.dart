@@ -73,7 +73,7 @@ class _NewGameStartState extends State<NewGameStart> {
         children: [
           MainBackground(),
           Padding(
-            padding: const EdgeInsets.all(10.0),
+            padding: const EdgeInsets.only(top: 50.0),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
