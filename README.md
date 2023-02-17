@@ -4,6 +4,10 @@
 
 ![eng_banner](https://user-images.githubusercontent.com/88318279/219756698-54f36662-5a51-4643-8506-e445561ae4eb.png)
 
+## [Google Play](https://play.google.com/store/apps/details?id=com.rabbit.release)
+
+<a href="https://play.google.com/store/apps/details?id=com.rabbit.release" target="blank"><img align="center" src="https://lh3.googleusercontent.com/Mnn3W-HCNSJAYPqLSd4wHlgXRIfxNGuDc5Bh5bGcZbdhbVfRVi9pOGYJdS0bFBZ3908ovZWqrWu02lP1qDpOkmDVuqlBzn2griN9c3EvWeMDLRlx1MUF=s0" alt="https://play.google.com/store/apps/details?id=com.rabbit.release" height="50" width="80" /></a>
+</p>
 
 ## 1) Language 
 - Dart
@@ -25,6 +29,5 @@
 
 
 
-
-https://user-images.githubusercontent.com/88318279/219762500-3ca9f76f-50ae-47c6-bf83-800fe0589fb9.mp4
+https://user-images.githubusercontent.com/88318279/219764947-90a7b187-f768-4ebd-9260-4b1967e394e0.mp4
 
