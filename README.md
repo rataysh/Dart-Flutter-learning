@@ -1,7 +1,7 @@
 <h1 align="center">Rabbit</h1>
 
 <h3>Rabbit is a fun and interactive game based on the famous board game.</h3>
-![eng_banner](https://user-images.githubusercontent.com/88318279/219733372-f3910ce5-2607-41ad-8e51-77f22cf3c4e9.png)
+![eng_banner](https://user-images.githubusercontent.com/88318279/219756698-54f36662-5a51-4643-8506-e445561ae4eb.png)
 
 
 ## 1) Language 
