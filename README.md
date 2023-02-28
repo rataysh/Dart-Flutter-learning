@@ -28,6 +28,16 @@
 #### - With the help of the Flutter native splash package.
 
 
+## Demonstation 
 
-https://user-images.githubusercontent.com/88318279/219764947-90a7b187-f768-4ebd-9260-4b1967e394e0.mp4
+### Multi-linguality
 
+<img src="https://user-images.githubusercontent.com/88318279/221924824-b3e6a10c-a3f9-4e65-8111-7be76c1fc26a.gif" alt="linguality" height="600"/>
+
+### Game
+
+<img src="https://user-images.githubusercontent.com/88318279/221925051-2fb769f9-a460-4aeb-9c67-5b807c0ae982.gif" alt="Game" height="600"/>
+
+### Rules
+
+<img src="https://user-images.githubusercontent.com/88318279/221925164-8cdc5171-85d1-434b-a66f-0ae7cd7ef553.gif" alt="Rules" height="600"/>
